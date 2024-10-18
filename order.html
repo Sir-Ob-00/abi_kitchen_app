@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abi's Kitchen/Order</title>
+    <link rel="shortcut icon" type="image/png" href="logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    footer{
+            background-image: url('background1.jpg');
+        }
+</style>
+<body >
+<div class="bg-gray-100 p-6">
+
+    <nav class="bg-white bg-opacity-90 fixed top-0 left-0 right-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+            
+                <div class="flex-shrink-0 flex items-center">
+                    <img src="logo.png" alt="Logo" class="w-28 h-25">
+                </div>
+
+                <!-- Middle Section: Centered Menu Items -->
+                <div class="hidden md:flex space-x-6 items-center">
+                    <!-- Simple Menu Items -->
+                    <a href="home.html" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Home</a>
+                    <a href="menu.html" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Menu</a>
+                    <a href="#" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Dashboard</a>
+
+                    <!-- Orders Menu with Submenu -->
+                    <div class="relative dropdown">
+                        <a href="#" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover flex items-center">
+                            Orders
+                            <!-- Arrow Icon -->
+                            <i class="fas fa-chevron-down ml-2 text-sm"></i>
+                        </a>
+                        <!-- Submenu -->
+                        <div class="dropdown-menu hidden absolute bg-white shadow-lg rounded mt-1">
+                            <a href="order.html" class="block px-4 py-2 text-gray-700 hover:bg-orange-600 hover:text-white submenu-scale">Place Order</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-orange-600 hover:text-white submenu-scale">Cancel Order</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-orange-600 hover:text-white submenu-scale">Order Status</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-orange-600 hover:text-white submenu-scale">Order History</a>
+                        </div>
+                    </div>
+
+                    <!-- Simple Menu Item -->
+                    <a href="staff.html" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Staff</a>
+
+                    <!-- Reservation Menu with Submenu -->
+                    <div class="relative dropdown">
+                        <a href="#" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover flex items-center">
+                            Reservation
+                            <!-- Arrow Icon -->
+                            <i class="fas fa-chevron-down ml-2 text-sm"></i>
+                        </a>
+                        <!-- Submenu -->
+                        <div class="dropdown-menu hidden absolute bg-white shadow-lg rounded mt-1">
+                            <a href="reservation.html" class="block px-4 py-2 text-gray-700 hover:bg-orange-600 hover:text-white submenu-scale">Book Table</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-orange-600 hover:text-white submenu-scale">View Reservations</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-orange-600 hover:text-white submenu-scale">Cancel Reservation</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-orange-600 hover:text-white submenu-scale">Edit Reservation</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Section: Login and Sign Up Buttons -->
+                <div class="hidden md:flex space-x-4 items-center">
+                    <a href="login.html" class="text-gray-700 hover:text-red-400 px-3 py-2">Login</a>
+                    <a href="signup.html" class="text-red-400 ml-2 md:border-2 border-red-300 rounded-full 
+                    py-2 px-3 text-xs uppercase font-bold tracking-wider hover:bg-red-400 hover:text-white transition ease-out duration-500 active:bg-red-300">Sign Up</a>
+                </div>
+
+                <!-- Hamburger Menu Icon (Visible on smaller screens) -->
+                <div class="md:hidden flex items-center">
+                    <button id="hamburger-button" class="focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu (Hidden by default) -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4">
+                <!-- Menu Items for smaller screens -->
+                <div class="space-y-4">
+                    <a href="home.html" class="block text-gray-500 hover:text-red-400 underline-hover">Home</a>
+                    <a href="menu.html" class="block text-gray-500 hover:text-red-400 underline-hover">Menu</a>
+                    <a href="#" class="block text-gray-500 hover:text-red-400 underline-hover">Dashboard</a>
+
+                    <div class="dropdown">
+                        <a href="#" class="block text-gray-500 hover:text-red-400 underline-hover flex items-center justify-between">
+                            Orders
+                            <i class="fas fa-chevron-down text-sm"></i>
+                        </a>
+                        <!-- Submenu -->
+                        <div class="dropdown-menu hidden bg-orange-600 shadow-lg rounded mt-1">
+                            <a href="order.html" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Place Order</a>
+                            <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Cancel Order</a>
+                            <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Order Status</a>
+                            <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Order History</a>
+                        </div>
+                    </div>
+
+                    <a href="staff.html" class="block text-gray-500 hover:text-red-400 underline-hover">Staff</a>
+
+                    <div class="dropdown">
+                        <a href="#" class="block text-gray-500 hover:text-red-400 underline-hover flex items-center justify-between">
+                            Reservation
+                            <i class="fas fa-chevron-down text-sm"></i>
+                        </a>
+                        <!-- Submenu -->
+                        <div class="dropdown-menu hidden bg-orange-600 shadow-lg rounded mt-1">
+                            <a href="reservation.html" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Book Table</a>
+                            <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">View Reservations</a>
+                            <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Cancel Reservation</a>
+                            <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Edit Reservation</a>
+                        </div>
+                    </div>
+
+                    <!-- Login and Sign Up for smaller screens -->
+                    <div class="flex flex-col space-y-4 mt-4">
+                        <a href="login.html" class="text-gray-700 hover:text-red-400 px-3 py-2">Login</a>
+                        <a href="signup.html" class="py-2 px-4 bg-orange-600 text-white rounded hover:bg-orange-700 text-center">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg mt-16">
+        <h2 class="text-3xl font-bold mb-6 text-gray-800 text-center">Place Your Order</h2>
+
+        <form action="#" method="POST">
+            <!-- Personal Information Section -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-red-500">Full Name</label>
+                    <input type="text" id="name" name="name" required class="mt-1 block w-full p-2 border border-red-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-red-500">Email Address</label>
+                    <input type="email" id="email" name="email" required class="mt-1 block w-full p-2 border border-red-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                </div>
+                <div>
+                    <label for="phone" class="block text-sm font-medium text-red-500">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required class="mt-1 block w-full p-2 border border-red-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                </div>
+                <div>
+                    <label for="address" class="block text-sm font-medium text-red-500">Shipping Address</label>
+                    <input type="text" id="address" name="address" required class="mt-1 block w-full p-2 border border-red-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                </div>
+            </div>
+
+            <!-- Order Details Section -->
+            <div class="mb-6">
+                <label for="orderDetails" class="block text-sm font-medium text-gray-700">Order Details</label>
+                <textarea id="orderDetails" name="orderDetails" rows="4" required class="mt-1 block w-full Shipping Address
+                p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:ring-blue-500"></textarea>
+            </div>
+
+            <!-- Payment Method Section -->
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-gray-800">Payment Method</h3>
+                <div class="mt-3 space-y-4">
+                    <div class="flex items-center">
+                        <input id="payment-credit-card" name="payment-method" type="radio" value="credit-card" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" required>
+                        <label for="payment-credit-card" class="ml-3 block text-sm font-medium text-gray-700">Credit Card</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="payment-paypal" name="payment-method" type="radio" value="paypal" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" required>
+                        <label for="payment-paypal" class="ml-3 block text-sm font-medium text-gray-700">PayPal</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="payment-cash" name="payment-method" type="radio" value="cash" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" required>
+                        <label for="payment-cash" class="ml-3 block text-sm font-medium text-gray-700">Cash on Delivery</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center">
+                <button type="submit" class="w-full bg-red-500 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-red-700 transition duration-300 ease focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Submit Order</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+        <!-- Footer Section -->
+        <footer class="bg-cover bg-center bg-no-repeat text-white py-10 ">
+            <div class="grid grid-cols-2 md:flex md:justify-be">
+            
+            <!-- Address -->
+            <div class="w-full md:w-1/4 mb-6 ml-4">
+                <h3 class="text-lg font-bold mb-4 font-bold text-orange-600 bg-white w-28 p-2 rounded">Address</h3>
+                <div class="space-y-2">
+                    <div class="flex items-center">
+                        <i class="fas fa-map-marker-alt mr-2"></i>
+                        <span>Sunyani, Fiapre Box 20</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-phone mr-2"></i>
+                        <span>+233 24 089 7702</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-envelope mr-2"></i>
+                        <span>owusuboat05@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Navigation -->
+            <div class="w-full md:w-1/4 mb-6 md:ml-6">
+                <h3 class="text-lg font-bold mb-4 font-bold text-orange-600 bg-white w-28 p-2 rounded">Navigation</h3>
+                <ul class="space-y-2">
+                <li><a href="home.html" class="transform hover:scale-105 transition ease-out duration-300">Home</a></li>
+                <li><a href="menu.html" class="hover:underline">Menu</a></li>
+                <li><a href="order.html" class="hover:underline">Orders</a></li>
+                <li><a href="staff.html" class="hover:underline">Staff</a></li>
+                <li><a href="#" class="hover:underline">Blog</a></li>
+                <li><a href="#" class="hover:underline">Policy</a></li>
+                <li><a href="#" class="hover:underline">Terms & Conditions</a></li>
+                </ul>
+            </div>
+    
+            <!-- Open Hours -->
+            <div class="w-full md:w-1/4 mb-6 ml-4">
+                <h3 class="text-lg font-bold mb-4 font-bold text-orange-600 bg-white w-32 p-2 rounded">Open Hours</h3>
+                <div class="space-y-2">
+                <p>Sunday - Friday: 6am - 11pm</p>
+                <p>Saturday: 6pm - 11pm</p>
+                </div>
+            </div>
+    
+            <!-- Social Media -->
+            <div class="w-full md:w-1/4 mb-6">
+                <h3 class="text-lg font-bold mb-4 font-bold text-orange-600 bg-white w-28 p-2 rounded">Follow Us</h3>
+                <div class="flex space-x-4">
+                <a href="#" class="hover:text-red-400"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-red-400"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-red-400"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-red-400"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="hover:text-red-400"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+    
+            </div>
+        </footer>
+        
+        <script src="js/navbar.js">
+           
+        </script>
+</body>
+</html>
