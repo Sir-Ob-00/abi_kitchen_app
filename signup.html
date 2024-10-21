@@ -4,19 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Abi'sKitchen/Sign Up</title>
-  <link rel="shortcut icon" type="image/png" href="logo.png">
+  <link rel="shortcut icon" type="image/png" href="/images/background/logo.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
     main {
-      background-image: url('Background.jpg'); /* Add your background image URL */
+      background-image: url('/images/background/Background.jpg'); 
       background-size: cover;
       background-position: center;
     }
 
     footer{
-        background-image: url('background1.jpg');
+        background-image: url('/images/background/background1.jpg');
     }
   </style>
 </head>
@@ -26,7 +26,7 @@
             <div class="flex justify-between items-center h-16">
             
                 <div class="flex-shrink-0 flex items-center">
-                    <img src="logo.png" alt="Logo" class="w-28 h-25">
+                    <img src="/images/background/logo.png" alt="Logo" class="w-28 h-25">
                 </div>
 
                 <!-- Middle Section: Centered Menu Items -->
@@ -248,8 +248,41 @@
     
             </div>
   </footer>
-      <script src="js/navbar.js">
-         
+      <script>
+         //JS for Humburger Menu
+            // Toggle mobile menu visibility
+    document.getElementById('hamburger-button').addEventListener('click', function () {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+    });
+
+    // Toggle submenus on both large and mobile screens
+    document.querySelectorAll('.dropdown > a').forEach(dropdownToggle => {
+        dropdownToggle.addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent the default link behavior
+            const submenu = this.nextElementSibling;
+            
+            // Close other open submenus
+            document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                if (menu !== submenu) {
+                    menu.classList.add('hidden');
+                }
+            });
+
+            // Toggle the current submenu
+            submenu.classList.toggle('hidden');
+        });
+    });
+
+    // Close submenus when clicking outside (for larger screens)
+    document.addEventListener('click', function (event) {
+        const isClickInsideMenu = event.target.closest('.dropdown');
+        if (!isClickInsideMenu && window.innerWidth >= 768) {
+            document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                menu.classList.add('hidden');
+            });
+        }
+    });
       </script>
 </body>
 </html>
