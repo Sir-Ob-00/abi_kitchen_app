@@ -161,49 +161,49 @@
             <div class="font-mono grid grid-cols-2 gap-4 sm:flex sm:flex-shrink-1">
                 <div>
                 <a href="#"><button class="bg-red-500 p-2 rounded-lg text-white text-xl hover:border-2 hover:border-red-500 
-                hover:bg-inherit hover:text-red-500 transition ease-out duration-300">LOCAL HOT</button></a>
+                hover:bg-inherit hover:text-red-500 transition ease-out duration-300" id="localHot">LOCAL HOT</button></a>
+                </div>
+
+                <div>
+                <button class="bg-red-500 p-2 rounded-lg text-white text-xl hover:border-2 hover:border-red-500 
+                hover:bg-inherit hover:text-red-500 transition ease-out duration-300" id="specialRice">SPECIAL RICE</button>
                 </div>
 
                 <div>
                 <a href="#"><button class="bg-red-500 p-2 rounded-lg text-white text-xl hover:border-2 hover:border-red-500 
-                hover:bg-inherit hover:text-red-500 transition ease-out duration-300">SPECIAL RICE</button></a>
-                </div>
-
-                <div>
-                <a href="#"><button class="bg-red-500 p-2 rounded-lg text-white text-xl hover:border-2 hover:border-red-500 
-                hover:bg-inherit hover:text-red-500 transition ease-out duration-300">FAVOURITE STEW/SOUP</button></a>
+                hover:bg-inherit hover:text-red-500 transition ease-out duration-300" id="favStew">FAVOURITE STEW/SOUP</button></a>
                 </div>
                 <div>
                 <a href="#"><button class="bg-red-500 p-2 rounded-lg text-white text-xl hover:border-2 hover:border-red-500 
-                hover:bg-inherit hover:text-red-500 transition ease-out duration-300">STREET FOOD</button></a>
+                hover:bg-inherit hover:text-red-500 transition ease-out duration-300" id="streetFood">STREET FOOD</button></a>
                 </div>
             </div>
 
             <div class="my-4 content-center font-mono grid grid-cols-2 gap-4 sm:flex sm:flex-shrink-1">
                 <div>
                 <a href="#"><button class="bg-red-500 p-2 rounded-lg text-white text-xl hover:border-2 hover:border-red-500 
-                    hover:bg-inherit hover:text-red-500 transition ease-out duration-300">DESSERT</button></a>
+                    hover:bg-inherit hover:text-red-500 transition ease-out duration-300" id="dessert">DESSERT</button></a>
                 </div>
 
                 <div>
                 <a href="#"><button class="bg-red-500 p-2 rounded-lg text-white text-xl hover:border-2 hover:border-red-500 
-                hover:bg-inherit hover:text-red-500 transition ease-out duration-300">PIZZA</button></a>
+                hover:bg-inherit hover:text-red-500 transition ease-out duration-300" id="pizza">PIZZA</button></a>
                 </div>
 
                 <div>
                 <a href="#"><button class="bg-red-500 p-2 rounded-lg text-white text-xl hover:border-2 hover:border-red-500 
-                hover:bg-inherit hover:text-red-500 transition ease-out duration-300">NOODLES</button></a>
+                hover:bg-inherit hover:text-red-500 transition ease-out duration-300" id="noodles">NOODLES</button></a>
                 </div>
                     
                 <div>
                 <a href="#"><button class="bg-red-500 p-2 rounded-lg text-white text-xl hover:border-2 hover:border-red-500 
-                hover:bg-inherit hover:text-red-500 transition ease-out duration-300">LOCAL BEVERAGES</button></a>
+                hover:bg-inherit hover:text-red-500 transition ease-out duration-300" id="localBev">LOCAL BEVERAGES</button></a>
                 </div>
             </div>
 
 
             <div  class="bg-gray-100 font-sans">
-                <div class="container mx-auto p-4">
+                <div class="container mx-auto p-4" id="targetLocal">
                     <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">Local Hot</h1>
             
                     <!-- Local Hot -->
@@ -278,7 +278,7 @@
             </div>
 
             <!--Rice-->
-            <div  class="bg-gray-100 font-sans">
+            <div  class="bg-gray-100 font-sans" id="targetRice">
                 <div class="container mx-auto p-4">
                     <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">Special Rice</h1>
             
@@ -321,7 +321,7 @@
             </div>
 
             <!--Soup/Syew-->
-            <div  class="bg-gray-100 font-sans">
+            <div  class="bg-gray-100 font-sans" id="targetStew">
                 <div class="container mx-auto p-4">
                     <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">Special Soup/Stew</h1>
             
@@ -381,7 +381,7 @@
 
             <!--Street Food-->
             <div  class="bg-gray-100 font-sans">
-                <div class="container mx-auto p-4">
+                <div class="container mx-auto p-4" id="targetStreet">
                     <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">Street Foods</h1>
             
                     <!-- Menu Items -->
@@ -456,7 +456,7 @@
             </div>
 
             <!--Special Pizza-->
-            <aside class="min-h-screen flex items-center justify-center">
+            <aside class="min-h-screen flex items-center justify-center" id="targetPizza">
                 <div class="container mx-auto p-8 bg-white bg-opacity-80 rounded-lg shadow-lg">
                     <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">Special Pizza</h1>
                 
@@ -526,7 +526,7 @@
             </aside>
             
             <!--Noodles-->
-            <main>
+            <main id="targetNoodles">
                 <div class="relative h-screen flex items-center justify-center">
                     <div class="absolute inset-0 bg-black bg-opacity-50"></div>
                     <div class="relative z-10 p-6 md:p-8 text-center bg-white bg-opacity-90 rounded-lg shadow-lg transform transition duration-500 
@@ -546,7 +546,7 @@
 
 
              <!--Dessert-->
-             <div  class="bg-gray-100 font-sans">
+             <div  class="bg-gray-100 font-sans" id="targetDessert">
                 <div class="container mx-auto p-4">
                     <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">dessert</h1>
             
@@ -606,7 +606,7 @@
 
 
              <!--Local beverages-->
-             <div  class="bg-gray-100 font-sans">
+             <div  class="bg-gray-100 font-sans" id="targetBev">
                 <div class="container mx-auto p-4">
                     <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">Local Beverages</h1>
             
@@ -746,41 +746,7 @@
             </div>
         </footer>
         
-        <script>
-            //JS for Humburger Menu
-            // Toggle mobile menu visibility
-    document.getElementById('hamburger-button').addEventListener('click', function () {
-        const menu = document.getElementById('mobile-menu');
-        menu.classList.toggle('hidden');
-    });
-
-    // Toggle submenus on both large and mobile screens
-    document.querySelectorAll('.dropdown > a').forEach(dropdownToggle => {
-        dropdownToggle.addEventListener('click', function (event) {
-            event.preventDefault(); // Prevent the default link behavior
-            const submenu = this.nextElementSibling;
-            
-            // Close other open submenus
-            document.querySelectorAll('.dropdown-menu').forEach(menu => {
-                if (menu !== submenu) {
-                    menu.classList.add('hidden');
-                }
-            });
-
-            // Toggle the current submenu
-            submenu.classList.toggle('hidden');
-        });
-    });
-
-    // Close submenus when clicking outside (for larger screens)
-    document.addEventListener('click', function (event) {
-        const isClickInsideMenu = event.target.closest('.dropdown');
-        if (!isClickInsideMenu && window.innerWidth >= 768) {
-            document.querySelectorAll('.dropdown-menu').forEach(menu => {
-                menu.classList.add('hidden');
-            });
-        }
-    });
+        <script src="/javaScript/menufunction.js">
         </script>
 
 
