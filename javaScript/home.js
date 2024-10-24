@@ -59,3 +59,39 @@
                 // Optional: Add event listeners for manual controls
                 document.getElementById("next").addEventListener("click", goToNextSlide);
                 document.getElementById("prev").addEventListener("click", goToPrevSlide);
+
+            //Picture cards
+            // Wait until the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", function() {
+    const labels = document.querySelectorAll('.label');
+
+    // Function to check if an element is in the viewport
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
+    // Function to toggle visibility of labels based on scroll position
+    function handleScroll() {
+        labels.forEach(label => {
+            if (isInViewport(label)) {
+                label.classList.remove('opacity-0');
+                label.classList.add('opacity-100');
+            } else {
+                label.classList.remove('opacity-100');
+                label.classList.add('opacity-0');
+            }
+        });
+    }
+
+    // Listen for scroll and run the handler
+    window.addEventListener('scroll', handleScroll);
+
+    // Trigger the function on page load in case some labels are already in view
+    handleScroll();
+});
