@@ -27,20 +27,17 @@
     </style>
 </head>
 <body>
-            <!--Nav:With hero section-->
     <main class="h-full">
-                            <!--Nav Section-->
-        <nav class="bg-white bg-opacity-90 fixed top-0 left-0 right-0 z-50 shadow-md">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!--Nav Section-->
+        <nav class="bg-white bg-opacity-90 fixed top-0 left-0 right-0 z-50 shadow-md w-full">
+            <div class="w-full px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between items-center h-16">
-                
                     <div class="flex-shrink-0 flex items-center">
                         <img src="/images/background/logo.png" alt="Logo" class="w-28 h-25">
                     </div>
-
+    
                     <!-- Middle Section: Centered Menu Items -->
                     <div class="hidden md:flex space-x-6 items-center text-lg">
-                        <!-- Simple Menu Items -->
                         <a href="#" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Home</a>
                         <a href="menu.html" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Menu</a>
                         <a href="#" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Dashboard</a>
@@ -48,14 +45,13 @@
                         <a href="staff.html" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Staff</a>
                         <a href="#" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Reservation</a>
                     </div>
-
+    
                     <!-- Right Section: Login and Sign Up Buttons -->
                     <div class="hidden md:flex space-x-4 items-center">
                         <a href="login.html" class="text-gray-700 hover:text-red-400 px-3 py-2">Login</a>
-                        <a href="signup.html" class="text-red-400 ml-2 md:border-2 border-red-300 rounded-full 
-                        py-2 px-3 text-xs uppercase font-bold tracking-wider hover:bg-red-400 hover:text-white transition ease-out duration-500 active:bg-red-300">Sign Up</a>
+                        <a href="signup.html" class="text-red-400 ml-2 md:border-2 border-red-300 rounded-full py-2 px-3 text-xs uppercase font-bold tracking-wider hover:bg-red-400 hover:text-white transition ease-out duration-500 active:bg-red-300">Sign Up</a>
                     </div>
-
+    
                     <!-- Hamburger Menu Icon (Visible on smaller screens) -->
                     <div class="md:hidden flex items-center">
                         <button id="hamburger-button" class="focus:outline-none">
@@ -63,21 +59,17 @@
                         </button>
                     </div>
                 </div>
-
+    
                 <!-- Mobile Menu (Hidden by default) -->
                 <div id="mobile-menu" class="hidden md:hidden mt-4">
-                    <!-- Menu Items for smaller screens -->
                     <div class="space-y-4">
                         <a href="#" class="block text-gray-500 hover:text-red-400 underline-hover">Home</a>
                         <a href="menu.html" class="block text-gray-500 hover:text-red-400 underline-hover">Menu</a>
                         <a href="#" class="block text-gray-500 hover:text-red-400 underline-hover">Dashboard</a>
-
                         <div class="dropdown">
-                            <a href="#" class="block text-gray-500 hover:text-red-400 underline-hover flex items-center justify-between">
-                                Orders
+                            <a href="#" class="block text-gray-500 hover:text-red-400 underline-hover flex items-center justify-between">Orders
                                 <i class="fas fa-chevron-down text-sm"></i>
                             </a>
-                            <!-- Submenu -->
                             <div class="dropdown-menu hidden bg-orange-600 shadow-lg rounded mt-1">
                                 <a href="menu.html" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Place Order</a>
                                 <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Cancel Order</a>
@@ -85,15 +77,11 @@
                                 <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Order History</a>
                             </div>
                         </div>
-
                         <a href="staff.html" class="block text-gray-500 hover:text-red-400 underline-hover">Staff</a>
-
                         <div class="dropdown">
-                            <a href="#" class="block text-gray-500 hover:text-red-400 underline-hover flex items-center justify-between">
-                                Reservation
+                            <a href="#" class="block text-gray-500 hover:text-red-400 underline-hover flex items-center justify-between">Reservation
                                 <i class="fas fa-chevron-down text-sm"></i>
                             </a>
-                            <!-- Submenu -->
                             <div class="dropdown-menu hidden bg-orange-600 shadow-lg rounded mt-1">
                                 <a href="reservation.html" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Book Table</a>
                                 <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">View Reservations</a>
@@ -101,8 +89,6 @@
                                 <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Edit Reservation</a>
                             </div>
                         </div>
-
-                        <!-- Login and Sign Up for smaller screens -->
                         <div class="flex flex-col space-y-4 mt-4">
                             <a href="login.html" class="text-gray-700 hover:text-red-400 px-3 py-2">Login</a>
                             <a href="signup.html" class="py-2 px-4 bg-orange-600 text-white rounded hover:bg-orange-700 text-center">Sign Up</a>
@@ -111,146 +97,140 @@
                 </div>
             </div>
         </nav>
-
-
-
+    
         <!-- Page Content:Hero Section -->
         <div class="pt-20">
-            <div class="container mx-auto text-center text-white">
-                <h1 class="text-5xl font-bold mt-24 mb-8 uppercase">Welcome to Our <span class="text-red-900">Website</span></h1>
+            <div class="w-full text-center text-white">
+            
                 <div class="relative overflow-hidden">
-                    <div id="slider" class="flex transition-transform duration-500 ease-in-out">
-                      <!-- Slide 1 -->
-                      <div class="bg-white flex-shrink-0 w-full flex">
-                        <div class="block h-full w-2/5 ml-20">
-                          <img src="/images/background/logo.png" alt="logo">
-                          <h1 class="text-gray-700 ml-0 mb-20 font-bold text-2xl md:text-4xl lg:text-6xl">
-                            WE SERVE YOU WITH THE BEST LOCAL DISHES
-                          </h1>
+                    <div id="slider" class="flex transition-transform duration-500 ease-in-out w-full">
+                        <!-- Slide 1 -->
+                        <div class="bg-white flex-shrink-0 w-full flex">
+                            <div class="justify-center content-center">
+                                <h1 class="text-gray-700 ml-0 mb-20 font-bold text-2xl md:text-4xl lg:text-6xl">WE SERVE YOU WITH THE BEST LOCAL DISHES</h1>
+                            </div>
+                            <div class="justify-center content-center relative">
+                                <img src="/images/Traditional/kokonte-and-groundnut-soup.webp" class="rounded-full border-2">
+                                <div class="bg-white rounded-full text-orange-400 text-2xl w-16 h-16 top-28 absolute content-center justify-center items-center text-center shadow-md font-bold lg:w-48 lg:h-48 lg:text-6xl lg:top-72">
+                                    <span>20% off</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="justify-center content-center relative">
-                          <img src="/images/Traditional/kokonte-and-groundnut-soup.webp" class="rounded-full border-2">
-                          <div class="bg-white rounded-full text-orange-400 text-2xl w-16 h-16 top-28 absolute content-center justify-center items-center text-center shadow-md font-bold lg:w-48 lg:h-48 lg:text-6xl lg:top-72">
-                            <span>20% off</span>
-                          </div>
+    
+                        <!-- Slide 2 -->
+                        <div class="bg-white flex-shrink-0 w-full flex">
+                            <div class="justify-center content-center">
+                                <h1 class="text-red-400 ml-0 mb-20 font-bold text-2xl md:text-4xl lg:text-6xl uppercase">Where Tradition Meets Taste</h1>
+                            </div>
+                            <div class="justify-center content-center relative">
+                                <img src="/images/background/Gc-rice-and-chicken.jpeg" class="rounded-full border-2">
+                                <div class="bg-white rounded-full text-red-400 text-2xl w-16 h-16 top-28 absolute content-center justify-center items-center text-center shadow-md font-bold lg:w-48 lg:h-48 lg:text-6xl lg:top-72">
+                                    <span>20% off</span>
+                                </div>
+                            </div>
                         </div>
-                      </div>
-                      <!-- Slide 2 -->
-                      <div class="bg-white flex-shrink-0 w-full flex">
-                        <div class="block h-full w-2/5 ml-20">
-                          <img src="/images/background/logo.png" alt="logo">
-                          <h1 class="text-red-400 ml-0 mb-20 font-bold text-2xl md:text-4xl lg:text-6xl uppercase">
-                            Where Tradition Meets Taste
-                          </h1>
+    
+                        <!-- Slide 3 -->
+                        <div class="bg-white flex-shrink-0 w-full flex">
+                            <div class="justify-center content-center">
+                                <h1 class="text-green-400 ml-0 mb-20 font-bold text-2xl md:text-4xl lg:text-6xl uppercase">Discounts are assured on all ordered dishes</h1>
+                            </div>
+                            <div class="justify-center content-center relative">
+                                <img src="/images/background/salad.jpeg" class="rounded-full border-2">
+                                <div class="bg-white rounded-full text-green-400 text-2xl w-16 h-16 top-28 absolute content-center justify-center text-center shadow-md font-bold lg:w-48 lg:h-48 lg:text-6xl lg:top-72">
+                                    <span>20% off</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="justify-center content-center relative">
-                          <img src="/images/background/Gc-rice-and-chicken.jpeg" class="rounded-full border-2">
-                          <div class="bg-white rounded-full text-red-400 text-2xl w-16 h-16 top-28 absolute content-center justify-center items-center text-center shadow-md font-bold lg:w-48 lg:h-48 lg:text-6xl lg:top-72">
-                            <span>20% off</span>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- Slide 3 -->
-                      <div class="bg-white flex-shrink-0 w-full flex">
-                        <div class="block h-full w-2/5 ml-20">
-                          <img src="/images/background/logo.png" alt="logo">
-                          <h1 class="text-green-400 ml-0 mb-20 font-bold text-2xl md:text-4xl lg:text-6xl uppercase">
-                            Discounts are assured on all ordered dishes
-                          </h1>
-                        </div>
-                        <div class="justify-center content-center relative">
-                          <img src="/images/background/salad.jpeg" class="rounded-full border-2">
-                          <div class="bg-white rounded-full text-green-400 text-2xl w-16 h-16 top-28 absolute content-center justify-center text-center shadow-md font-bold lg:w-48 lg:h-48 lg:text-6xl lg:top-72">
-                            <span>20% off</span>
-                          </div>
-                        </div>
-                      </div>
                     </div>
-                  
-                    <!-- Slide controls (optional for manual control) -->
-                    <button id="prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-4xl">
-                      &#10094;
-                    </button>
-                    <button id="next" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-4xl">
-                      &#10095;
-                    </button>
-                  </div>    
-                
-                <!--Picture cards:To Menu Section-->
-                
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-                        <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg  border-2 transform hover:scale-105 transition ease-out duration-300">
-                            <img src="/images/background/salad 1.jpg" alt="soup" class="w-full h-32 object-cover sm:h-48">
+    
+                    <!-- Slide controls -->
+                    <button id="prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-4xl text-red-500">&#10094;</button>
+                    <button id="next" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-4xl text-red-500">&#10095;</button>
+                </div>
+    
+                <!-- Menu:Picture cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+                    <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg border-2 transform hover:scale-105 transition-transform duration-300">
+                        <div class="relative">
+                            <img src="/images/background/salad 1.jpg" alt="Fish Dish" class="w-full h-48 object-cover">
                             <div class="bg-gray-200 text-gray-500 font-bold text-xl uppercase rounded-full p-2 absolute top-0 ml-2 mt-2 shadow-md">
                                 <span>best salad</span>
                             </div>
                         </div>
-            
-                        <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg  border-2 transform hover:scale-105 transition ease-out duration-300">
-                            <img src="/images/background/pizza 1.jpg" alt="soup" class="w-full h-32 object-cover sm:h-48">
+                    </div>
+                    <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg border-2 transform hover:scale-105 transition-transform duration-300">
+                        <div class="relative">
+                            <img src="/images/background/pizza 1.jpg" alt="Fufu Dish" class="w-full h-48 object-cover">
                             <div class="bg-gray-200 text-gray-500 font-bold text-xl uppercase rounded-full p-2 absolute top-0 ml-2 mt-2 shadow-md">
                                 <span>top pizza</span>
                             </div>
                         </div>
-            
-                        <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg border-2 transform hover:scale-105 transition ease-out duration-300">
-                            <img src="/images/background/Gc-rice-and-chicken.jpeg" class="w-full h-32 object-cover sm:h-48">
+                    </div>
+                    <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg border-2 transform hover:scale-105 transition-transform duration-300">
+                        <div class="relative">
+                            <img src="/images/Desert/gc-seafood.jpeg" alt="Fried Rice Dish" class="w-full h-48 object-cover">
                             <div class="bg-gray-200 text-gray-500 font-bold text-xl uppercase rounded-full p-2 absolute top-0 ml-2 mt-2 shadow-md">
                                 <span>hot dessert</span>
                             </div>
                         </div>
-
-                        <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg border-2 transform hover:scale-105 transition ease-out duration-300">
-                            <img src="/images/Traditional/fufu-nice-1.jpg" class="w-full h-32 object-cover sm:h-48">
+                    </div>
+                    <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg border-2 transform hover:scale-105 transition-transform duration-300">
+                        <div class="relative">
+                            <img src="/images/background/salad 1.jpg" alt="Fish Dish" class="w-full h-48 object-cover">
                             <div class="bg-gray-200 text-gray-500 font-bold text-xl uppercase rounded-full p-2 absolute top-0 ml-2 mt-2 shadow-md">
                                 <span>hot local</span>
                             </div>
                         </div>
-
-                        <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg border-2 transform hover:scale-105 transition ease-out duration-300">
-                            <img src="/images/Speacial/crab 1.png" class="w-full h-32 object-cover sm:h-48">
+                    </div>
+                    <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg border-2 transform hover:scale-105 transition-transform duration-300">
+                        <div class="relative">
+                            <img src="/images/background/pizza 1.jpg" alt="Fufu Dish" class="w-full h-48 object-cover">
                             <div class="bg-gray-200 text-gray-500 font-bold text-xl uppercase rounded-full p-2 absolute top-0 ml-2 mt-2 shadow-md">
                                 <span>special</span>
                             </div>
                         </div>
-
-                        <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg border-2 transform hover:scale-105 transition ease-out duration-300">
-                            <img src="/images/Local beverage/sobolo 3.jpg" class="w-full h-32 object-cover sm:h-48">
+                    </div>
+                    <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg border-2 transform hover:scale-105 transition-transform duration-300">
+                        <div class="relative">
+                            <img src="/images/Desert/gc-seafood.jpeg" alt="Fried Rice Dish" class="w-full h-48 object-cover">
                             <div class="bg-gray-200 text-gray-500 font-bold text-xl uppercase rounded-full p-2 absolute top-0 ml-2 mt-2 shadow-md">
                                 <span>beverage</span>
                             </div>
                         </div>
                     </div>
-                
-                <!--View menu button-->
-               <div class="flex items-center justify-center gap-20 p-8">
-                <a href="menu.html" class="bg-red-600 font-semibold text-xl p-2 rounded hover:border-2 hover:border-red-600 hover:bg-inherit transition ease-out duration-500">View Menu</a>
-               </div>
+                </div>
+                    <!--View menu button-->
+                <div class="flex items-center justify-center gap-20 p-8">
+                    <a href="menu.html" class="bg-red-600 font-semibold text-xl p-2 rounded hover:border-2 hover:border-red-600 hover:bg-inherit transition ease-out duration-500">View Menu</a>
+                </div>
+
             </div>
         </div>
     </main>
+    
 
     <!--Reservation section-->
-        <section class="flex flex-col items-center justify-center my-6 bg-gradient-to-r from-red-500 to-yellow-500 py-16">
-            <div class="flex flex-row w-full max-w-5xl">
-            <!-- First Flex Element: Text Content -->
+    <section class="flex flex-col items-center justify-center my-6 bg-gradient-to-r from-red-500 to-yellow-500 py-16">
+        <div class="flex flex-row w-full max-w-5xl">
+                <!-- First Flex Element: Text Content -->
             <div class="flex-1">
                 <h1 class="text-4xl font-bold text-white mb-4 md:text-5xl lg:text-7xl">Reserve a table</h1>
                 <p class="text-lg text-white mb-6 md:text-xl lg:text-2xl">Enjoy a memorable dining experience. Book your table now to ensure your spot.</p>
                 <a href="reservation.html" class="text-white font-semibold text-xl md:text-2xl bg-red-600 hover:bg-white hover:text-red-600 py-2 px-4 rounded-full">Book Now</a>
             </div>
-        
-            <!-- Second Flex Element: Bigger Image -->
+            
+                <!-- Second Flex Element: Bigger Image -->
             <div class="flex-1">
                 <img src="images\background\back reserve.avif" alt="table image" class="w-5/6 h-auto object-cover rounded-lg shadow-lg">
             </div>
-        
-            <!-- Third Flex Element: Smaller Image -->
+            
+                <!-- Third Flex Element: Smaller Image -->
             <div class="flex-1 p-4">
                 <img src="images\background\back reserve.avif" alt="table image" class="w-2/3 h-auto object-cover rounded-lg shadow-lg">
             </div>
-            </div>
-        </section>
+        </div>
+    </section>
 
         <!-- Footer Section -->
     <footer class="relative bg-black bg-cover bg-center bg-no-repeat text-white py-4 bg-black">
