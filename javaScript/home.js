@@ -35,30 +35,21 @@
         
         
     //JS for slide
-        
-                let currentIndex = 0;
-                const slides = document.querySelectorAll("#slider > div");
-                const totalSlides = slides.length;
-                const slider = document.getElementById("slider");
-            
-                // Function to slide to the next slide
-                function goToNextSlide() {
-                currentIndex = (currentIndex + 1) % totalSlides;
-                slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-                }
-            
-                // Function to slide to the previous slide (optional if you want manual controls)
-                function goToPrevSlide() {
-                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-                slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-                }
-            
-                // Set interval for automatic slide (3 seconds)
-                setInterval(goToNextSlide, 3000);
-            
-                // Optional: Add event listeners for manual controls
-                document.getElementById("next").addEventListener("click", goToNextSlide);
-                document.getElementById("prev").addEventListener("click", goToPrevSlide);
+        const images = document.querySelectorAll('.slider-img');
+        let currentIndex = 0;
+
+        function changeImage() {
+        images[currentIndex].classList.add('opacity-0');
+        images[currentIndex].classList.remove('opacity-100');
+
+        currentIndex = (currentIndex + 1) % images.length;
+
+        images[currentIndex].classList.remove('opacity-0');
+        images[currentIndex].classList.add('opacity-100');
+        }
+        setInterval(changeImage, 3000);
+
+
 
             //Picture cards
             // Wait until the DOM is fully loaded

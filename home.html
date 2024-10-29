@@ -8,12 +8,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        main {
-            background-image: url('./images/background/Background.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
         .underline-hover:hover {
             text-decoration: underline;
             text-underline-offset: 4px;
@@ -41,7 +35,6 @@
                         <a href="#" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Home</a>
                         <a href="menu.html" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Menu</a>
                         <a href="#" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Dashboard</a>
-                        <a href="#" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover flex items-center">Orders</a>
                         <a href="staff.html" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Staff</a>
                         <a href="#" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Reservation</a>
                     </div>
@@ -60,35 +53,17 @@
                     </div>
                 </div>
     
+                
                 <!-- Mobile Menu (Hidden by default) -->
                 <div id="mobile-menu" class="hidden md:hidden mt-4">
                     <div class="space-y-4">
                         <a href="#" class="block text-gray-500 hover:text-red-400 underline-hover">Home</a>
                         <a href="menu.html" class="block text-gray-500 hover:text-red-400 underline-hover">Menu</a>
                         <a href="#" class="block text-gray-500 hover:text-red-400 underline-hover">Dashboard</a>
-                        <div class="dropdown">
-                            <a href="#" class="block text-gray-500 hover:text-red-400 underline-hover flex items-center justify-between">Orders
-                                <i class="fas fa-chevron-down text-sm"></i>
-                            </a>
-                            <div class="dropdown-menu hidden bg-orange-600 shadow-lg rounded mt-1">
-                                <a href="menu.html" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Place Order</a>
-                                <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Cancel Order</a>
-                                <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Order Status</a>
-                                <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Order History</a>
-                            </div>
-                        </div>
                         <a href="staff.html" class="block text-gray-500 hover:text-red-400 underline-hover">Staff</a>
-                        <div class="dropdown">
-                            <a href="#" class="block text-gray-500 hover:text-red-400 underline-hover flex items-center justify-between">Reservation
-                                <i class="fas fa-chevron-down text-sm"></i>
-                            </a>
-                            <div class="dropdown-menu hidden bg-orange-600 shadow-lg rounded mt-1">
-                                <a href="reservation.html" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Book Table</a>
-                                <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">View Reservations</a>
-                                <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Cancel Reservation</a>
-                                <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Edit Reservation</a>
-                            </div>
-                        </div>
+                        <a href="#" class="block text-gray-500 hover:text-red-400 underline-hover flex items-center justify-between">Reservation </a>
+            
+                        <!--LogIn and Sign Up -->
                         <div class="flex flex-col space-y-4 mt-4">
                             <a href="login.html" class="text-gray-700 hover:text-red-400 px-3 py-2">Login</a>
                             <a href="signup.html" class="py-2 px-4 bg-orange-600 text-white rounded hover:bg-orange-700 text-center">Sign Up</a>
@@ -98,57 +73,28 @@
             </div>
         </nav>
     
-        <!-- Page Content:Hero Section -->
-        <div class="pt-20">
-            <div class="w-full text-center text-white">
-            
-                <div class="relative overflow-hidden">
-                    <div id="slider" class="flex transition-transform duration-500 ease-in-out w-full">
-                        <!-- Slide 1 -->
-                        <div class="bg-white flex-shrink-0 w-full flex">
-                            <div class="justify-center content-center">
-                                <h1 class="text-gray-700 ml-0 mb-20 font-bold text-2xl md:text-4xl lg:text-6xl">WE SERVE YOU WITH THE BEST LOCAL DISHES</h1>
-                            </div>
-                            <div class="justify-center content-center relative">
-                                <img src="/images/Traditional/kokonte-and-groundnut-soup.webp" class="rounded-full border-2">
-                                <div class="bg-white rounded-full text-orange-400 text-2xl w-16 h-16 top-28 absolute content-center justify-center items-center text-center shadow-md font-bold lg:w-48 lg:h-48 lg:text-6xl lg:top-72">
-                                    <span>20% off</span>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <!-- Slide 2 -->
-                        <div class="bg-white flex-shrink-0 w-full flex">
-                            <div class="justify-center content-center">
-                                <h1 class="text-red-400 ml-0 mb-20 font-bold text-2xl md:text-4xl lg:text-6xl uppercase">Where Tradition Meets Taste</h1>
-                            </div>
-                            <div class="justify-center content-center relative">
-                                <img src="/images/background/Gc-rice-and-chicken.jpeg" class="rounded-full border-2">
-                                <div class="bg-white rounded-full text-red-400 text-2xl w-16 h-16 top-28 absolute content-center justify-center items-center text-center shadow-md font-bold lg:w-48 lg:h-48 lg:text-6xl lg:top-72">
-                                    <span>20% off</span>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <!-- Slide 3 -->
-                        <div class="bg-white flex-shrink-0 w-full flex">
-                            <div class="justify-center content-center">
-                                <h1 class="text-green-400 ml-0 mb-20 font-bold text-2xl md:text-4xl lg:text-6xl uppercase">Discounts are assured on all ordered dishes</h1>
-                            </div>
-                            <div class="justify-center content-center relative">
-                                <img src="/images/background/salad.jpeg" class="rounded-full border-2">
-                                <div class="bg-white rounded-full text-green-400 text-2xl w-16 h-16 top-28 absolute content-center justify-center text-center shadow-md font-bold lg:w-48 lg:h-48 lg:text-6xl lg:top-72">
-                                    <span>20% off</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <!-- Slide controls -->
-                    <button id="prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-4xl text-red-500">&#10094;</button>
-                    <button id="next" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-4xl text-red-500">&#10095;</button>
+            <!-- Page Content:Hero Section -->
+                <!-- Main container -->
+            <div class="w-full h-[500px] md:h-[500px] lg:h-[600px] bg-white shadow-lg flex flex-row mt-16">
+                    
+                    <!-- Text section -->
+                <div class="w-1/2 sm:w-1/2 md:w-1/2 p-4 md:p-8 flex flex-col justify-center">
+                    <h2 class="text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl text-gray-800 uppercase">Where Traditional Meets Taste</h2>
+                    <p class="mt-2 sm:mt-4 text-xl sm:text-base md:text-2xl text-gray-600">
+                        We serve you with the best local dishes. Discounts are assured on all ordered dishes
+                    </p>
                 </div>
-    
+                    <!-- Image slider section -->
+                <div class="w-1/2 sm:w-1/2 md:w-1/2 relative overflow-hidden">
+                <div class="slider relative w-full h-full">
+                    <img src="/images/Traditional/kokonte-and-groundnut-soup.webp" alt="Image 1" class="absolute inset-0 w-full h-full object-cover slider-img opacity-100">
+                    <img src="/images/background/Gc-rice-and-chicken.jpeg" alt="Image 2" class="absolute inset-0 w-full h-full object-cover slider-img opacity-0">
+                    <img src="/images/background/salad.jpeg" alt="Image 3" class="absolute inset-0 w-full h-full object-cover slider-img opacity-0">
+                </div>
+                </div>
+            </div>
+
+
                 <!-- Menu:Picture cards -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
                     <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg border-2 transform hover:scale-105 transition-transform duration-300">
@@ -202,7 +148,7 @@
                 </div>
                     <!--View menu button-->
                 <div class="flex items-center justify-center gap-20 p-8">
-                    <a href="menu.html" class="bg-red-600 font-semibold text-xl p-2 rounded hover:border-2 hover:border-red-600 hover:bg-inherit transition ease-out duration-500">View Menu</a>
+                    <a href="menu.html" class="bg-red-600 text-white font-semibold text-xl p-2 rounded hover:border-2 hover:border-red-600 hover:bg-inherit hover:text-red-500 transition ease-out duration-500">View Menu</a>
                 </div>
 
             </div>
@@ -217,7 +163,7 @@
             <div class="flex-1">
                 <h1 class="text-4xl font-bold text-white mb-4 md:text-5xl lg:text-7xl">Reserve a table</h1>
                 <p class="text-lg text-white mb-6 md:text-xl lg:text-2xl">Enjoy a memorable dining experience. Book your table now to ensure your spot.</p>
-                <a href="reservation.html" class="text-white font-semibold text-xl md:text-2xl bg-red-600 hover:bg-white hover:text-red-600 py-2 px-4 rounded-full">Book Now</a>
+                <a href="reservation.html" class="text-white font-semibold text-xl md:text-2xl bg-green-700 hover:bg-gray-300 hover:text-green-600 py-2 px-4 rounded-full">Book Now</a>
             </div>
             
                 <!-- Second Flex Element: Bigger Image -->
@@ -233,11 +179,7 @@
     </section>
 
         <!-- Footer Section -->
-    <footer class="relative bg-black bg-cover bg-center bg-no-repeat text-white py-4 bg-black">
-        <div class="absolute inset-0">
-            <img src="/images/background/background1.jpg" alt="Footer Background" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-black opacity-50"></div>
-        </div>
+    <footer class="relative bg-orange-700 bg-cover bg-center bg-no-repeat text-white py-4">
         <div class="relative grid grid-cols-2 md:flex md:justify-between">
         <!-- Address -->
                 <div class="w-full md:w-1/4 mb-6 ml-4">
@@ -263,11 +205,10 @@
             <div class="w-full md:w-1/4 mb-6 md:ml-6">
                 <h3 class="text-lg font-bold mb-4 font-bold text-orange-600 bg-white w-28 p-2 rounded">Navigation</h3>
                 <ul class="space-y-2">
-                <li><a href="#" class="transform hover:scale-105 transition ease-out duration-300">Home</a></li>
+                <li><a href="#" class="hover:underline">Home</a></li>
                 <li><a href="menu.html" class="hover:underline">Menu</a></li>
                 <li><a href="order.html" class="hover:underline">Orders</a></li>
                 <li><a href="staff.html" class="hover:underline">Staff</a></li>
-                <li><a href="#" class="hover:underline">Blog</a></li>
                 <li><a href="#" class="hover:underline">Policy</a></li>
                 <li><a href="#" class="hover:underline">Terms & Conditions</a></li>
                 </ul>

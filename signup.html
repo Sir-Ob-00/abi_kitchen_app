@@ -14,69 +14,30 @@
       background-size: cover;
       background-position: center;
     }
-
-    footer{
-        background-image: url('/images/background/background1.jpg');
-    }
   </style>
 </head>
 <body> 
-      <nav class="bg-white bg-opacity-90 fixed top-0 left-0 right-0 z-50 shadow-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!--Nav Section-->
+      <nav class="bg-white bg-opacity-90 fixed top-0 left-0 right-0 z-50 shadow-md w-full">
+        <div class="w-full px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-            
                 <div class="flex-shrink-0 flex items-center">
                     <img src="/images/background/logo.png" alt="Logo" class="w-28 h-25">
                 </div>
 
                 <!-- Middle Section: Centered Menu Items -->
-                <div class="hidden md:flex space-x-6 items-center">
-                    <!-- Simple Menu Items -->
-                    <a href="home.html" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Home</a>
+                <div class="hidden md:flex space-x-6 items-center text-lg">
+                    <a href="#" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Home</a>
                     <a href="menu.html" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Menu</a>
                     <a href="#" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Dashboard</a>
-
-                    <!-- Orders Menu with Submenu -->
-                    <div class="relative dropdown">
-                        <a href="#" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover flex items-center">
-                            Orders
-                            <!-- Arrow Icon -->
-                            <i class="fas fa-chevron-down ml-2 text-sm"></i>
-                        </a>
-                        <!-- Submenu -->
-                        <div class="dropdown-menu hidden absolute bg-white shadow-lg rounded mt-1">
-                            <a href="order.html" class="block px-4 py-2 text-gray-700 hover:bg-orange-600 hover:text-white submenu-scale">Place Order</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-orange-600 hover:text-white submenu-scale">Cancel Order</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-orange-600 hover:text-white submenu-scale">Order Status</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-orange-600 hover:text-white submenu-scale">Order History</a>
-                        </div>
-                    </div>
-
-                    <!-- Simple Menu Item -->
                     <a href="staff.html" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Staff</a>
-
-                    <!-- Reservation Menu with Submenu -->
-                    <div class="relative dropdown">
-                        <a href="#" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover flex items-center">
-                            Reservation
-                            <!-- Arrow Icon -->
-                            <i class="fas fa-chevron-down ml-2 text-sm"></i>
-                        </a>
-                        <!-- Submenu -->
-                        <div class="dropdown-menu hidden absolute bg-white shadow-lg rounded mt-1">
-                            <a href="reservation.html" class="block px-4 py-2 text-gray-700 hover:bg-orange-600 hover:text-white submenu-scale">Book Table</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-orange-600 hover:text-white submenu-scale">View Reservations</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-orange-600 hover:text-white submenu-scale">Cancel Reservation</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-orange-600 hover:text-white submenu-scale">Edit Reservation</a>
-                        </div>
-                    </div>
+                    <a href="#" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Reservation</a>
                 </div>
 
                 <!-- Right Section: Login and Sign Up Buttons -->
                 <div class="hidden md:flex space-x-4 items-center">
                     <a href="login.html" class="text-gray-700 hover:text-red-400 px-3 py-2">Login</a>
-                    <a href="signup.html" class="text-red-400 ml-2 md:border-2 border-red-300 rounded-full 
-                    py-2 px-3 text-xs uppercase font-bold tracking-wider hover:bg-red-400 hover:text-white transition ease-out duration-500 active:bg-red-300">Sign Up</a>
+                    <a href="signup.html" class="text-red-400 ml-2 md:border-2 border-red-300 rounded-full py-2 px-3 text-xs uppercase font-bold tracking-wider hover:bg-red-400 hover:text-white transition ease-out duration-500 active:bg-red-300">Sign Up</a>
                 </div>
 
                 <!-- Hamburger Menu Icon (Visible on smaller screens) -->
@@ -87,45 +48,17 @@
                 </div>
             </div>
 
+            
             <!-- Mobile Menu (Hidden by default) -->
             <div id="mobile-menu" class="hidden md:hidden mt-4">
-                <!-- Menu Items for smaller screens -->
                 <div class="space-y-4">
-                    <a href="home.html" class="block text-gray-500 hover:text-red-400 underline-hover">Home</a>
+                    <a href="#" class="block text-gray-500 hover:text-red-400 underline-hover">Home</a>
                     <a href="menu.html" class="block text-gray-500 hover:text-red-400 underline-hover">Menu</a>
                     <a href="#" class="block text-gray-500 hover:text-red-400 underline-hover">Dashboard</a>
-
-                    <div class="dropdown">
-                        <a href="#" class="block text-gray-500 hover:text-red-400 underline-hover flex items-center justify-between">
-                            Orders
-                            <i class="fas fa-chevron-down text-sm"></i>
-                        </a>
-                        <!-- Submenu -->
-                        <div class="dropdown-menu hidden bg-orange-600 shadow-lg rounded mt-1">
-                            <a href="order.html" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Place Order</a>
-                            <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Cancel Order</a>
-                            <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Order Status</a>
-                            <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Order History</a>
-                        </div>
-                    </div>
-
                     <a href="staff.html" class="block text-gray-500 hover:text-red-400 underline-hover">Staff</a>
-
-                    <div class="dropdown">
-                        <a href="#" class="block text-gray-500 hover:text-red-400 underline-hover flex items-center justify-between">
-                            Reservation
-                            <i class="fas fa-chevron-down text-sm"></i>
-                        </a>
-                        <!-- Submenu -->
-                        <div class="dropdown-menu hidden bg-orange-600 shadow-lg rounded mt-1">
-                            <a href="reservation.html" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Book Table</a>
-                            <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">View Reservations</a>
-                            <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Cancel Reservation</a>
-                            <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Edit Reservation</a>
-                        </div>
-                    </div>
-
-                    <!-- Login and Sign Up for smaller screens -->
+                    <a href="#" class="block text-gray-500 hover:text-red-400 underline-hover flex items-center justify-between">Reservation </a>
+        
+                    <!--LogIn and Sign Up -->
                     <div class="flex flex-col space-y-4 mt-4">
                         <a href="login.html" class="text-gray-700 hover:text-red-400 px-3 py-2">Login</a>
                         <a href="signup.html" class="py-2 px-4 bg-orange-600 text-white rounded hover:bg-orange-700 text-center">Sign Up</a>
@@ -134,66 +67,63 @@
             </div>
         </div>
     </nav>
-    
-    <main class="min-h-screen flex items-center justify-center p-5 bg-gray-900 bg-opacity-50 mt-16">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full max-w-5xl">
-          <!-- Left Div -->
-          <div class="flex flex-col justify-center items-start space-y-4">
-              <div class="bg-white text-orange-600 px-4 py-2 rounded shadow-lg">
-                  <h1 class="text-xl font-bold">Why sign Up</h1>
-              </div>
-              <p class="text-white text-6xl">Exclusive Discounts and Offers</p>
-          </div>
-  
-          <!-- Middle Div (Sign-up Form) -->
-          <div class="bg-white p-8 rounded-lg shadow-lg">
-              <h2 class="text-3xl font-bold text-gray-700 mb-6 text-center">Sign Up Here</h2>
-              <form action="#" method="POST">
-                  <div class="mb-4">
-                      <label for="firstName" class="block text-gray-700">First Name</label>
-                      <input type="text" id="firstName" name="firstName" class="w-full p-2 border border-gray-300 rounded" required>
-                  </div>
-                  <div class="mb-4">
-                      <label for="lastName" class="block text-gray-700">Last Name</label>
-                      <input type="text" id="lastName" name="lastName" class="w-full p-2 border border-gray-300 rounded" required>
-                  </div>
-                  <div class="mb-4">
-                      <label for="email" class="block text-gray-700">Email</label>
-                      <input type="email" id="email" name="email" class="w-full p-2 border border-gray-300 rounded" required>
-                  </div>
-                  <div class="mb-4">
-                      <label for="password" class="block text-gray-700">Password</label>
-                      <input type="password" id="password" name="password" class="w-full p-2 border border-gray-300 rounded" required>
-                  </div>
-                  <div class="mb-6">
-                      <label for="confirmPassword" class="block text-gray-700">Confirm Password</label>
-                      <input type="password" id="confirmPassword" name="confirmPassword" class="w-full p-2 border border-gray-300 rounded" required>
-                  </div>
-                  <button type="submit" class="w-full bg-orange-600 text-white py-2 px-4 rounded-md shadow-md transform hover:scale-105 hover:bg-orange-700 transition ease-out 
-                      duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 ">
-                      Sign Up
-                  </button>
-              </form>
-          </div>
-  
-          <!-- Right Div -->
-          <div class="flex flex-col justify-center items-end space-y-4">
-              <p class="text-white text-3xl">Offer special discounts or promotions only available to registered members. 
-                  Everyone loves saving money, and offering exclusive deals is a great way to entice them.</p>
-              <div class="bg-white text-orange-600 px-4 py-2 rounded-full shadow-lg">
-                  <h1 class="text-7xl font-bold">20%</h1>
-              </div>
-          </div>
-      </div>
-  </main>
 
     
-          <!-- Footer Section -->
-    <footer class="relative bg-black bg-cover bg-center bg-no-repeat text-white py-10 bg-black">
-        <div class="absolute inset-0">
-            <img src="/images/background/background1.jpg" alt="Footer Background" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-orange-500 opacity-70"></div>
+        <main class="min-h-screen flex items-center justify-center p-5 bg-gray-900 bg-opacity-50 mt-16">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full max-w-5xl">
+            <!-- Left Div -->
+            <div class="flex flex-col justify-center items-start space-y-4">
+                <div class="bg-white text-orange-600 px-4 py-2 rounded shadow-lg">
+                    <h1 class="text-xl font-bold">Why sign Up</h1>
+                </div>
+                <p class="text-white text-6xl">Exclusive Discounts and Offers</p>
+            </div>
+    
+            <!-- Middle Div (Sign-up Form) -->
+            <div class="bg-white p-8 rounded-lg shadow-lg">
+                <h2 class="text-3xl font-bold text-gray-700 mb-6 text-center">Sign Up Here</h2>
+                <form action="#" method="POST">
+                    <div class="mb-4">
+                        <label for="firstName" class="block text-gray-700">First Name</label>
+                        <input type="text" id="firstName" name="firstName" class="w-full p-2 border border-gray-300 rounded" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="lastName" class="block text-gray-700">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" class="w-full p-2 border border-gray-300 rounded" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700">Email</label>
+                        <input type="email" id="email" name="email" class="w-full p-2 border border-gray-300 rounded" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="password" class="block text-gray-700">Password</label>
+                        <input type="password" id="password" name="password" class="w-full p-2 border border-gray-300 rounded" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="confirmPassword" class="block text-gray-700">Confirm Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" class="w-full p-2 border border-gray-300 rounded" required>
+                    </div>
+                    <button type="submit" class="w-full bg-orange-600 text-white py-2 px-4 rounded-md shadow-md transform hover:scale-105 hover:bg-orange-700 transition ease-out 
+                        duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 ">
+                        Sign Up
+                    </button>
+                </form>
+            </div>
+    
+            <!-- Right Div -->
+            <div class="flex flex-col justify-center items-end space-y-4">
+                <p class="text-white text-3xl">Offer special discounts or promotions only available to registered members. 
+                    Everyone loves saving money, and offering exclusive deals is a great way to entice them.</p>
+                <div class="bg-white text-orange-600 px-4 py-2 rounded-full shadow-lg">
+                    <h1 class="text-7xl font-bold">20%</h1>
+                </div>
+            </div>
         </div>
+    </main>
+
+    
+         <!-- Footer Section -->
+    <footer class="relative bg-orange-700 bg-cover bg-center bg-no-repeat text-white py-4">
         <div class="relative grid grid-cols-2 md:flex md:justify-between">
         <!-- Address -->
                 <div class="w-full md:w-1/4 mb-6 ml-4">
@@ -219,11 +149,10 @@
             <div class="w-full md:w-1/4 mb-6 md:ml-6">
                 <h3 class="text-lg font-bold mb-4 font-bold text-orange-600 bg-white w-28 p-2 rounded">Navigation</h3>
                 <ul class="space-y-2">
-                <li><a href="#" class="transform hover:scale-105 transition ease-out duration-300">Home</a></li>
+                <li><a href="#" class="hover:underline">Home</a></li>
                 <li><a href="menu.html" class="hover:underline">Menu</a></li>
                 <li><a href="order.html" class="hover:underline">Orders</a></li>
                 <li><a href="staff.html" class="hover:underline">Staff</a></li>
-                <li><a href="#" class="hover:underline">Blog</a></li>
                 <li><a href="#" class="hover:underline">Policy</a></li>
                 <li><a href="#" class="hover:underline">Terms & Conditions</a></li>
                 </ul>
