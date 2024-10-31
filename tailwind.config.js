@@ -10,7 +10,10 @@ module.exports = {
       },
       fontFamily:{
         pop:['Poppins'],
-        ant:['Anton']
+        ant:['Anton'],
+        alex:['Alex Brush'],
+        arv:['Arvo'],
+        archivo:['Archivo Black']
       }
     },
   },
