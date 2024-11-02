@@ -3,22 +3,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abi's Kitchen/Menu</title>
-    <link rel="shortcut icon" type="image/png" href="logo.png">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" type="image/png" href="/images/background/logo.png">
+    <link href="./output.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <style>
-        footer{
-            background-image: url('background1.jpg');
-        }
-
         .hover-animate:hover {
         transform: translateY(-10px);
         transition: transform 0.3s ease;
         }
 
         aside {
-        background-image: url('pizza 1.jpg');
+        background-image: url('/images/background/pizza\ 1.jpg');
         background-size: cover;
         background-position: center;
         }
@@ -27,7 +23,7 @@
         {
             margin: 0;
             padding: 0;
-            background-image: url('noodles 1.jpg');
+            background-image: url('/images/background/noodles\ 1.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -36,62 +32,27 @@
 </style>
 <body>
 
-    <nav class="bg-white bg-opacity-90 fixed top-0 left-0 right-0 z-50 shadow-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!--Nav Section-->
+    <nav class="bg-white bg-opacity-90 fixed top-0 left-0 right-0 z-50 shadow-md w-full">
+        <div class="w-full px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-            
                 <div class="flex-shrink-0 flex items-center">
-                    <img src="logo.png" alt="Logo" class="w-28 h-25">
+                    <img src="/images/background/logo.png" alt="Logo" class="w-28 h-25">
                 </div>
 
                 <!-- Middle Section: Centered Menu Items -->
-                <div class="hidden md:flex space-x-6 items-center">
-                    <!-- Simple Menu Items -->
-                    <a href="home.html" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Home</a>
+                <div class="hidden md:flex space-x-6 items-center text-lg font-arv">
+                    <a href="#" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Home</a>
                     <a href="menu.html" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Menu</a>
                     <a href="#" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Dashboard</a>
-
-                    <!-- Orders Menu with Submenu -->
-                    <div class="relative dropdown">
-                        <a href="#" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover flex items-center">
-                            Orders
-                            <!-- Arrow Icon -->
-                            <i class="fas fa-chevron-down ml-2 text-sm"></i>
-                        </a>
-                        <!-- Submenu -->
-                        <div class="dropdown-menu hidden absolute bg-white shadow-lg rounded mt-1">
-                            <a href="menu.html" class="block px-4 py-2 text-gray-700 hover:bg-orange-600 hover:text-white submenu-scale">Place Order</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-orange-600 hover:text-white submenu-scale">Cancel Order</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-orange-600 hover:text-white submenu-scale">Order Status</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-orange-600 hover:text-white submenu-scale">Order History</a>
-                        </div>
-                    </div>
-
-                    <!-- Simple Menu Item -->
                     <a href="staff.html" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Staff</a>
-
-                    <!-- Reservation Menu with Submenu -->
-                    <div class="relative dropdown">
-                        <a href="#" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover flex items-center">
-                            Reservation
-                            <!-- Arrow Icon -->
-                            <i class="fas fa-chevron-down ml-2 text-sm"></i>
-                        </a>
-                        <!-- Submenu -->
-                        <div class="dropdown-menu hidden absolute bg-white shadow-lg rounded mt-1">
-                            <a href="reservation.html" class="block px-4 py-2 text-gray-700 hover:bg-orange-600 hover:text-white submenu-scale">Book Table</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-orange-600 hover:text-white submenu-scale">View Reservations</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-orange-600 hover:text-white submenu-scale">Cancel Reservation</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-orange-600 hover:text-white submenu-scale">Edit Reservation</a>
-                        </div>
-                    </div>
+                    <a href="#" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Reservation</a>
                 </div>
 
                 <!-- Right Section: Login and Sign Up Buttons -->
                 <div class="hidden md:flex space-x-4 items-center">
                     <a href="login.html" class="text-gray-700 hover:text-red-400 px-3 py-2">Login</a>
-                    <a href="signup.html" class="text-red-400 ml-2 md:border-2 border-red-300 rounded-full 
-                    py-2 px-3 text-xs uppercase font-bold tracking-wider hover:bg-red-400 hover:text-white transition ease-out duration-500 active:bg-red-300">Sign Up</a>
+                    <a href="signup.html" class="text-red-400 ml-2 md:border-2 border-red-300 rounded-full py-2 px-3 text-xs uppercase font-bold tracking-wider hover:bg-red-400 hover:text-white transition ease-out duration-500 active:bg-red-300">Sign Up</a>
                 </div>
 
                 <!-- Hamburger Menu Icon (Visible on smaller screens) -->
@@ -102,45 +63,17 @@
                 </div>
             </div>
 
+            
             <!-- Mobile Menu (Hidden by default) -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4">
-                <!-- Menu Items for smaller screens -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 font-arv">
                 <div class="space-y-4">
                     <a href="home.html" class="block text-gray-500 hover:text-red-400 underline-hover">Home</a>
                     <a href="menu.html" class="block text-gray-500 hover:text-red-400 underline-hover">Menu</a>
                     <a href="#" class="block text-gray-500 hover:text-red-400 underline-hover">Dashboard</a>
-
-                    <div class="dropdown">
-                        <a href="#" class="block text-gray-500 hover:text-red-400 underline-hover flex items-center justify-between">
-                            Orders
-                            <i class="fas fa-chevron-down text-sm"></i>
-                        </a>
-                        <!-- Submenu -->
-                        <div class="dropdown-menu hidden bg-orange-600 shadow-lg rounded mt-1">
-                            <a href="menu.html" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Place Order</a>
-                            <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Cancel Order</a>
-                            <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Order Status</a>
-                            <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Order History</a>
-                        </div>
-                    </div>
-
                     <a href="staff.html" class="block text-gray-500 hover:text-red-400 underline-hover">Staff</a>
-
-                    <div class="dropdown">
-                        <a href="#" class="block text-gray-500 hover:text-red-400 underline-hover flex items-center justify-between">
-                            Reservation
-                            <i class="fas fa-chevron-down text-sm"></i>
-                        </a>
-                        <!-- Submenu -->
-                        <div class="dropdown-menu hidden bg-orange-600 shadow-lg rounded mt-1">
-                            <a href="reservation.html" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Book Table</a>
-                            <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">View Reservations</a>
-                            <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Cancel Reservation</a>
-                            <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Edit Reservation</a>
-                        </div>
-                    </div>
-
-                    <!-- Login and Sign Up for smaller screens -->
+                    <a href="reservation.html" class="block text-gray-500 hover:text-red-400 underline-hover items-center justify-between">Reservation </a>
+        
+                    <!--LogIn and Sign Up -->
                     <div class="flex flex-col space-y-4 mt-4">
                         <a href="login.html" class="text-gray-700 hover:text-red-400 px-3 py-2">Login</a>
                         <a href="signup.html" class="py-2 px-4 bg-orange-600 text-white rounded hover:bg-orange-700 text-center">Sign Up</a>
@@ -150,60 +83,64 @@
         </div>
     </nav>
 
+
+    <!--Dishes heading-->
+
     <div class="fixed right-0 top-1/2 transform -translate-y-1/2 bg-green-500 text-white p-4 rounded-l-md shadow-lg"> 
         <a href=""><i class="fa fa-location-arrow" aria-hidden="true"></i></a>
       </div>
 
-    <section class="md:flex justify-center items-center mt-24 ">
+    <section class="md:flex justify-center items-center mt-24 font-pop">
         <div class="md:flex md:flex-col items-center">
-            <div class="text-4xl font-bold uppercase p-10 text-5xl text-center">Our Dishes</div>
+            <div class="font-bold uppercase p-10 text-5xl text-center">Our Dishes</div>
 
             <div class="font-mono grid grid-cols-2 gap-4 sm:flex sm:flex-shrink-1">
                 <div>
-                <a href="#"><button class="bg-red-500 p-2 rounded-lg text-white text-xl hover:border-2 hover:border-red-500 
-                hover:bg-inherit hover:text-red-500 transition ease-out duration-300">LOCAL HOT</button></a>
+                <a href="#targetLocal"><button class="bg-red-500 p-2 rounded-lg text-white text-xl hover:border-2 hover:border-red-500 
+                hover:bg-inherit hover:text-red-500 transition ease-out duration-300" id="localHot">LOCAL HOT</button></a>
                 </div>
 
                 <div>
-                <a href="#"><button class="bg-red-500 p-2 rounded-lg text-white text-xl hover:border-2 hover:border-red-500 
-                hover:bg-inherit hover:text-red-500 transition ease-out duration-300">SPECIAL RICE</button></a>
-                </div>
+                <a href="#targetRice"><button class="bg-red-500 p-2 rounded-lg text-white text-xl hover:border-2 hover:border-red-500 
+                hover:bg-inherit hover:text-red-500 transition ease-out duration-300" id="specialRice">SPECIAL RICE</button>
+                </div></a>
 
                 <div>
-                <a href="#"><button class="bg-red-500 p-2 rounded-lg text-white text-xl hover:border-2 hover:border-red-500 
-                hover:bg-inherit hover:text-red-500 transition ease-out duration-300">FAVOURITE STEW/SOUP</button></a>
+                <a href="#targetStew"><button class="bg-red-500 p-2 rounded-lg text-white text-xl hover:border-2 hover:border-red-500 
+                hover:bg-inherit hover:text-red-500 transition ease-out duration-300" id="favStew">FAVOURITE STEW/SOUP</button></a>
                 </div>
                 <div>
-                <a href="#"><button class="bg-red-500 p-2 rounded-lg text-white text-xl hover:border-2 hover:border-red-500 
-                hover:bg-inherit hover:text-red-500 transition ease-out duration-300">STREET FOOD</button></a>
+                <a href="#targetStreet"><button class="bg-red-500 p-2 rounded-lg text-white text-xl hover:border-2 hover:border-red-500 
+                hover:bg-inherit hover:text-red-500 transition ease-out duration-300" id="streetFood">STREET FOOD</button></a>
                 </div>
             </div>
 
             <div class="my-4 content-center font-mono grid grid-cols-2 gap-4 sm:flex sm:flex-shrink-1">
                 <div>
-                <a href="#"><button class="bg-red-500 p-2 rounded-lg text-white text-xl hover:border-2 hover:border-red-500 
-                    hover:bg-inherit hover:text-red-500 transition ease-out duration-300">DESSERT</button></a>
+                <a href="#targetDessert"><button class="bg-red-500 p-2 rounded-lg text-white text-xl hover:border-2 hover:border-red-500 
+                    hover:bg-inherit hover:text-red-500 transition ease-out duration-300" id="dessert">DESSERT</button></a>
                 </div>
 
                 <div>
-                <a href="#"><button class="bg-red-500 p-2 rounded-lg text-white text-xl hover:border-2 hover:border-red-500 
-                hover:bg-inherit hover:text-red-500 transition ease-out duration-300">PIZZA</button></a>
+                <a href="#targetPizza"><button class="bg-red-500 p-2 rounded-lg text-white text-xl hover:border-2 hover:border-red-500 
+                hover:bg-inherit hover:text-red-500 transition ease-out duration-300" id="pizza">PIZZA</button></a>
                 </div>
 
                 <div>
-                <a href="#"><button class="bg-red-500 p-2 rounded-lg text-white text-xl hover:border-2 hover:border-red-500 
-                hover:bg-inherit hover:text-red-500 transition ease-out duration-300">NOODLES</button></a>
+                <a href="#targetNoodles"><button class="bg-red-500 p-2 rounded-lg text-white text-xl hover:border-2 hover:border-red-500 
+                hover:bg-inherit hover:text-red-500 transition ease-out duration-300" id="noodles">NOODLES</button></a>
                 </div>
                     
                 <div>
-                <a href="#"><button class="bg-red-500 p-2 rounded-lg text-white text-xl hover:border-2 hover:border-red-500 
-                hover:bg-inherit hover:text-red-500 transition ease-out duration-300">LOCAL BEVERAGES</button></a>
+                <a href="#targetBev"><button class="bg-red-500 p-2 rounded-lg text-white text-xl hover:border-2 hover:border-red-500 
+                hover:bg-inherit hover:text-red-500 transition ease-out duration-300" id="localBev">LOCAL BEVERAGES</button></a>
                 </div>
             </div>
 
 
+            <!--Section For Local Hot-->
             <div  class="bg-gray-100 font-sans">
-                <div class="container mx-auto p-4">
+                <div class="container mx-auto p-4" id="targetLocal">
                     <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">Local Hot</h1>
             
                     <!-- Local Hot -->
@@ -211,7 +148,7 @@
                     
                     <!-- Dish 1 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Traditional\fufu and groundnut.webp" alt="Grilled Chicken" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Traditional/fufu and groundnut.webp" alt="fufu and groundnut" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Fufu(Light Soup/Groundnut soup/Palm nut soup)</h2>
                         <p class="text-blue-600 mt-2">&#8373;50.00</p>
                         <a href="order.html" class="inline-block mt-4 px-4 py-2 bg-red-500 text-white font-semibold rounded hover:bg-red-400 transition duration-300 ease-in-out">Order Now</a>
@@ -219,7 +156,7 @@
             
                     <!-- Dish 2 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Traditional\banku and groundnut.jpg" alt="Beef Steak" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Traditional/banku and groundnut.jpg" alt="banku and groundnut" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Banku (pepper sauce, Okro stew, Groundnut soup, Palm nut soup)</h2>
                         <p class="text-blue-600 mt-2">&#8373;30.00</p>
                         <a href="order.html" class="inline-block mt-4 px-4 py-2 bg-red-500 text-white font-semibold rounded hover:bg-red-400 transition duration-300 ease-in-out">Order Now</a>
@@ -227,7 +164,7 @@
             
                     <!-- Dish 3 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Traditional\Kenkey 2.jpg" alt="Pasta Alfredo" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Traditional/Kenkey 2.jpg" alt="kenkey" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Kenkey (Okro Stew or Beans stew fish or meat)</h2>
                         <p class="text-blue-600 mt-2">&#8373;20.00</p>
                         <a href="order.html" class="inline-block mt-4 px-4 py-2 bg-red-500 text-white font-semibold rounded hover:bg-red-400 transition duration-300 ease-in-out">Order Now</a>
@@ -235,7 +172,7 @@
             
                     <!-- Dish 4 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Traditional\Ampesi.jpg" alt="Caesar Salad" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Traditional/Ampesi.jpg" alt="ampesi" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Ampesi (Kontomire stew, Beans stew, Tomato source, Garden eggs stew)</h2>
                         <p class="text-blue-600 mt-2">&#8373;20.00</p>
                         <a href="order.html" class="inline-block mt-4 px-4 py-2 bg-red-500 text-white font-semibold rounded hover:bg-red-400 transition duration-300 ease-in-out">Order Now</a>
@@ -243,7 +180,7 @@
             
                     <!-- Dish 5 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Traditional\Akple okro stew.jpg" alt="Shrimp Tacos" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Traditional/Akple okro stew.jpg" alt="akple" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Akple with Vegetable Stew/Groudnut soup/Palm nut Soup</h2>
                         <p class="text-blue-600 mt-2">&#8373;20.00</p>
                         <a href="order.html" class="inline-block mt-4 px-4 py-2 bg-red-500 text-white font-semibold rounded hover:bg-red-400 transition duration-300 ease-in-out">Order Now</a>
@@ -251,7 +188,7 @@
             
                     <!-- Dish 6 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Traditional\Tuo-Zaafi.webp" alt="Vegetarian Pizza" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Traditional/Tuo-Zaafi.webp" alt="tuo zaafi" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Tuo Zaafi with Vegetable Stew/Groundnut Soup</h2>
                         <p class="text-blue-600 mt-2">&#8373;20.00</p>
                         <a href="order.html" class="inline-block mt-4 px-4 py-2 bg-red-500 text-white font-semibold rounded hover:bg-red-400 transition duration-300 ease-in-out">Order Now</a>
@@ -259,7 +196,7 @@
             
                     <!-- Dish 7 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Traditional\Motuo groundnut.webp" alt="Vegetarian Pizza" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Traditional/Motuo groundnut.webp" alt="motuo" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Rice Boil(mmutuo with Groundnut soup, Palm nut soup)</h2>
                         <p class="text-blue-600 mt-2">&#8373;30.00</p>
                         <a href="#" class="inline-block mt-4 px-4 py-2 bg-red-500 text-white font-semibold rounded hover:bg-red-400 transition duration-300 ease-in-out">Order Now</a>
@@ -267,7 +204,7 @@
             
                     <!-- Dish 8 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Traditional\kokonte-and-groundnut-soup.webp" alt="Vegetarian Pizza" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Traditional/kokonte-and-groundnut-soup.webp" alt="konkonte" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Konkonte(Okro stew, Groundnut soup, Palm nut soup)</h2>
                         <p class="text-blue-600 mt-2">&#8373;20.00</p>
                         <a href="order.html" class="inline-block mt-4 px-4 py-2 bg-red-500 text-white font-semibold rounded hover:bg-red-400 transition duration-300 ease-in-out">Order Now</a>
@@ -277,8 +214,8 @@
                 </div>
             </div>
 
-            <!--Rice-->
-            <div  class="bg-gray-100 font-sans">
+            <!--Section for Rice-->
+            <div  class="bg-gray-100 font-sans" id="targetRice">
                 <div class="container mx-auto p-4">
                     <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">Special Rice</h1>
             
@@ -287,7 +224,7 @@
                     
                     <!-- Dish 1 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Rice\Jollof-rice veg.jpg" alt="Grilled Chicken" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Rice/Jollof-rice veg.jpg" alt="jollof" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Special Jollof Rice</h2>
                         <p class="text-red-600 mt-2">&#8373;50.00</p>
                         <a href="order.html" class="inline-block mt-4 px-4 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-500 transition duration-300 ease-in-out">Order Now</a>
@@ -295,7 +232,7 @@
             
                     <!-- Dish 2 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Rice\Plain rice 3.webp" alt="Beef Steak" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Rice/Plain rice 3.webp" alt="plain rice" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Special Plain Rice</h2>
                         <p class="text-red-600 mt-2">&#8373;40.00</p>
                         <a href="order.html" class="inline-block mt-4 px-4 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-500 transition duration-300 ease-in-out">Order Now</a>
@@ -303,7 +240,7 @@
             
                     <!-- Dish 3 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Rice\Awakye 3.jpg" alt="Pasta Alfredo" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Rice/Awakye 3.jpg" alt="awakye" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Special Awakye</h2>
                         <p class="text-red-600 mt-2">&#8373;40.00</p>
                         <a href="order.html" class="inline-block mt-4 px-4 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-500 transition duration-300 ease-in-out">Order Now</a>
@@ -311,7 +248,7 @@
             
                     <!-- Dish 4 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Rice\fried rice 3.jpg" alt="Caesar Salad" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Rice/fried rice 3.jpg" alt="fried rice" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Special Fried Rice</h2>
                         <p class="text-red-600 mt-2">&#8373;50.00</p>
                         <a href="order.html" class="inline-block mt-4 px-4 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-500 transition duration-300 ease-in-out">Order Now</a>
@@ -321,7 +258,7 @@
             </div>
 
             <!--Soup/Syew-->
-            <div  class="bg-gray-100 font-sans">
+            <div  class="bg-gray-100 font-sans" id="targetStew">
                 <div class="container mx-auto p-4">
                     <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">Special Soup/Stew</h1>
             
@@ -330,7 +267,7 @@
                     
                     <!-- Dish 1 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Speacial\Special chicken.jpg" alt="Grilled Chicken" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Speacial/Special chicken.jpg" alt="Special Chicken" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Chicken Soup</h2>
                         <p class="text-red-600 mt-2">&#8373;50.00</p>
                         <a href="order.html" class="inline-block mt-4 px-4 py-2 bg-green-600 text-white font-semibold rounded hover:bg-green-500 transition duration-300 ease-in-out">Order Now</a>
@@ -338,7 +275,7 @@
             
                     <!-- Dish 2 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Speacial\Beef and goat.jpg" alt="Grilled Chicken" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Speacial/Beef and goat.jpg" alt="Beef and goat" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Beef And Goat</h2>
                         <p class="text-red-600 mt-2">&#8373;50.00</p>
                         <a href="order.html" class="inline-block mt-4 px-4 py-2 bg-green-600 text-white font-semibold rounded hover:bg-green-500 transition duration-300 ease-in-out">Order Now</a>
@@ -346,7 +283,7 @@
             
                     <!-- Dish 3 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Speacial\bush meat.png" alt="Grilled Chicken" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Speacial/bush meat.png" alt="bush meat" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Bush Meat</h2>
                         <p class="text-red-600 mt-2">&#8373;50.00</p>
                         <a href="order.html" class="inline-block mt-4 px-4 py-2 bg-green-600 text-white font-semibold rounded hover:bg-green-500 transition duration-300 ease-in-out">Order Now</a>
@@ -354,7 +291,7 @@
 
                     <!-- Dish 4 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Speacial\crab 1.png" alt="Grilled Chicken" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Speacial/crab 1.png" alt="crab" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Crab Meat</h2>
                         <p class="text-red-600 mt-2">&#8373;50.00</p>
                         <a href="order.html" class="inline-block mt-4 px-4 py-2 bg-green-600 text-white font-semibold rounded hover:bg-green-500 transition duration-300 ease-in-out">Order Now</a>
@@ -362,7 +299,7 @@
 
                     <!-- Dish 5 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Speacial\salmon.jpg" alt="Grilled Chicken" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Speacial/salmon.jpg" alt="Salmon" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Salmon Soup</h2>
                         <p class="text-red-600 mt-2">&#8373;50.00</p>
                         <a href="order.html" class="inline-block mt-4 px-4 py-2 bg-green-600 text-white font-semibold rounded hover:bg-green-500 transition duration-300 ease-in-out">Order Now</a>
@@ -370,7 +307,7 @@
 
                     <!-- Dish 6 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Speacial\snail 1.jpg" alt="Grilled Chicken" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Speacial/snail 1.jpg" alt="snail" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Snail Soup</h2>
                         <p class="text-red-600 mt-2">&#8373;50.00</p>
                         <a href="order.htmorder.html" class="inline-block mt-4 px-4 py-2 bg-green-600 text-white font-semibold rounded hover:bg-green-500 transition duration-300 ease-in-out">Order Now</a>
@@ -381,7 +318,7 @@
 
             <!--Street Food-->
             <div  class="bg-gray-100 font-sans">
-                <div class="container mx-auto p-4">
+                <div class="container mx-auto p-4" id="targetStreet">
                     <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">Street Foods</h1>
             
                     <!-- Menu Items -->
@@ -389,7 +326,7 @@
                     
                     <!-- Dish 1 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Street\fried yams.jpg" alt="Grilled Chicken" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Street/fried yams.jpg" alt="fried yams" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Fried Yams</h2>
                         <p class="text-red-600 mt-2">&#8373;20.00</p>
                         <a href="order.html" class="inline-block mt-4 px-4 py-2 bg-yellow-500 text-white font-semibold rounded hover:bg-yellow-400 transition duration-300 ease-in-out">Order Now</a>
@@ -397,7 +334,7 @@
             
                     <!-- Dish 2 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Street\groundnut cake.webp" alt="Grilled Chicken" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Street/groundnut cake.webp" alt="groundnut cake" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Groundnut Cake</h2>
                         <p class="text-red-600 mt-2">&#8373;20.00</p>
                         <a href="order.html" class="inline-block mt-4 px-4 py-2 bg-yellow-500 text-white font-semibold rounded hover:bg-yellow-400 transition duration-300 ease-in-out">Order Now</a>
@@ -405,7 +342,7 @@
             
                     <!-- Dish 3 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Street\kebabs-.jpeg" alt="Grilled Chicken" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Street/kebabs-.jpeg" alt="kebabs" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Kebab</h2>
                         <p class="text-red-600 mt-2">&#8373;20.00</p>
                         <a href="order.html" class="inline-block mt-4 px-4 py-2 bg-yellow-500 text-white font-semibold rounded hover:bg-yellow-400 transition duration-300 ease-in-out">Order Now</a>
@@ -413,7 +350,7 @@
             
                     <!-- Dish 4 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Street\Meat pies.jpg" alt="Grilled Chicken" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Street/Meat pies.jpg" alt="Meat pie" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Meat Pie</h2>
                         <p class="text-gray-600 mt-2">&#8373;20.00</p>
                         <a href="order.html" class="inline-block mt-4 px-4 py-2 bg-yellow-500 text-white font-semibold rounded hover:bg-yellow-400 transition duration-300 ease-in-out">Order Now</a>
@@ -421,7 +358,7 @@
 
                     <!-- Dish 5 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Street\meat-balls.jpeg" alt="Grilled Chicken" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Street/meat-balls.jpeg" alt="meat ball" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Meat Ball</h2>
                         <p class="text-red-600 mt-2">&#8373;20.00</p>
                         <a href="order.html" class="inline-block mt-4 px-4 py-2 bg-yellow-500 text-white font-semibold rounded hover:bg-yellow-400 transition duration-300 ease-in-out">Order Now</a>
@@ -429,7 +366,7 @@
             
                     <!-- Dish 6 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Street\plantain chips.webp" alt="Grilled Chicken" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Street/plantain chips.webp" alt="plantain chips" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Plantain Chip</h2>
                         <p class="text-red-600 mt-2">&#8373;20.00</p>
                         <a href="order.html" class="inline-block mt-4 px-4 py-2 bg-yellow-500 text-white font-semibold rounded hover:bg-yellow-400 transition duration-300 ease-in-out">Order Now</a>
@@ -437,7 +374,7 @@
             
                     <!-- Dish 7 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Street\Spring rolls.jpeg" alt="Grilled Chicken" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Street/Spring rolls.jpeg" alt="spring roll" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Spring Roll</h2>
                         <p class="text-red-600 mt-2">&#8373;20.00</p>
                         <a href="order.html" class="inline-block mt-4 px-4 py-2 bg-yellow-500 text-white font-semibold rounded hover:bg-yellow-400 transition duration-300 ease-in-out">Order Now</a>
@@ -445,7 +382,7 @@
             
                     <!-- Dish 8 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Street\kelewele.jpg" alt="Grilled Chicken" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Street/kelewele.jpg" alt="kelewele" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">kelewele</h2>
                         <p class="text-red-600 mt-2">&#8373;20.00</p>
                         <a href="order.html" class="inline-block mt-4 px-4 py-2 bg-yellow-500 text-white font-semibold rounded hover:bg-yellow-400 transition duration-300 ease-in-out">Order Now</a>
@@ -456,7 +393,7 @@
             </div>
 
             <!--Special Pizza-->
-            <aside class="min-h-screen flex items-center justify-center">
+            <aside class="min-h-screen flex items-center justify-center" id="targetPizza">
                 <div class="container mx-auto p-8 bg-white bg-opacity-80 rounded-lg shadow-lg">
                     <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">Special Pizza</h1>
                 
@@ -526,7 +463,7 @@
             </aside>
             
             <!--Noodles-->
-            <main>
+            <main id="targetNoodles">
                 <div class="relative h-screen flex items-center justify-center">
                     <div class="absolute inset-0 bg-black bg-opacity-50"></div>
                     <div class="relative z-10 p-6 md:p-8 text-center bg-white bg-opacity-90 rounded-lg shadow-lg transform transition duration-500 
@@ -546,7 +483,7 @@
 
 
              <!--Dessert-->
-             <div  class="bg-gray-100 font-sans">
+             <div  class="bg-gray-100 font-sans" id="targetDessert">
                 <div class="container mx-auto p-4">
                     <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">dessert</h1>
             
@@ -555,7 +492,7 @@
                     
                     <!-- Dish 1 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Desert\coconut-rice-pudding.webp" alt="Grilled Chicken" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Desert/coconut-rice-pudding.webp" alt="coconut rice pudding" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Coconut Rice pudding</h2>
                         <p class="text-red-600 mt-2">&#8373;25.00</p>
                         <a href="order.html" class="inline-block mt-4 px-4 py-2 bg-purple-500 text-white font-semibold rounded hover:bg-purple-400 transition duration-300 ease-in-out">Order Now</a>
@@ -563,7 +500,7 @@
             
                     <!-- Dish 2 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Desert\mango.jpg" alt="Grilled Chicken" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Desert/mango.jpg" alt="mango" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Mango Juice</h2>
                         <p class="text-red-600 mt-2">&#8373;25.00</p>
                         <a href="order.html" class="inline-block mt-4 px-4 py-2 bg-purple-500 text-white font-semibold rounded hover:bg-purple-400 transition duration-300 ease-in-out">Order Now</a>
@@ -571,7 +508,7 @@
             
                     <!-- Dish 3 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Desert\mabgo-pineapple.jpg" alt="Grilled Chicken" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Desert/mabgo-pineapple.jpg" alt="mango pineapple" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Pineapple Juice</h2>
                         <p class="text-red-600 mt-2">&#8373;25.00</p>
                         <a href="order.html" class="inline-block mt-4 px-4 py-2 bg-purple-500 text-white font-semibold rounded hover:bg-purple-400 transition duration-300 ease-in-out">Order Now</a>
@@ -579,7 +516,7 @@
             
                     <!-- Dish 4 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Desert\Gc-fish-Potato.jpeg" alt="Grilled Chicken" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Desert/Gc-fish-Potato.jpeg" alt="fish potato" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Fish Potato</h2>
                         <p class="text-red-600 mt-2">&#8373;25.00</p>
                         <a href="#" class="inline-block mt-4 px-4 py-2 bg-purple-500 text-white font-semibold rounded hover:bg-purple-400 transition duration-300 ease-in-out">Order Now</a>
@@ -587,7 +524,7 @@
 
                     <!-- Dish 5 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Desert\gc-seafood.jpeg" alt="Grilled Chicken" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Desert/gc-seafood.jpeg" alt="seafood" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Seafood</h2>
                         <p class="text-red-600 mt-2">GHC25.00</p>
                         <a href="order.html" class="inline-block mt-4 px-4 py-2 bg-purple-500 text-white font-semibold rounded hover:bg-purple-400 transition duration-300 ease-in-out">Order Now</a>
@@ -595,7 +532,7 @@
             
                     <!-- Dish 6 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Desert\pineapple.jpg" alt="Grilled Chicken" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Desert/pineapple.jpg" alt="pineapple" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">special Juice</h2>
                         <p class="text-red-600 mt-2">&#8373;25.00</p>
                         <a href="order.html" class="inline-block mt-4 px-4 py-2 bg-purple-500 text-white font-semibold rounded hover:bg-purple-400 transition duration-300 ease-in-out">Order Now</a>
@@ -606,7 +543,7 @@
 
 
              <!--Local beverages-->
-             <div  class="bg-gray-100 font-sans">
+             <div  class="bg-gray-100 font-sans" id="targetBev">
                 <div class="container mx-auto p-4">
                     <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">Local Beverages</h1>
             
@@ -615,7 +552,7 @@
                     
                     <!-- Dish 1 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Local beverage\sobolo 1.jpg" alt="Grilled Chicken" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Local beverage/sobolo 1.jpg" alt="sobolo" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Sobolo</h2>
                         <p class="text-red-600 mt-2">&#8373;10.00</p>
                         <a href="order.html" class="inline-block mt-4 px-4 py-2 bg-sky-500 text-white font-semibold rounded hover:bg-sky-400 transition duration-300 ease-in-out">Order Now</a>
@@ -623,7 +560,7 @@
             
                     <!-- Dish 2 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Local beverage\pito 1.webp" alt="Grilled Chicken" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Local beverage/pito 1.webp" alt="pito" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Pito</h2>
                         <p class="text-red-600 mt-2">&#8373;10.00</p>
                         <a href="order.html" class="inline-block mt-4 px-4 py-2 bg-sky-500 text-white font-semibold rounded hover:bg-sky-400 transition duration-300 ease-in-out">Order Now</a>
@@ -631,7 +568,7 @@
             
                     <!-- Dish 3 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Local beverage\palm wine 2.jpg" alt="Grilled Chicken" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Local beverage/palm wine 2.jpg" alt="palm wine" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Palm Wine</h2>
                         <p class="text-red-600 mt-2">&#8373;10.00</p>
                         <a href="order.html" class="inline-block mt-4 px-4 py-2 bg-sky-500 text-white font-semibold rounded hover:bg-sky-400 transition duration-300 ease-in-out">Order Now</a>
@@ -639,7 +576,7 @@
             
                     <!-- Dish 4 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Local beverage\coconut 1.webp" alt="Grilled Chicken" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Local beverage/coconut 1.webp" alt="coconut" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Coconut Juice</h2>
                         <p class="text-red-600 mt-2">&#8373;10.00</p>
                         <a href="order.html" class="inline-block mt-4 px-4 py-2 bg-sky-500 text-white font-semibold rounded hover:bg-sky-400 transition duration-300 ease-in-out">Order Now</a>
@@ -647,7 +584,7 @@
 
                     <!-- Dish 5 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Local beverage\akpeteshie.jpeg" alt="Grilled Chicken" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Local beverage/akpeteshie.jpeg" alt="akpeteshie" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Akpeteshie</h2>
                         <p class="text-red-600 mt-2">GHC10.00</p>
                         <a href="order.html" class="inline-block mt-4 px-4 py-2 bg-sky-500 text-white font-semibold rounded hover:bg-sky-400 transition duration-300 ease-in-out">Order Now</a>
@@ -655,7 +592,7 @@
             
                     <!-- Dish 6 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Local beverage\sobolo 2.jpg" alt="Grilled Chicken" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Local beverage/sobolo 2.jpg" alt="sobolo" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Sobolo</h2>
                         <p class="text-red-600 mt-2">&#8373;10.00</p>
                         <a href="order.html" class="inline-block mt-4 px-4 py-2 bg-sky-500 text-white font-semibold rounded hover:bg-sky-400 transition duration-300 ease-in-out">Order Now</a>
@@ -663,7 +600,7 @@
             
                     <!-- Dish 7 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Local beverage\coconut 3.jpg" alt="Grilled Chicken" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Local beverage/coconut 3.jpg" alt="coconut" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Coconut Juice</h2>
                         <p class="text-red-600 mt-2">&#8373;10.00</p>
                         <a href="order.html" class="inline-block mt-4 px-4 py-2 bg-sky-500 text-white font-semibold rounded hover:bg-sky-400 transition duration-300 ease-in-out">Order Now</a>
@@ -671,7 +608,7 @@
             
                     <!-- Dish 8 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
-                        <img src="Local beverage\pito 2.webp" alt="Grilled Chicken" class="rounded-t-lg w-full h-48 object-cover">
+                        <img src="/images/Local beverage/pito 2.webp" alt="pito" class="rounded-t-lg w-full h-48 object-cover">
                         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Pito</h2>
                         <p class="text-red-600 mt-2">&#8373;10.00</p>
                         <a href="order.html" class="inline-block mt-4 px-4 py-2 bg-sky-500 text-white font-semibold rounded hover:bg-sky-400 transition duration-300 ease-in-out">Order Now</a>
@@ -684,56 +621,54 @@
         </div>
     </section>
 
-    
-        <!-- Footer Section -->
-        <footer class="bg-cover bg-center bg-no-repeat text-white py-10 ">
-            <div class="grid grid-cols-2 md:flex md:justify-be">
-            
-            <!-- Address -->
-            <div class="w-full md:w-1/4 mb-6 ml-4">
-                <h3 class="text-lg font-bold mb-4 font-bold text-orange-600 bg-white w-28 p-2 rounded">Address</h3>
-                <div class="space-y-2">
-                    <div class="flex items-center">
-                        <i class="fas fa-map-marker-alt mr-2"></i>
-                        <span>Sunyani, Fiapre Box 20</span>
-                    </div>
-                    <div class="flex items-center">
-                        <i class="fas fa-phone mr-2"></i>
-                        <span>+233 24 089 7702</span>
-                    </div>
-                    <div class="flex items-center">
-                        <i class="fas fa-envelope mr-2"></i>
-                        <span>owusuboat05@gmail.com</span>
+    <!-- Footer Section -->
+    <footer class="relative bg-orange-700 bg-cover bg-center bg-no-repeat text-white py-4 font-arv">
+        <div class="relative grid grid-cols-2 md:flex md:justify-between">
+        <!-- Address -->
+                <div class="w-full md:w-1/4 mb-6 ml-4">
+                    <h3 class="text-lg font-bold mb-4 text-orange-600 bg-white w-28 p-2 rounded">Address</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Sunyani, Fiapre Box 20</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone mr-2"></i>
+                            <span>+233 24 089 7702</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <span>owusuboat05@gmail.com</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-    
+
+
             <!-- Navigation -->
             <div class="w-full md:w-1/4 mb-6 md:ml-6">
-                <h3 class="text-lg font-bold mb-4 font-bold text-orange-600 bg-white w-28 p-2 rounded">Navigation</h3>
+                <h3 class="text-lg font-bold mb-4 text-orange-600 bg-white w-28 p-2 rounded">Navigation</h3>
                 <ul class="space-y-2">
-                <li><a href="home.html" class="transform hover:scale-105 transition ease-out duration-300">Home</a></li>
+                <li><a href="#" class="hover:underline">Home</a></li>
                 <li><a href="menu.html" class="hover:underline">Menu</a></li>
                 <li><a href="order.html" class="hover:underline">Orders</a></li>
                 <li><a href="staff.html" class="hover:underline">Staff</a></li>
-                <li><a href="#" class="hover:underline">Blog</a></li>
                 <li><a href="#" class="hover:underline">Policy</a></li>
                 <li><a href="#" class="hover:underline">Terms & Conditions</a></li>
                 </ul>
             </div>
-    
+
             <!-- Open Hours -->
             <div class="w-full md:w-1/4 mb-6 ml-4">
-                <h3 class="text-lg font-bold mb-4 font-bold text-orange-600 bg-white w-32 p-2 rounded">Open Hours</h3>
+                <h3 class="text-lg font-bold mb-4 text-orange-600 bg-white w-32 p-2 rounded">Open Hours</h3>
                 <div class="space-y-2">
                 <p>Sunday - Friday: 6am - 11pm</p>
                 <p>Saturday: 6pm - 11pm</p>
                 </div>
             </div>
-    
+
             <!-- Social Media -->
             <div class="w-full md:w-1/4 mb-6">
-                <h3 class="text-lg font-bold mb-4 font-bold text-orange-600 bg-white w-28 p-2 rounded">Follow Us</h3>
+                <h3 class="text-lg font-bold mb-4 text-orange-600 bg-white w-28 p-2 rounded">Follow Us</h3>
                 <div class="flex space-x-4">
                 <a href="#" class="hover:text-red-400"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" class="hover:text-red-400"><i class="fab fa-instagram"></i></a>
@@ -742,12 +677,11 @@
                 <a href="#" class="hover:text-red-400"><i class="fab fa-tiktok"></i></a>
                 </div>
             </div>
-    
-            </div>
-        </footer>
+
+        </div>
+    </footer>
         
-        <script src="js/navbar.js">
-           
+        <script src="/javaScript/menufunction.js">
         </script>
 
 

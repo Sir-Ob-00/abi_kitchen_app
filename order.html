@@ -4,74 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abi's Kitchen/Order</title>
-    <link rel="shortcut icon" type="image/png" href="logo.png">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" type="image/png" href="/images/background/logo.png">
+    <link href="./output.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<style>
-    footer{
-            background-image: url('background1.jpg');
-        }
-</style>
 <body >
 <div class="bg-gray-100 p-6">
 
-    <nav class="bg-white bg-opacity-90 fixed top-0 left-0 right-0 z-50 shadow-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!--Nav Section-->
+    <nav class="bg-white bg-opacity-90 fixed top-0 left-0 right-0 z-50 shadow-md w-full">
+        <div class="w-full px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-            
                 <div class="flex-shrink-0 flex items-center">
-                    <img src="logo.png" alt="Logo" class="w-28 h-25">
+                    <img src="/images/background/logo.png" alt="Logo" class="w-28 h-25">
                 </div>
 
                 <!-- Middle Section: Centered Menu Items -->
-                <div class="hidden md:flex space-x-6 items-center">
-                    <!-- Simple Menu Items -->
+                <div class="hidden md:flex space-x-6 items-center text-lg font-arv">
                     <a href="home.html" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Home</a>
                     <a href="menu.html" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Menu</a>
                     <a href="#" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Dashboard</a>
-
-                    <!-- Orders Menu with Submenu -->
-                    <div class="relative dropdown">
-                        <a href="#" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover flex items-center">
-                            Orders
-                            <!-- Arrow Icon -->
-                            <i class="fas fa-chevron-down ml-2 text-sm"></i>
-                        </a>
-                        <!-- Submenu -->
-                        <div class="dropdown-menu hidden absolute bg-white shadow-lg rounded mt-1">
-                            <a href="order.html" class="block px-4 py-2 text-gray-700 hover:bg-orange-600 hover:text-white submenu-scale">Place Order</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-orange-600 hover:text-white submenu-scale">Cancel Order</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-orange-600 hover:text-white submenu-scale">Order Status</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-orange-600 hover:text-white submenu-scale">Order History</a>
-                        </div>
-                    </div>
-
-                    <!-- Simple Menu Item -->
                     <a href="staff.html" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Staff</a>
-
-                    <!-- Reservation Menu with Submenu -->
-                    <div class="relative dropdown">
-                        <a href="#" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover flex items-center">
-                            Reservation
-                            <!-- Arrow Icon -->
-                            <i class="fas fa-chevron-down ml-2 text-sm"></i>
-                        </a>
-                        <!-- Submenu -->
-                        <div class="dropdown-menu hidden absolute bg-white shadow-lg rounded mt-1">
-                            <a href="reservation.html" class="block px-4 py-2 text-gray-700 hover:bg-orange-600 hover:text-white submenu-scale">Book Table</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-orange-600 hover:text-white submenu-scale">View Reservations</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-orange-600 hover:text-white submenu-scale">Cancel Reservation</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-orange-600 hover:text-white submenu-scale">Edit Reservation</a>
-                        </div>
-                    </div>
+                    <a href="reservation.html" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Reservation</a>
                 </div>
 
                 <!-- Right Section: Login and Sign Up Buttons -->
                 <div class="hidden md:flex space-x-4 items-center">
                     <a href="login.html" class="text-gray-700 hover:text-red-400 px-3 py-2">Login</a>
-                    <a href="signup.html" class="text-red-400 ml-2 md:border-2 border-red-300 rounded-full 
-                    py-2 px-3 text-xs uppercase font-bold tracking-wider hover:bg-red-400 hover:text-white transition ease-out duration-500 active:bg-red-300">Sign Up</a>
+                    <a href="signup.html" class="text-red-400 ml-2 md:border-2 border-red-300 rounded-full py-2 px-3 text-xs uppercase font-bold tracking-wider hover:bg-red-400 hover:text-white transition ease-out duration-500 active:bg-red-300">Sign Up</a>
                 </div>
 
                 <!-- Hamburger Menu Icon (Visible on smaller screens) -->
@@ -82,45 +42,17 @@
                 </div>
             </div>
 
+            
             <!-- Mobile Menu (Hidden by default) -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4">
-                <!-- Menu Items for smaller screens -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 font-arv">
                 <div class="space-y-4">
                     <a href="home.html" class="block text-gray-500 hover:text-red-400 underline-hover">Home</a>
                     <a href="menu.html" class="block text-gray-500 hover:text-red-400 underline-hover">Menu</a>
                     <a href="#" class="block text-gray-500 hover:text-red-400 underline-hover">Dashboard</a>
-
-                    <div class="dropdown">
-                        <a href="#" class="block text-gray-500 hover:text-red-400 underline-hover flex items-center justify-between">
-                            Orders
-                            <i class="fas fa-chevron-down text-sm"></i>
-                        </a>
-                        <!-- Submenu -->
-                        <div class="dropdown-menu hidden bg-orange-600 shadow-lg rounded mt-1">
-                            <a href="order.html" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Place Order</a>
-                            <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Cancel Order</a>
-                            <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Order Status</a>
-                            <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Order History</a>
-                        </div>
-                    </div>
-
                     <a href="staff.html" class="block text-gray-500 hover:text-red-400 underline-hover">Staff</a>
-
-                    <div class="dropdown">
-                        <a href="#" class="block text-gray-500 hover:text-red-400 underline-hover flex items-center justify-between">
-                            Reservation
-                            <i class="fas fa-chevron-down text-sm"></i>
-                        </a>
-                        <!-- Submenu -->
-                        <div class="dropdown-menu hidden bg-orange-600 shadow-lg rounded mt-1">
-                            <a href="reservation.html" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Book Table</a>
-                            <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">View Reservations</a>
-                            <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Cancel Reservation</a>
-                            <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-red-400 submenu-scale">Edit Reservation</a>
-                        </div>
-                    </div>
-
-                    <!-- Login and Sign Up for smaller screens -->
+                    <a href="reservation.html" class="block text-gray-500 hover:text-red-400 underline-hover items-center justify-between">Reservation </a>
+        
+                    <!--LogIn and Sign Up -->
                     <div class="flex flex-col space-y-4 mt-4">
                         <a href="login.html" class="text-gray-700 hover:text-red-400 px-3 py-2">Login</a>
                         <a href="signup.html" class="py-2 px-4 bg-orange-600 text-white rounded hover:bg-orange-700 text-center">Sign Up</a>
@@ -130,6 +62,9 @@
         </div>
     </nav>
 
+
+
+    
     <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg mt-16">
         <h2 class="text-3xl font-bold mb-6 text-gray-800 text-center">Place Your Order</h2>
 
@@ -158,7 +93,7 @@
             <div class="mb-6">
                 <label for="orderDetails" class="block text-sm font-medium text-gray-700">Order Details</label>
                 <textarea id="orderDetails" name="orderDetails" rows="4" required class="mt-1 block w-full Shipping Address
-                p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:ring-blue-500"></textarea>
+                p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500"></textarea>
             </div>
 
             <!-- Payment Method Section -->
@@ -188,14 +123,12 @@
     </div>
 </div>
 
-
-        <!-- Footer Section -->
-        <footer class="bg-cover bg-center bg-no-repeat text-white py-10 ">
-            <div class="grid grid-cols-2 md:flex md:justify-be">
-            
-            <!-- Address -->
+<!-- Footer Section -->
+<footer class="relative bg-red-700 bg-cover bg-center bg-no-repeat text-white py-4 font-arv">
+    <div class="relative grid grid-cols-2 md:flex md:justify-between">
+    <!-- Address -->
             <div class="w-full md:w-1/4 mb-6 ml-4">
-                <h3 class="text-lg font-bold mb-4 font-bold text-orange-600 bg-white w-28 p-2 rounded">Address</h3>
+                <h3 class="text-lg font-bold mb-4 text-orange-600 bg-white w-28 p-2 rounded">Address</h3>
                 <div class="space-y-2">
                     <div class="flex items-center">
                         <i class="fas fa-map-marker-alt mr-2"></i>
@@ -211,46 +144,46 @@
                     </div>
                 </div>
             </div>
-    
-            <!-- Navigation -->
-            <div class="w-full md:w-1/4 mb-6 md:ml-6">
-                <h3 class="text-lg font-bold mb-4 font-bold text-orange-600 bg-white w-28 p-2 rounded">Navigation</h3>
-                <ul class="space-y-2">
-                <li><a href="home.html" class="transform hover:scale-105 transition ease-out duration-300">Home</a></li>
-                <li><a href="menu.html" class="hover:underline">Menu</a></li>
-                <li><a href="order.html" class="hover:underline">Orders</a></li>
-                <li><a href="staff.html" class="hover:underline">Staff</a></li>
-                <li><a href="#" class="hover:underline">Blog</a></li>
-                <li><a href="#" class="hover:underline">Policy</a></li>
-                <li><a href="#" class="hover:underline">Terms & Conditions</a></li>
-                </ul>
+
+
+        <!-- Navigation -->
+        <div class="w-full md:w-1/4 mb-6 md:ml-6">
+            <h3 class="text-lg font-bold mb-4 text-orange-600 bg-white w-28 p-2 rounded">Navigation</h3>
+            <ul class="space-y-2">
+            <li><a href="#" class="hover:underline">Home</a></li>
+            <li><a href="menu.html" class="hover:underline">Menu</a></li>
+            <li><a href="order.html" class="hover:underline">Orders</a></li>
+            <li><a href="staff.html" class="hover:underline">Staff</a></li>
+            <li><a href="policy.html" class="hover:underline">Policy</a></li>
+            <li><a href="#" class="hover:underline">Terms & Conditions</a></li>
+            </ul>
+        </div>
+
+        <!-- Open Hours -->
+        <div class="w-full md:w-1/4 mb-6 ml-4">
+            <h3 class="text-lg font-bold mb-4 text-orange-600 bg-white w-32 p-2 rounded">Open Hours</h3>
+            <div class="space-y-2">
+            <p>Sunday - Friday: 6am - 11pm</p>
+            <p>Saturday: 6pm - 11pm</p>
             </div>
-    
-            <!-- Open Hours -->
-            <div class="w-full md:w-1/4 mb-6 ml-4">
-                <h3 class="text-lg font-bold mb-4 font-bold text-orange-600 bg-white w-32 p-2 rounded">Open Hours</h3>
-                <div class="space-y-2">
-                <p>Sunday - Friday: 6am - 11pm</p>
-                <p>Saturday: 6pm - 11pm</p>
-                </div>
+        </div>
+
+        <!-- Social Media -->
+        <div class="w-full md:w-1/4 mb-6">
+            <h3 class="text-lg font-bold mb-4 text-orange-600 bg-white w-28 p-2 rounded">Follow Us</h3>
+            <div class="flex space-x-4">
+            <a href="#" class="hover:text-red-400"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="hover:text-red-400"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="hover:text-red-400"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="hover:text-red-400"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="hover:text-red-400"><i class="fab fa-tiktok"></i></a>
             </div>
-    
-            <!-- Social Media -->
-            <div class="w-full md:w-1/4 mb-6">
-                <h3 class="text-lg font-bold mb-4 font-bold text-orange-600 bg-white w-28 p-2 rounded">Follow Us</h3>
-                <div class="flex space-x-4">
-                <a href="#" class="hover:text-red-400"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="hover:text-red-400"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="hover:text-red-400"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="hover:text-red-400"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="hover:text-red-400"><i class="fab fa-tiktok"></i></a>
-                </div>
-            </div>
-    
-            </div>
-        </footer>
+        </div>
+
+    </div>
+</footer>
         
-        <script src="js/navbar.js">
+        <script src="/javaScript/order.js">
            
         </script>
 </body>
