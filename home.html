@@ -32,11 +32,11 @@
     
                     <!-- Middle Section: Centered Menu Items -->
                     <div class="hidden md:flex space-x-6 items-center text-lg font-arv">
-                        <a href="#" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Home</a>
+                        <a href="home.html" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Home</a>
                         <a href="menu.html" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Menu</a>
                         <a href="#" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Dashboard</a>
                         <a href="staff.html" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Staff</a>
-                        <a href="#" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Reservation</a>
+                        <a href="reservation.html" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Reservation</a>
                     </div>
     
                     <!-- Right Section: Login and Sign Up Buttons -->
@@ -72,70 +72,77 @@
                 </div>
             </div>
         </nav>
+    </main>
 
-        
+
+
     
             <!-- Page Content:Hero Section -->
-                <!-- Main container -->
-            <div class="w-full h-[500px] md:h-[500px] lg:h-[600px] bg-white shadow-lg flex flex-row mt-16 mb-32">
-                    
-                    <!-- Text section -->
-                <div class="w-1/2 sm:w-1/2 md:w-1/2 p-4 md:p-8 flex flex-col justify-center">
-                    <h2 class="text-2xl font-bold font-archivo sm:text-4xl md:text-4xl lg:text-6xl xl:text-7xl text-orange-600 uppercase">Where Traditional Meets Taste</h2>
-                    <div class="mt-2 sm:mt-4 text-xl sm:text-base md:text-2xl text-gray-600">
-                        <p>We serve you with the best local dishes.</p>
-                        <p> Discounts are assured on all ordered dishes</p>
+            <div class="bg-gray-100 flex items-center justify-center mb-20">
+                <!-- Main container with responsive grid layout -->
+                <div class="max-w-full bg-white shadow-lg mt-20 grid grid-rows-2 md:grid-rows-1 md:grid-cols-2">
+                    <!-- Image slider section (top on smaller screens) -->
+                    <div class="relative w-full h-[300px] md:h-full overflow-hidden order-1 md:order-2">
+                        <div class="slider relative w-full h-full">
+                            <!-- Slider Images with Tailwind classes for opacity transition -->
+                            <img src="/images/background/Gc-rice-and-chicken.jpeg" alt="Kokonte and Groundnut Soup" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100">
+                            <img src="/images/background/Banku and Tilapia.jpg" alt="Rice and Chicken" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0">
+                            <img src="/images/Local beverage/coconut 2.jpg" alt="Salad" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0">
+                        </div>
                     </div>
-                    <a href="menu.html"><p class="font-arv bg-gradient-to-r from-red-500 to-yellow-600 hover:shadow-xl rounded-md text-white p-4 mt-4 text-xl text-center md:w-1/2 hover:bg-orange-600 transition ease-in 0.3s">Discover more &rarr;</p></a>
-                </div>
-                    <!-- Image slider section -->
-                <div class="w-1/2 sm:w-1/2 md:w-1/2 relative overflow-hidden">
-                <div class="slider relative w-full h-full">
-                    <img src="/images/Traditional/kokonte-and-groundnut-soup.webp" alt="Image 1" class="absolute inset-0 w-full h-full object-cover slider-img opacity-100">
-                    <img src="/images/background/Gc-rice-and-chicken.jpeg" alt="Image 2" class="absolute inset-0 w-full h-full object-cover slider-img opacity-0">
-                    <img src="/images/background/salad.jpeg" alt="Image 3" class="absolute inset-0 w-full h-full object-cover slider-img opacity-0">
-                </div>
+        
+                    <!-- Text section (left side on larger screens) -->
+                    <div class="p-4 md:p-8 flex flex-col justify-center text-center md:text-left order-2 md:order-1">
+                        <h2 class="text-2xl font-bold font-archivo sm:text-4xl md:text-4xl lg:text-5xl text-orange-600 uppercase">Where Tradition Meets Taste</h2>
+                        <div class="mt-4 text-xl text-gray-600 md:text-2xl">
+                            <p>We serve you with the best local dishes.</p>
+                            <p>Discounts are assured on all ordered dishes.</p>
+                        </div>
+                        <a href="menu.html">
+                            <p class="font-arv bg-gradient-to-r from-red-500 to-yellow-600 hover:shadow-xl rounded-md text-white p-4 mt-6 text-xl text-center inline-block md:w-1/2 hover:bg-orange-600 transition ease-in 0.3s">Discover more &rarr;</p>
+                        </a>
+                    </div>
                 </div>
             </div>
 
 
                 <!-- Menu:Picture cards -->
-                <h2 class="mb-8 text-red-600 text-5xl text-center font-extrabold">MENU</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-20 gap-x-10 font-pop">
+                <h2 class="my-8 text-red-600 text-5xl text-center font-extrabold">MENU</h2>
+                <div class="grid m-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-20 gap-x-10 font-pop">
                     <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg border-2 transform hover:scale-105 transition-transform duration-300">
                         <div>
                             <img src="/images/background/salad 1.jpg" alt="Fish Dish">
-                            <p class="hidden-label m-10 text-gray-500 font-bold text-3xl uppercase text-center">best salad</p>
+                            <p class="hidden-label m-10 text-gray-500 font-bold text-2xl uppercase text-center">best salad</p>
                         </div>
                     </div>
                     <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg border-2 transform hover:scale-105 transition-transform duration-300">
                             <div>
                                 <img src="/images/background/pizza 1.jpg" alt="Fufu Dish">
-                                <p class="hidden-label m-10 text-gray-500 font-bold text-3xl uppercase text-center">top pizza</p>
+                                <p class="hidden-label m-10 text-gray-500 font-bold text-2xl uppercase text-center">top pizza</p>
                             </div>
                     </div>
                     <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg border-2 transform hover:scale-105 transition-transform duration-300">
                         <div>
                             <img src="/images/Desert/gc-seafood.jpeg" alt="seafood">
-                            <p class="hidden-label m-10 text-gray-500 font-bold text-3xl uppercase text-center">Hot Dessert</p>
+                            <p class="hidden-label m-10 text-gray-500 font-bold text-2xl uppercase text-center">Hot Dessert</p>
                         </div>
                     </div>
                     <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg border-2 transform hover:scale-105 transition-transform duration-300">
                         <div>
                             <img src="/images/Traditional/Akple with Palm.jpg" alt="akple">
-                            <p class="hidden-label m-10 text-gray-500 font-bold text-3xl uppercase text-center">Hot Local</p>
+                            <p class="hidden-label m-10 text-gray-500 font-bold text-2xl uppercase text-center">Hot Local</p>
                         </div>
                     </div>
                     <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg border-2 transform hover:scale-105 transition-transform duration-300">
                         <div>
                             <img src="/images/Speacial/snail 1.jpg" alt="snail">
-                            <p class="hidden-label m-10 text-gray-500 font-bold text-3xl uppercase text-center">Special</p>
+                            <p class="hidden-label m-10 text-gray-500 font-bold text-2xl uppercase text-center">Special</p>
                         </div>
                     </div>
                     <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg border-2 transform hover:scale-105 transition-transform duration-300">
                         <div>
                             <img src="/images/Local beverage/palm wine 2.jpg" alt="Fufu Dish">
-                            <p class="hidden-label m-10 text-gray-500 font-bold text-3xl uppercase text-center">beverage</p>
+                            <p class="hidden-label m-10 text-gray-500 font-bold text-2xl uppercase text-center">beverage</p>
                         </div>
                     </div>
                 </div>
@@ -146,111 +153,88 @@
 
             </div>
         </div>
-    </main>
     
 
-    <!-- Reservation Section -->
-    <section class="flex flex-col items-center justify-center mt-6 mb-16 bg-gray-300 shadow-lg py-16 relative rounded-lg">
-        <!-- Text Content Centered Above the Image -->
-        <div class="text-center px-4 max-w-3xl z-10 mb-8">
-            <h1 class="text-4xl font-bold font-alex mb-4 md:text-5xl lg:text-7xl text-orange-600">Reserve a Table</h1>
-            <div class="text-lg mb-6 md:text-xl lg:text-2xl">
-            <p>Enjoy a memorable dining experience.</p>
-            <p>Book your table now to ensure your spot.</p>
+        <!-- Reservation Section -->
+        <section class="flex flex-col items-center justify-center mt-14 mb-16 bg-gray-100 shadow-lg py-16 relative rounded-lg">
+            <!-- Text Content Centered Above the Image -->
+            <div class="text-center px-4 max-w-3xl z-10 mb-8">
+                <h1 class="text-4xl font-bold font-alex mb-4 md:text-5xl lg:text-7xl text-orange-600">Reserve a Table</h1>
+                <div class="text-lg mb-6 md:text-xl lg:text-2xl">
+                    <p>Enjoy a memorable dining experience.</p>
+                    <p>Book your table now to ensure your spot.</p>
+                </div> 
             </div>
-            <a href="reservation.html" class="text-white font-semibold text-xl md:text-2xl bg-gradient-to-r from-red-500 to-yellow-600 hover:shadow-lg hover:text-slate-200 transition ease-in-out 0.3s py-2 px-4 rounded-full">Book Now</a>
-        </div>
-    
-        <!-- Bottom Image -->
-        <div class="w-full max-w-5xl">
-            <img src="/images/background/back reserve.avif" alt="table image" class="w-full h-80 object-cover rounded-lg shadow-lg">
-        </div>
-    </section>
-    
-
-    <!-- Policy/Terms and condition -->
-    <div class="flex flex-col lg:flex-row gap-8 max-w-6xl mx-auto my-8">
-        <!-- Policy -->
-        <div class="flex-1 bg-white p-6 rounded-lg shadow-lg space-y-6">
-            <div class="flex flex-col items-center space-y-4">
-                <i class="fa fa-shield text-6xl text-green-600 bg-green-100 p-4 rounded-full"></i>
-                <p class="text-2xl text-gray-800 text-center font-pop italic">We are committed to protecting your privacy. 
-                    This Privacy Policy outlines how we collect, use, and safeguard your information.</p>
-                <a href="policy.html" class="bg-red-500 text-white font-medium px-4 py-2 rounded hover:bg-red-600 font-arv">Read More</a>
-            </div>
-        </div>
         
-            <!-- Right Card -->
-        <div class="flex-1 bg-white p-6 rounded-lg shadow-lg space-y-6">
-            <div class="flex flex-col items-center space-y-4">
-                <i class="fas fa-file-contract text-6xl text-green-600 bg-green-100 p-4 rounded-full"></i>
-                <p class="text-2xl text-gray-800 text-center font-pop italic">By accessing or using our Website, 
-                    you agree to comply with and be bound by the following terms and conditions.</p>
-                <a href="#" class="bg-red-500 text-white font-medium px-4 py-2 rounded hover:bg-red-600 font-arv">Read More</a>
+            <!-- Bottom Image -->
+            <div class="w-full max-w-5xl">
+                <img src="/images/background/reser.jpg" alt="table image" class="w-auto h-full object-cover rounded-lg shadow-lg p-2">
             </div>
-        </div>
-      </div>
+            <a href="reservation.html" class="text-white font-semibold text-xl md:text-2xl bg-gradient-to-r from-red-500 to-yellow-600 hover:shadow-lg hover:text-slate-200 transition ease-in-out 0.3s py-2 px-4 rounded-full mt-10">Book Now</a>
+        </section>
+    
 
 
       <!-- Footer Section -->
-    <footer class="relative bg-orange-700 bg-cover bg-center bg-no-repeat text-white py-4 font-arv">
-        <div class="relative grid grid-cols-2 md:flex md:justify-between lg:mx-16">
-        <!-- Address -->
-                <div class="w-full md:w-1/4 mb-6 ml-4">
-                        <h3 class="text-md mb-4 font-bold text-orange-600 bg-white w-28 p-2 rounded">Address</h3>
-                        <div class="space-y-2">
-                            <div class="flex items-center">
-                                <i class="fas fa-map-marker-alt mr-2"></i>
-                                <span>Sunyani, Fiapre Box 20</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-phone mr-2"></i>
-                                <span>+233 24 089 7702</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-envelope mr-2"></i>
-                                <span>owusuboat05@gmail.com</span>
-                            </div>
+        <footer class="relative bg-orange-700 bg-cover bg-center bg-no-repeat text-white py-4 font-arv">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  lg:ml-16 text-sm">
+                
+                <!-- Address -->
+                <div class="w-full mb-6 ml-4 text-center md:text-left">
+                    <h3 class="text-xl mb-2 font-bold text-white underline p-2 rounded">Address</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-center md:justify-start">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Sunyani, Fiapre Box 20</span>
                         </div>
+                        <div class="flex items-center justify-center md:justify-start">
+                            <i class="fas fa-phone mr-2"></i>
+                            <span>+233 24 089 7702</span>
+                        </div>
+                        <div class="flex items-center justify-center md:justify-start">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <span>owusuboat05@gmail.com</span>
+                        </div>
+                    </div>
                 </div>
-
-
-            <!-- Navigation -->
-            <div class="w-full md:w-1/4 mb-6 md:ml-6 justify-center">
-                <h3 class="text-md mb-4 font-bold text-orange-600 bg-white w-28 p-2 rounded">Navigation</h3>
-                <ul class="space-y-2">
-                    <li><a href="#" class="hover:underline">Home</a></li>
-                    <li><a href="menu.html" class="hover:underline">Menu</a></li>
-                    <li><a href="order.html" class="hover:underline">Orders</a></li>
-                    <li><a href="staff.html" class="hover:underline">Staff</a></li>
-                    <li><a href="policy.html" class="hover:underline">Policy</a></li>
-                    <li><a href="terms.html" class="hover:underline">Terms & Conditions</a></li>
-                </ul>
-            </div>
-
-            <!-- Open Hours -->
-            <div class="w-full md:w-1/4 mb-6 ml-4">
-                <h3 class="text-md mb-4 font-bold text-orange-600 bg-white w-32 p-2 rounded">Open Hours</h3>
-                <div class="space-y-2">
-                <p>Sunday - Friday: 6am - 11pm</p>
-                <p>Saturday: 6pm - 11pm</p>
+        
+                <!-- Navigation -->
+                <div class="w-full mb-6 md:ml-6 text-center md:text-left">
+                    <h3 class="text-xl mb-2 font-bold text-white underline p-2 rounded">Navigation</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline">Home</a></li>
+                        <li><a href="menu.html" class="hover:underline">Menu</a></li>
+                        <li><a href="order.html" class="hover:underline">Orders</a></li>
+                        <li><a href="staff.html" class="hover:underline">Staff</a></li>
+                        <li><a href="policy.html" class="hover:underline">Policy</a></li>
+                        <li><a href="terms.html" class="hover:underline">Terms & Conditions</a></li>
+                    </ul>
                 </div>
-            </div>
-
-            <!-- Social Media -->
-            <div class="w-full md:w-1/4 mb-6 ml-4">
-                    <h3 class="text-md mb-4 font-bold text-orange-600 bg-white w-28 p-2 rounded">Follow Us</h3>
-                    <div class="flex space-x-4 text-xl">
+        
+                <!-- Open Hours -->
+                <div class="w-full mb-6 ml-4 text-center md:text-left">
+                    <h3 class="text-xl mb-2 font-bold text-white underline p-2 rounded">Open Hours</h3>
+                    <div class="space-y-2">
+                        <p>Sunday - Friday: 6am - 11pm</p>
+                        <p>Saturday: 6pm - 11pm</p>
+                    </div>
+                </div>
+        
+                <!-- Social Media -->
+                <div class="w-full mb-6 ml-4 text-center md:text-left">
+                    <h3 class="text-xl mb-2 font-bold text-white underline p-2 rounded">Follow Us</h3>
+                    <div class="flex justify-center md:justify-start space-x-4 text-xl">
                         <a href="#" class="hover:text-red-400"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="hover:text-red-400"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="hover:text-red-400"><i class="fab fa-twitter"></i></a>
                         <a href="#" class="hover:text-red-400"><i class="fab fa-linkedin"></i></a>
                         <a href="#" class="hover:text-red-400"><i class="fab fa-tiktok"></i></a>
                     </div>
+                </div>
+        
             </div>
-
-        </div>
-    </footer>
+        </footer>
+    
     
     
     

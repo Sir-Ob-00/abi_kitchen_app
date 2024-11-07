@@ -34,21 +34,17 @@
         });
         
         
-    //JS for slide
-        const images = document.querySelectorAll('.slider-img');
-        let currentIndex = 0;
-
-        function changeImage() {
-        images[currentIndex].classList.add('opacity-0');
-        images[currentIndex].classList.remove('opacity-100');
-
+    // Select all images in the slider
+    const images = document.querySelectorAll('.slider img');
+    let currentIndex = 0;
+    function showNextImage() {
+        images[currentIndex].classList.replace('opacity-100', 'opacity-0');
         currentIndex = (currentIndex + 1) % images.length;
+        images[currentIndex].classList.replace('opacity-0', 'opacity-100');
+    }
+    setInterval(showNextImage, 3000);
 
-        images[currentIndex].classList.remove('opacity-0');
-        images[currentIndex].classList.add('opacity-100');
-        }
-        setInterval(changeImage, 3000);
-
+    
 
 
             //Picture cards
