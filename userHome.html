@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    .underline-hover:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .submenu-scale:hover {
+      transform: scale(1.05);
+      transition: transform 0.2s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+    <div class="flex flex-col min-h-screen">
+        <!-- Navbar -->
+        <nav class="bg-white shadow-md w-full fixed top-0 z-20">
+            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="home.html"><img src="/images/background/new_logo.png" alt="Logo" class="w-24"></a>
+                </div>
+                <ul class="hidden md:flex space-x-6 text-gray-600">
+                    <li><a href="userHome.html" class="hover:text-gray-800 transition">Home</a></li>
+                    <li><a href="userMenu.html" class="hover:text-gray-800 transition">Menu</a></li>
+                    <li><a href="userStaff.html" class="hover:text-gray-800 transition">Staff</a></li>
+                    <li><a href="#reservation" class="hover:text-gray-800 transition">Reservation</a></li>
+                </ul>
+                <div class="flex items-center space-x-4 text-2xl">
+                    <button class="relative"><i class="fa fa-bell"></i></button>
+                    <button class="relative"><i class="fa fa-shopping-cart"></i></button>
+                    <div class="md:hidden flex items-center">
+                        <button id="hamburger-button" class="focus:outline-none">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+                <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-md mt-2 z-10">
+                    <div class="space-y-4">
+                        <a href="userHome.html" class="block text-gray-500 hover:text-red-400 underline-hover px-6 py-2">Home</a>
+                        <a href="userMenu.html" class="block text-gray-500 hover:text-red-400 underline-hover px-6 py-2">Menu</a>
+                        <a href="userStaff.html" class="block text-gray-500 hover:text-red-400 underline-hover px-6 py-2">Staff</a>
+                        <a href="reservation.html" class="block text-gray-500 hover:text-red-400 underline-hover px-6 py-2">Reservation</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Sidebar -->
+        <aside id="sidebar" class="fixed top-16 left-0 w-64 h-[calc(100%-4rem)] bg-white shadow-lg z-10 transform -translate-x-full transition-transform duration-300 lg:translate-x-0">
+            <div class="flex items-center gap-4 p-6 border-b">
+                <img src="https://via.placeholder.com/50" alt="User Profile" class="w-12 h-12 rounded-full border">
+                <div>
+                    <h1 class="font-bold text-lg text-gray-800">User Name</h1>
+                    <p class="text-sm text-gray-500">Welcome Back!</p>
+                </div>
+            </div>
+            <nav class="mt-6">
+                <ul class="space-y-2">
+                    <li><a href="userProfile.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-gray-800 transition rounded">My Profile</a></li>
+                    <li><a href="#orders" class="block px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-gray-800 transition rounded">My Orders</a></li>
+                    <li><a href="#reservation" class="block px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-gray-800 transition rounded">My Reservations</a></li>
+                    <li><a href="#logout" class="block px-6 py-3 text-red-500 hover:bg-gray-100 hover:text-red-600 transition rounded">Log Out</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Sidebar Toggle Button -->
+        <button id="sidebarToggle" class="fixed bottom-5 left-5 bg-red-500 text-white p-4 rounded-full shadow-lg hover:bg-red-600 lg:hidden">
+            <i class="fa fa-bars"></i>
+        </button>
+
+        <!-- Main Content -->
+        <main class="ml-0 lg:ml-64 mt-16 flex-1 p-8 bg-gray-50 overflow-y-auto">
+            <!-- Page Content:Hero Section -->
+            <div class="bg-gray-100 flex items-center justify-center">
+                <!-- Main container with responsive grid layout -->
+                <div class="max-w-full bg-white shadow-lg grid grid-rows-2 md:grid-rows-1 md:grid-cols-2 px-10 py-5">
+                    <!-- Image slider section (top on smaller screens) -->
+                    <div class="order-1 md:order-2">
+                        <div class="">
+                            <img src="/images/background/Gc-rice-and-chicken.jpeg" alt="Kokonte and Groundnut Soup" class="w-full object-cover transition-opacity duration-1000 opacity-100">
+                            <!-- <img src="/images/background/Banku and Tilapia.jpg" alt="Rice and Chicken" class=" w-full object-cover transition-opacity duration-1000 opacity-0"> -->
+                            <!-- <img src="/images/Local beverage/coconut 2.jpg" alt="Salad" class="w-full object-cover transition-opacity duration-1000 opacity-0"> -->
+                        </div>
+                    </div>
+            
+                    <!-- Text section (left side on larger screens) -->
+                    <div class=" flex flex-col justify-center text-left order-2 md:order-1">
+                        <h2 class="text-3xl font-bold font-archivo md:text-5xl lg:text-7xl text-orange-600 uppercase mt-10">Where Tradition Meets Taste</h2>
+                        <div class=" text-xl text-gray-600 md:text-2xl">
+                            <p>We serve you with the best local dishes.</p>
+                            <p>Discounts are assured on all ordered dishes.</p>
+                        </div>
+                        <a href="userMenu.html">
+                            <p class="font-arv bg-gradient-to-r from-red-500 to-yellow-600 hover:shadow-xl rounded-md text-white p-4 mt-6 mb-10 text-xl text-center inline-block hover:bg-orange-600 transition ease-in 0.3s">Discover more &rarr;</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+                    <!-- Menu:Picture cards -->
+            <div class="mt-20">
+                <h2 class="text-red-600 text-5xl text-center font-extrabold">MENU</h2>
+            
+                <div class="grid m-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-20 gap-x-10 font-pop">
+                    <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg border-2 transform hover:scale-105 transition-transform duration-300">
+                        <div>
+                            <img src="/images/background/salad 1.jpg" alt="Fish Dish">
+                            <p class="hidden-label m-10 text-gray-500 font-bold text-2xl uppercase text-center">best salad</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg border-2 transform hover:scale-105 transition-transform duration-300">
+                        <div>
+                            <img src="/images/background/pizza 1.jpg" alt="Fufu Dish">
+                            <p class="hidden-label m-10 text-gray-500 font-bold text-2xl uppercase text-center">top pizza</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg border-2 transform hover:scale-105 transition-transform duration-300">
+                        <div>
+                            <img src="/images/Desert/gc-seafood.jpeg" alt="seafood">
+                            <p class="hidden-label m-10 text-gray-500 font-bold text-2xl uppercase text-center">Hot Dessert</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg border-2 transform hover:scale-105 transition-transform duration-300">
+                        <div>
+                            <img src="/images/Traditional/Akple with Palm.jpg" alt="akple">
+                            <p class="hidden-label m-10 text-gray-500 font-bold text-2xl uppercase text-center">Hot Local</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg border-2 transform hover:scale-105 transition-transform duration-300">
+                        <div>
+                            <img src="/images/Speacial/snail 1.jpg" alt="snail">
+                            <p class="hidden-label m-10 text-gray-500 font-bold text-2xl uppercase text-center">Special</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg border-2 transform hover:scale-105 transition-transform duration-300">
+                        <div>
+                            <img src="/images/Local beverage/palm wine 2.jpg" alt="Fufu Dish">
+                            <p class="hidden-label m-10 text-gray-500 font-bold text-2xl uppercase text-center">beverage</p>
+                        </div>
+                    </div>
+                </div>
+                            <!--View menu button-->
+                <div class="flex items-center justify-center gap-20 p-8">
+                    <a href="userMenu.html" class="bg-red-600 text-white font-semibold text-xl p-2 rounded hover:border-2 hover:border-red-600 hover:bg-inherit hover:text-red-500 transition ease-out duration-500">View Menu</a>
+                </div>
+            </div>
+
+            
+            
+        
+
+            <!-- Reservation Section -->
+            <section class="flex flex-col items-center justify-center bg-gray-100 shadow-lg py-16  rounded-lg">
+                <!-- Text Content Centered Above the Image -->
+                <div class="text-center px-4 max-w-3xl mb-8">
+                    <h1 class="text-4xl font-bold font-archivo mb-4 md:text-5xl lg:text-7xl text-orange-600">Reserve a Table</h1>
+                    <div class="text-lg mb-6 md:text-xl lg:text-2xl">
+                        <p>Enjoy a memorable dining experience.</p>
+                        <p>Book your table now to ensure your spot.</p>
+                    </div> 
+                </div>
+            
+                <!-- Bottom Image -->
+                <div class="w-full max-w-5xl">
+                    <img src="/images/background/reser.jpg" alt="table image" class="w-auto h-full object-cover rounded-lg shadow-lg p-2">
+                </div>
+                <a href="reservation.html" class="text-white font-semibold text-xl md:text-2xl bg-gradient-to-r from-red-500 to-yellow-600 hover:shadow-lg hover:text-slate-200 transition ease-in-out 0.3s py-2 px-4 rounded-full mt-10">Book Now</a>
+            </section>
+        </main>
+
+        
+        <!-- Footer -->
+        <footer class="bg-orange-700 text-white py-12 px-4 lg:ml-64">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+                <!-- Address -->
+                <div class="w-full mb-6 text-center md:text-left">
+                    <h3 class="text-xl mb-2 font-bold text-white underline rounded">Address</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-center md:justify-start">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Sunyani, Fiapre Box 20</span>
+                        </div>
+                        <div class="flex items-center justify-center md:justify-start">
+                            <i class="fas fa-phone mr-2"></i>
+                            <span>+233 24 089 7702</span>
+                        </div>
+                        <div class="flex items-center justify-center md:justify-start">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <span>owusuboat05@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+    
+            <!-- Navigation -->
+                <div class="w-full mb-6 md:ml-6 text-center md:text-left">
+                    <h3 class="text-xl mb-2 font-bold text-white underline rounded">Navigation</h3>
+                    <ul class="space-y-2">
+                        <li><a href="userHome.html" class="hover:underline">Home</a></li>
+                        <li><a href="userMenu.html" class="hover:underline">Menu</a></li>
+                        <li><a href="order.html" class="hover:underline">Orders</a></li>
+                        <li><a href="userStaff.html" class="hover:underline">Staff</a></li>
+                        <li><a href="userPolicy.html" class="hover:underline">Policy</a></li>
+                        <li><a href="userTerms.html" class="hover:underline">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+    
+            <!-- Open Hours -->
+                <div class="w-full mb-6 ml-4 text-center md:text-left">
+                    <h3 class="text-xl mb-2 font-bold text-white underline rounded">Open Hours</h3>
+                    <div class="space-y-2">
+                        <p>Sunday - Friday: 6am - 11pm</p>
+                        <p>Saturday: 6pm - 11pm</p>
+                    </div>
+                </div>
+    
+            <!-- Social Media -->
+                <div class="w-full mb-6 ml-4 text-center md:text-left">
+                    <h3 class="text-xl mb-2 font-bold text-white underline rounded">Follow Us</h3>
+                    <div class="flex justify-center md:justify-start space-x-4 text-xl">
+                        <a href="#" class="hover:text-red-400"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-red-400"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-red-400"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-red-400"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-red-400"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/userJS/uHome.js">
+       
+    </script>
+</body>
+</html>

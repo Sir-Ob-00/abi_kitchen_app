@@ -1,72 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abi'sKitchen/Sign Up</title>
-  <link rel="shortcut icon" type="image/png" href="/images/background/logo.png">
-  <link href="./output.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abi'sKitchen/Sign Up</title>
+    <link rel="shortcut icon" type="image/png" href="/images/background/favi.png">
+    <link href="./output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <style>
+<style>
     main {
-      background-image: url('/images/background/Background.jpg'); 
-      background-size: cover;
-      background-position: center;
+        background-image: url('/images/background/Background.jpg'); 
+        background-size: cover;
+        background-position: center;
     }
-  </style>
+</style>
 </head>
 <body> 
-      <!--Nav Section-->
-      <nav class="bg-white bg-opacity-90 fixed top-0 left-0 right-0 z-50 shadow-md w-full">
-        <div class="w-full px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex-shrink-0 flex items-center">
-                    <img src="/images/background/logo.png" alt="Logo" class="w-28 h-25">
-                </div>
-
-                <!-- Middle Section: Centered Menu Items -->
-                <div class="hidden md:flex space-x-6 items-center text-lg font-arv">
-                    <a href="#" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Home</a>
-                    <a href="menu.html" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Menu</a>
-                    <a href="#" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Dashboard</a>
-                    <a href="staff.html" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Staff</a>
-                    <a href="#" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Reservation</a>
-                </div>
-
-                <!-- Right Section: Login and Sign Up Buttons -->
-                <div class="hidden md:flex space-x-4 items-center">
-                    <a href="login.html" class="text-gray-700 hover:text-red-400 px-3 py-2">Login</a>
-                    <a href="signup.html" class="text-red-400 ml-2 md:border-2 border-red-300 rounded-full py-2 px-3 text-xs uppercase font-bold tracking-wider hover:bg-red-400 hover:text-white transition ease-out duration-500 active:bg-red-300">Sign Up</a>
-                </div>
-
-                <!-- Hamburger Menu Icon (Visible on smaller screens) -->
-                <div class="md:hidden flex items-center">
-                    <button id="hamburger-button" class="focus:outline-none">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
-                </div>
-            </div>
-
-            
-            <!-- Mobile Menu (Hidden by default) -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4 font-arv">
-                <div class="space-y-4">
-                    <a href="home.html" class="block text-gray-500 hover:text-red-400 underline-hover">Home</a>
-                    <a href="menu.html" class="block text-gray-500 hover:text-red-400 underline-hover">Menu</a>
-                    <a href="#" class="block text-gray-500 hover:text-red-400 underline-hover">Dashboard</a>
-                    <a href="staff.html" class="block text-gray-500 hover:text-red-400 underline-hover">Staff</a>
-                    <a href="reservation.html" class="block text-gray-500 hover:text-red-400 underline-hover items-center justify-between">Reservation </a>
-        
-                    <!--LogIn and Sign Up -->
-                    <div class="flex flex-col space-y-4 mt-4">
+    <header class="h-full">
+        <!--Nav Section-->
+        <nav class="bg-white bg-opacity-90 fixed top-0 left-0 right-0 z-50 shadow-md w-full">
+            <div class="w-full px-4 sm:px-6 md:px-10">
+                <div class="flex justify-between items-center h-16">
+                    <div class="flex items-center">
+                        <a href="home.html"><img src="/images/background/new_logo.png" alt="Logo" class="w-24"></a>
+                    </div>
+    
+                    <!-- Middle Section: Centered Menu Items -->
+                    <div class="hidden md:flex space-x-6 items-center text-sm font-arv">
+                        <a href="home.html" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Home</a>
+                        <a href="menu.html" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Menu</a>
+                        <a href="staff.html" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Staff</a>
+                        <a href="reservation.html" class="py-4 px-2 text-gray-700 hover:text-red-400 underline-hover">Reservation</a>
+                    </div>
+    
+                    <!-- Right Section: Login and Sign Up Buttons -->
+                    <div class="hidden md:flex space-x-4 items-center">
                         <a href="login.html" class="text-gray-700 hover:text-red-400 px-3 py-2">Login</a>
-                        <a href="signup.html" class="py-2 px-4 bg-orange-600 text-white rounded hover:bg-orange-700 text-center">Sign Up</a>
+                        <a href="signup.html" class="text-red-400 ml-2 md:border-2 border-red-300 rounded-full py-2 px-3 text-xs uppercase font-bold tracking-wider hover:bg-red-400 hover:text-white transition ease-out duration-500 active:bg-red-300">Sign Up</a>
+                    </div>
+    
+                    <!-- Hamburger Menu Icon (Visible on smaller screens) -->
+                    <div class="md:hidden flex items-center">
+                        <button id="hamburger-button" class="focus:outline-none">
+                            <i class="fas fa-bars text-4xl"></i>
+                        </button>
+                    </div>
+                </div>
+    
+
+                <!-- Mobile Menu (Hidden by default) -->
+                <div id="mobile-menu" class="hidden md:hidden mt-4">
+                    <div class="space-y-4 font-arv">
+                        <a href="home.html" class="block text-gray-500 hover:text-red-400 underline-hover">Home</a>
+                        <a href="menu.html" class="block text-gray-500 hover:text-red-400 underline-hover">Menu</a>
+                        <a href="#" class="block text-gray-500 hover:text-red-400 underline-hover">Dashboard</a>
+                        <a href="staff.html" class="block text-gray-500 hover:text-red-400 underline-hover">Staff</a>
+                        <a href="reservation.html" class="block text-gray-500 hover:text-red-400 underline-hover items-center justify-between">Reservation </a>
+            
+                        <!--LogIn and Sign Up -->
+                        <div class="flex flex-col space-y-4 mt-4">
+                            <a href="login.html" class="text-gray-700 hover:text-red-400 px-3 py-2">Login</a>
+                            <a href="signup.html" class="py-2 px-4 bg-orange-600 text-white rounded hover:bg-orange-700 text-center">Sign Up</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
     
         <main class="min-h-screen flex items-center justify-center p-5 bg-gray-900 bg-opacity-50 mt-16">
@@ -108,6 +109,9 @@
                         Sign Up
                     </button>
                 </form>
+                <div class="text-center pt-5">
+                    <p>Have an account <a href="login.html" class="text-red-500">Log In</a></p>
+                </div>
             </div>
     
             <!-- Right Div -->

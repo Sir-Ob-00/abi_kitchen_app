@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Policy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    .underline-hover:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .submenu-scale:hover {
+      transform: scale(1.05);
+      transition: transform 0.2s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+    <div class="flex flex-col min-h-screen">
+        <!-- Navbar -->
+        <nav class="bg-white shadow-md w-full fixed top-0 z-20">
+            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="home.html"><img src="/images/background/new_logo.png" alt="Logo" class="w-24"></a>
+                </div>
+                <ul class="hidden md:flex space-x-6 text-gray-600">
+                    <li><a href="userHome.html" class="hover:text-gray-800 transition">Home</a></li>
+                    <li><a href="userMenu.html" class="hover:text-gray-800 transition">Menu</a></li>
+                    <li><a href="userStaff.html" class="hover:text-gray-800 transition">Staff</a></li>
+                    <li><a href="userReservationForm.html" class="hover:text-gray-800 transition">Reservation</a></li>
+                </ul>
+                <div class="flex items-center space-x-4 text-2xl">
+                    <button class="relative"><i class="fa fa-bell"></i></button>
+                    <button class="relative"><i class="fa fa-shopping-cart"></i></button>
+                    <div class="md:hidden flex items-center">
+                        <button id="hamburger-button" class="focus:outline-none">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+                <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-md mt-2 z-10">
+                    <div class="space-y-4">
+                        <a href="userHome.html" class="block text-gray-500 hover:text-red-400 underline-hover px-6 py-2">Home</a>
+                        <a href="userMenu.html" class="block text-gray-500 hover:text-red-400 underline-hover px-6 py-2">Menu</a>
+                        <a href="userStaff.html" class="block text-gray-500 hover:text-red-400 underline-hover px-6 py-2">Staff</a>
+                        <a href="userReservationForm.html" class="block text-gray-500 hover:text-red-400 underline-hover px-6 py-2">Reservation</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Sidebar -->
+        <aside id="sidebar" class="fixed top-16 left-0 w-64 h-[calc(100%-4rem)] bg-white shadow-lg z-10 transform -translate-x-full transition-transform duration-300 lg:translate-x-0">
+            <div class="flex items-center gap-4 p-6 border-b">
+                <img src="https://via.placeholder.com/50" alt="User Profile" class="w-12 h-12 rounded-full border">
+                <div>
+                    <h1 class="font-bold text-lg text-gray-800">User Name</h1>
+                    <p class="text-sm text-gray-500">Welcome Back!</p>
+                </div>
+            </div>
+            <nav class="mt-6">
+                <ul class="space-y-2">
+                    <li><a href="userProfile.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-gray-800 transition rounded">My Profile</a></li>
+                    <li><a href="#orders" class="block px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-gray-800 transition rounded">My Orders</a></li>
+                    <li><a href="#reservation" class="block px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-gray-800 transition rounded">My Reservations</a></li>
+                    <li><a href="#logout" class="block px-6 py-3 text-red-500 hover:bg-gray-100 hover:text-red-600 transition rounded">Log Out</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Sidebar Toggle Button -->
+        <button id="sidebarToggle" class="fixed bottom-5 left-5 bg-red-500 text-white p-4 rounded-full shadow-lg hover:bg-red-600 lg:hidden">
+            <i class="fa fa-bars"></i>
+        </button>
+
+        <!-- Main Content -->
+        <main class="ml-0 lg:ml-64 mt-16 flex-1 p-8 bg-gray-50 overflow-y-auto">
+                <!-- Header with Background Image -->
+            <div class="bg-[url('/images/background/Gc-rice-and-chicken.jpeg')] font-arv relative bg-cover bg-center h-48 flex items-center justify-center">
+                <div class="absolute inset-0 bg-black opacity-50"></div>
+                <h1 class="text-4xl font-bold bg-red-600 bg-opacity-70 px-4 py-2 rounded-md text-white">Privacy Policy</h1>
+            </div>
+                   
+            <!-- Content Container -->
+            <div class="max-w-3xl mx-auto px-4 py-8 font-arv">
+                <p>At Abi's Restaurant, we are committed to protecting your privacy. This Privacy Policy outlines how we collect, use, and safeguard your information.</p>
+
+                    <!-- Policies List -->
+                <div class="space-y-8">
+                    <!-- Policy 1 -->
+                    <div>
+                        <h2 class="text-xl font-semibold text-gray-800">1. Information We Collect</h2>
+                        <p class="mt-2 text-gray-700">We collect the following types of information:</p>
+                        <ul class="list-disc ml-6 mt-2 text-gray-700 space-y-2">
+                            <li><strong>Personal Information</strong>: Details such as your name, email address, phone number, and payment information when you make a reservation, place an order, or sign up for our newsletter.</li>
+                            <li><strong>Usage Data</strong>: Information about how you interact with our website, including IP address, browser type, and access times.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Policy 2 -->
+                    <div>
+                        <h2 class="text-xl font-semibold text-gray-800">2. How We Use Your Information</h2>
+                        <ul class="list-disc ml-6 mt-2 text-gray-700 space-y-2">
+                            <li><strong>Order Processing</strong>: To process and deliver your orders efficiently.</li>
+                            <li><strong>Communication</strong>: To respond to inquiries, provide order updates, and send promotional materials if you've opted in.</li>
+                            <li><strong>Site Improvements</strong>: To enhance our website's functionality and user experience.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Policy 3 -->
+                    <div>
+                        <h2 class="text-xl font-semibold text-gray-800">3. Data Sharing</h2>
+                        <p class="mt-2 text-gray-700">We do not sell or share your personal data with third parties, except as necessary for service providers, such as payment processors, to complete transactions.</p>
+                    </div>
+
+                    <!-- Policy 4 -->
+                    <div>
+                        <h2 class="text-xl font-semibold text-gray-800">4. Data Security</h2>
+                        <p class="mt-2 text-gray-700">We take reasonable steps to protect your personal information against unauthorized access, alteration, or disclosure.</p>
+                    </div>
+
+                    <!-- Policy 5 -->
+                    <div>
+                        <h2 class="text-xl font-semibold text-gray-800">5. Cookies</h2>
+                        <p class="mt-2 text-gray-700">Our website may use cookies to improve your browsing experience. You may choose to disable cookies, although some features of our site may not function properly.</p>
+                    </div>
+
+                    <!-- Policy 6 -->
+                    <div>
+                        <h2 class="text-xl font-semibold text-gray-800">6. Your Choices and Rights</h2>
+                            <ul class="list-disc ml-6 mt-2 text-gray-700 space-y-2">
+                            <li><strong>Access and Correction</strong>: You have the right to access, update, or correct your personal data.</li>
+                            <li><strong>Opt-Out</strong>: You can unsubscribe from our marketing communications at any time.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Policy 7 -->
+                    <div>
+                        <h2 class="text-xl font-semibold text-gray-800">7. Policy Changes</h2>
+                        <p class="mt-2 text-gray-700">We may update this policy from time to time. Changes will be posted on this page, and we encourage you to review it periodically.</p>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div>
+                        <p class="text-gray-700 mt-8">For any questions or concerns about our Privacy Policy, please contact us at +233 24 089 7702.</p>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        
+        <!-- Footer -->
+        <footer class="bg-orange-700 text-white py-12 px-4 lg:ml-64">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+                <!-- Address -->
+                <div class="w-full mb-6 text-center md:text-left">
+                    <h3 class="text-xl mb-2 font-bold text-white underline rounded">Address</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-center md:justify-start">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Sunyani, Fiapre Box 20</span>
+                        </div>
+                        <div class="flex items-center justify-center md:justify-start">
+                            <i class="fas fa-phone mr-2"></i>
+                            <span>+233 24 089 7702</span>
+                        </div>
+                        <div class="flex items-center justify-center md:justify-start">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <span>owusuboat05@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+    
+            <!-- Navigation -->
+                <div class="w-full mb-6 md:ml-6 text-center md:text-left">
+                    <h3 class="text-xl mb-2 font-bold text-white underline rounded">Navigation</h3>
+                    <ul class="space-y-2">
+                        <li><a href="userHome.html" class="hover:underline">Home</a></li>
+                        <li><a href="userMenu.html" class="hover:underline">Menu</a></li>
+                        <li><a href="order.html" class="hover:underline">Orders</a></li>
+                        <li><a href="userStaff.html" class="hover:underline">Staff</a></li>
+                        <li><a href="userPolicy.html" class="hover:underline">Policy</a></li>
+                        <li><a href="userTerms.html" class="hover:underline">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+    
+            <!-- Open Hours -->
+                <div class="w-full mb-6 ml-4 text-center md:text-left">
+                    <h3 class="text-xl mb-2 font-bold text-white underline rounded">Open Hours</h3>
+                    <div class="space-y-2">
+                        <p>Sunday - Friday: 6am - 11pm</p>
+                        <p>Saturday: 6pm - 11pm</p>
+                    </div>
+                </div>
+    
+            <!-- Social Media -->
+                <div class="w-full mb-6 ml-4 text-center md:text-left">
+                    <h3 class="text-xl mb-2 font-bold text-white underline rounded">Follow Us</h3>
+                    <div class="flex justify-center md:justify-start space-x-4 text-xl">
+                        <a href="#" class="hover:text-red-400"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-red-400"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-red-400"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-red-400"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-red-400"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/userJS/uPolicy.js">
+       
+    </script>
+</body>
+</html>
