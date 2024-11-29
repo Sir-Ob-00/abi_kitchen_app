@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Menu</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    .hover-animate:hover {
+    transform: translateY(-10px);
+    transition: transform 0.3s ease;
+    }
+
+    #targetPizza {
+    background-image: url('/images/background/pizza\ 1.jpg');
+    background-size: cover;
+    background-position: center;
+    }
+
+    #targetNoodles{
+        margin: 0;
+        padding: 0;
+        background-image: url('/images/background/noodles\ 1.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+  </style>
+</head>
+<body>
+    <div class="flex flex-col min-h-screen">
+        <!-- Navbar -->
+        <nav class="bg-white shadow-md w-full fixed top-0 z-20">
+            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <!--Restaurant Logo -->
+                <div class="flex items-center">
+                    <a href="home.html"><img src="/images/background/new_logo.png" alt="Logo" class="w-24"></a>
+                </div>
+                <!-- Navigation Menu -->
+                <ul class="hidden md:flex space-x-6 text-gray-600">
+                    <li><a href="userHome.html" class="hover:text-gray-800 transition">Home</a></li>
+                    <li><a href="userMenu.html" class="hover:text-gray-800 transition">Menu</a></li>
+                    <li><a href="userStaff.html" class="hover:text-gray-800 transition">Staff</a></li>
+                    <li><a href="#reservation" class="hover:text-gray-800 transition">Reservation</a></li>
+                </ul>
+                <!-- Notification and Cart -->
+                <div class="flex items-center space-x-4 text-2xl">
+                    <button class="relative"><i class="fa fa-bell" aria-hidden="true"></i></button>
+                    <button class="relative"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+                    <!-- Hamburger Menu Icon (Visible on smaller screens) -->
+                    <div class="md:hidden flex items-center">
+                        <button id="hamburger-button" class="focus:outline-none">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu (Hidden by default) -->
+                <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-md mt-2 z-10">
+                    <div class="space-y-4">
+                        <a href="userHome.html" class="block text-gray-500 hover:text-red-400 underline-hover px-6 py-2">Home</a>
+                        <a href="userMenu.html" class="block text-gray-500 hover:text-red-400 underline-hover px-6 py-2">Menu</a>
+                        <a href="userStaff.html" class="block text-gray-500 hover:text-red-400 underline-hover px-6 py-2">Staff</a>
+                        <a href="reservation.html" class="block text-gray-500 hover:text-red-400 underline-hover px-6 py-2">Reservation</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Sidebar -->
+        <aside id="sidebar" class="fixed top-16 left-0 w-64 h-[calc(100%-4rem)] bg-white shadow-lg z-10 transform -translate-x-full transition-transform duration-300 lg:translate-x-0">
+            <div class="flex items-center gap-4 p-6 border-b">
+                <img src="https://via.placeholder.com/50" alt="User Profile" class="w-12 h-12 rounded-full border">
+                <div>
+                    <h1 class="font-bold text-lg text-gray-800">User Name</h1>
+                    <p class="text-sm text-gray-500">Welcome Back!</p>
+                </div>
+            </div>
+            <nav class="mt-6">
+                <ul class="space-y-2">
+                    <li><a href="userProfile.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-gray-800 transition rounded">My Profile</a></li>
+                    <li><a href="#orders" class="block px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-gray-800 transition rounded">My Orders</a></li>
+                    <li><a href="#reservation" class="block px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-gray-800 transition rounded">My Reservations</a></li>
+                    <li><a href="#logout" class="block px-6 py-3 text-red-500 hover:bg-gray-100 hover:text-red-600 transition rounded">Log Out</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Sidebar Toggle Button -->
+        <button id="sidebarToggle" class="fixed bottom-5 left-5 bg-red-500 text-white p-4 rounded-full shadow-lg hover:bg-red-600 lg:hidden">
+            <i class="fa fa-bars"></i>
+        </button>
+
+
+        <!-- Main Content -->
+        <main class="ml-0 lg:ml-64 flex-1 p-8 bg-gray-50 overflow-y-auto">
+            <section class="md:flex justify-center items-center mt-16 font-pop">
+                <div class="md:flex md:flex-col items-center">
+                    <div class="font-bold uppercase p-10 text-5xl text-center">Our Dishes</div>
+        
+                    <div class="font-mono grid grid-cols-2 gap-4 sm:flex sm:flex-shrink-1">
+                        <div>
+                        <a href="#targetLocal"><button class="bg-red-500 p-2 rounded-lg text-white text-xl hover:border-2 hover:border-red-500 
+                        hover:bg-inherit hover:text-red-500 transition ease-out duration-300" id="localHot">LOCAL HOT</button></a>
+                        </div>
+        
+                        <div>
+                        <a href="#targetRice"><button class="bg-red-500 p-2 rounded-lg text-white text-xl hover:border-2 hover:border-red-500 
+                            hover:bg-inherit hover:text-red-500 transition ease-out duration-300" id="specialRice">SPECIAL RICE</button>
+                        </div></a>
+        
+                        <div>
+                        <a href="#targetStew"><button class="bg-red-500 p-2 rounded-lg text-white text-xl hover:border-2 hover:border-red-500 
+                        hover:bg-inherit hover:text-red-500 transition ease-out duration-300" id="favStew">FAVOURITE STEW/SOUP</button></a>
+                        </div>
+                        <div>
+                        <a href="#targetStreet"><button class="bg-red-500 p-2 rounded-lg text-white text-xl hover:border-2 hover:border-red-500 
+                        hover:bg-inherit hover:text-red-500 transition ease-out duration-300" id="streetFood">STREET FOOD</button></a>
+                        </div>
+                    </div>
+        
+                    <div class="my-4 content-center font-mono grid grid-cols-2 gap-4 sm:flex sm:flex-shrink-1">
+                        <div>
+                        <a href="#targetDessert"><button class="bg-red-500 p-2 rounded-lg text-white text-xl hover:border-2 hover:border-red-500 
+                            hover:bg-inherit hover:text-red-500 transition ease-out duration-300" id="dessert">DESSERT</button></a>
+                        </div>
+        
+                        <div>
+                        <a href="#targetPizza"><button class="bg-red-500 p-2 rounded-lg text-white text-xl hover:border-2 hover:border-red-500 
+                        hover:bg-inherit hover:text-red-500 transition ease-out duration-300" id="pizza">PIZZA</button></a>
+                        </div>
+        
+                        <div>
+                        <a href="#targetNoodles"><button class="bg-red-500 p-2 rounded-lg text-white text-xl hover:border-2 hover:border-red-500 
+                        hover:bg-inherit hover:text-red-500 transition ease-out duration-300" id="noodles">NOODLES</button></a>
+                        </div>
+                            
+                        <div>
+                        <a href="#targetBev"><button class="bg-red-500 p-2 rounded-lg text-white text-xl hover:border-2 hover:border-red-500 
+                            hover:bg-inherit hover:text-red-500 transition ease-out duration-300" id="localBev">LOCAL BEVERAGES</button></a>
+                        </div>
+                    </div>
+        
+                    <!--Section For Local Hot-->
+                    <div  class="bg-gray-100 font-sans">
+                        <div class="container mx-auto p-4" id="targetLocal">
+                            <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">Local Hot</h1>
+                    
+                            <!-- Local Hot -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                            
+                            <!-- Dish 1 -->
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                                <img src="/images/Traditional/fufu and groundnut.webp" alt="fufu and groundnut" class="rounded-t-lg w-full h-48 object-cover">
+                                <h2 class="text-2xl font-semibold text-gray-800 mt-4">Fufu(Light Soup/Groundnut soup/Palm nut soup)</h2>
+                                <p class="text-blue-600 mt-2">&#8373;50.00</p>
+                                <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-red-500 text-white font-semibold rounded hover:bg-red-400 transition duration-300 ease-in-out">Order Now</a>
+                            </div>
+                    
+                            <!-- Dish 2 -->
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                                <img src="/images/Traditional/banku and groundnut.jpg" alt="banku and groundnut" class="rounded-t-lg w-full h-48 object-cover">
+                                <h2 class="text-2xl font-semibold text-gray-800 mt-4">Banku (pepper sauce, Okro stew, Groundnut soup, Palm nut soup)</h2>
+                                <p class="text-blue-600 mt-2">&#8373;30.00</p>
+                                <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-red-500 text-white font-semibold rounded hover:bg-red-400 transition duration-300 ease-in-out">Order Now</a>
+                            </div>
+                    
+                            <!-- Dish 3 -->
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                                <img src="/images/Traditional/Kenkey 2.jpg" alt="kenkey" class="rounded-t-lg w-full h-48 object-cover">
+                                <h2 class="text-2xl font-semibold text-gray-800 mt-4">Kenkey (Okro Stew or Beans stew fish or meat)</h2>
+                                <p class="text-blue-600 mt-2">&#8373;20.00</p>
+                                <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-red-500 text-white font-semibold rounded hover:bg-red-400 transition duration-300 ease-in-out">Order Now</a>
+                            </div>
+                    
+                            <!-- Dish 4 -->
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                                <img src="/images/Traditional/Ampesi.jpg" alt="ampesi" class="rounded-t-lg w-full h-48 object-cover">
+                                <h2 class="text-2xl font-semibold text-gray-800 mt-4">Ampesi (Kontomire stew, Beans stew, Tomato source, Garden eggs stew)</h2>
+                                <p class="text-blue-600 mt-2">&#8373;20.00</p>
+                                <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-red-500 text-white font-semibold rounded hover:bg-red-400 transition duration-300 ease-in-out">Order Now</a>
+                            </div>
+                    
+                            <!-- Dish 5 -->
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                                <img src="/images/Traditional/Akple okro stew.jpg" alt="akple" class="rounded-t-lg w-full h-48 object-cover">
+                                <h2 class="text-2xl font-semibold text-gray-800 mt-4">Akple with Vegetable Stew/Groudnut soup/Palm nut Soup</h2>
+                                <p class="text-blue-600 mt-2">&#8373;20.00</p>
+                                <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-red-500 text-white font-semibold rounded hover:bg-red-400 transition duration-300 ease-in-out">Order Now</a>
+                            </div>
+                    
+                            <!-- Dish 6 -->
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                                <img src="/images/Traditional/Tuo-Zaafi.webp" alt="tuo zaafi" class="rounded-t-lg w-full h-48 object-cover">
+                                <h2 class="text-2xl font-semibold text-gray-800 mt-4">Tuo Zaafi with Vegetable Stew/Groundnut Soup</h2>
+                                <p class="text-blue-600 mt-2">&#8373;20.00</p>
+                                <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-red-500 text-white font-semibold rounded hover:bg-red-400 transition duration-300 ease-in-out">Order Now</a>
+                            </div>
+                    
+                            <!-- Dish 7 -->
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                                <img src="/images/Traditional/Motuo groundnut.webp" alt="motuo" class="rounded-t-lg w-full h-48 object-cover">
+                                <h2 class="text-2xl font-semibold text-gray-800 mt-4">Rice Boil(mmutuo with Groundnut soup, Palm nut soup)</h2>
+                                <p class="text-blue-600 mt-2">&#8373;30.00</p>
+                                <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-red-500 text-white font-semibold rounded hover:bg-red-400 transition duration-300 ease-in-out">Order Now</a>
+                            </div>
+                    
+                            <!-- Dish 8 -->
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                                <img src="/images/Traditional/kokonte-and-groundnut-soup.webp" alt="konkonte" class="rounded-t-lg w-full h-48 object-cover">
+                                <h2 class="text-2xl font-semibold text-gray-800 mt-4">Konkonte(Okro stew, Groundnut soup, Palm nut soup)</h2>
+                                <p class="text-blue-600 mt-2">&#8373;20.00</p>
+                                <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-red-500 text-white font-semibold rounded hover:bg-red-400 transition duration-300 ease-in-out">Order Now</a>
+                            </div>
+                            
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!--Section for Rice-->
+                    <div  class="bg-gray-100 font-sans" id="targetRice">
+                        <div class="container mx-auto p-4">
+                            <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">Special Rice</h1>
+                    
+                            <!-- Menu Items -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <!-- Dish 1 -->
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                                <img src="/images/Rice/Jollof-rice veg.jpg" alt="jollof" class="rounded-t-lg w-full h-48 object-cover">
+                                <h2 class="text-2xl font-semibold text-gray-800 mt-4">Special Jollof Rice</h2>
+                                <p class="text-red-600 mt-2">&#8373;50.00</p>
+                                <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-500 transition duration-300 ease-in-out">Order Now</a>
+                            </div>
+                    
+                            <!-- Dish 2 -->
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                                <img src="/images/Rice/Plain rice 3.webp" alt="plain rice" class="rounded-t-lg w-full h-48 object-cover">
+                                <h2 class="text-2xl font-semibold text-gray-800 mt-4">Special Plain Rice</h2>
+                                <p class="text-red-600 mt-2">&#8373;40.00</p>
+                                <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-500 transition duration-300 ease-in-out">Order Now</a>
+                            </div>
+                    
+                            <!-- Dish 3 -->
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                                <img src="/images/Rice/Awakye 3.jpg" alt="awakye" class="rounded-t-lg w-full h-48 object-cover">
+                                <h2 class="text-2xl font-semibold text-gray-800 mt-4">Special Awakye</h2>
+                                <p class="text-red-600 mt-2">&#8373;40.00</p>
+                                <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-500 transition duration-300 ease-in-out">Order Now</a>
+                            </div>
+                    
+                            <!-- Dish 4 -->
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                                <img src="/images/Rice/fried rice 3.jpg" alt="fried rice" class="rounded-t-lg w-full h-48 object-cover">
+                                <h2 class="text-2xl font-semibold text-gray-800 mt-4">Special Fried Rice</h2>
+                                <p class="text-red-600 mt-2">&#8373;50.00</p>
+                                <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-500 transition duration-300 ease-in-out">Order Now</a>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!--Soup/Syew-->
+                    <div  class="bg-gray-100 font-sans" id="targetStew">
+                        <div class="container mx-auto p-4">
+                            <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">Special Soup/Stew</h1>
+                    
+                            <!-- Menu Items -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                            
+                            <!-- Dish 1 -->
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                                <img src="/images/Speacial/Special chicken.jpg" alt="Special Chicken" class="rounded-t-lg w-full h-48 object-cover">
+                                <h2 class="text-2xl font-semibold text-gray-800 mt-4">Chicken Soup</h2>
+                                <p class="text-red-600 mt-2">&#8373;50.00</p>
+                                <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-green-600 text-white font-semibold rounded hover:bg-green-500 transition duration-300 ease-in-out">Order Now</a>
+                            </div>
+                    
+                            <!-- Dish 2 -->
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                                <img src="/images/Speacial/Beef and goat.jpg" alt="Beef and goat" class="rounded-t-lg w-full h-48 object-cover">
+                                <h2 class="text-2xl font-semibold text-gray-800 mt-4">Beef And Goat</h2>
+                                <p class="text-red-600 mt-2">&#8373;50.00</p>
+                                <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-green-600 text-white font-semibold rounded hover:bg-green-500 transition duration-300 ease-in-out">Order Now</a>
+                            </div>
+                    
+                            <!-- Dish 3 -->
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                                <img src="/images/Speacial/bush meat.png" alt="bush meat" class="rounded-t-lg w-full h-48 object-cover">
+                                <h2 class="text-2xl font-semibold text-gray-800 mt-4">Bush Meat</h2>
+                                <p class="text-red-600 mt-2">&#8373;50.00</p>
+                                <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-green-600 text-white font-semibold rounded hover:bg-green-500 transition duration-300 ease-in-out">Order Now</a>
+                            </div>
+        
+                            <!-- Dish 4 -->
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                                <img src="/images/Speacial/crab 1.png" alt="crab" class="rounded-t-lg w-full h-48 object-cover">
+                                <h2 class="text-2xl font-semibold text-gray-800 mt-4">Crab Meat</h2>
+                                <p class="text-red-600 mt-2">&#8373;50.00</p>
+                                <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-green-600 text-white font-semibold rounded hover:bg-green-500 transition duration-300 ease-in-out">Order Now</a>
+                            </div>
+        
+                            <!-- Dish 5 -->
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                                <img src="/images/Speacial/salmon.jpg" alt="Salmon" class="rounded-t-lg w-full h-48 object-cover">
+                                <h2 class="text-2xl font-semibold text-gray-800 mt-4">Salmon Soup</h2>
+                                <p class="text-red-600 mt-2">&#8373;50.00</p>
+                                <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-green-600 text-white font-semibold rounded hover:bg-green-500 transition duration-300 ease-in-out">Order Now</a>
+                            </div>
+        
+                            <!-- Dish 6 -->
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                                <img src="/images/Speacial/snail 1.jpg" alt="snail" class="rounded-t-lg w-full h-48 object-cover">
+                                <h2 class="text-2xl font-semibold text-gray-800 mt-4">Snail Soup</h2>
+                                <p class="text-red-600 mt-2">&#8373;50.00</p>
+                                <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-green-600 text-white font-semibold rounded hover:bg-green-500 transition duration-300 ease-in-out">Order Now</a>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!--Street Food-->
+                    <div  class="bg-gray-100 font-sans">
+                        <div class="container mx-auto p-4" id="targetStreet">
+                            <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">Street Foods</h1>
+                    
+                            <!-- Menu Items -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                            
+                            <!-- Dish 1 -->
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                                <img src="/images/Street/fried yams.jpg" alt="fried yams" class="rounded-t-lg w-full h-48 object-cover">
+                                <h2 class="text-2xl font-semibold text-gray-800 mt-4">Fried Yams</h2>
+                                <p class="text-red-600 mt-2">&#8373;20.00</p>
+                                <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-yellow-500 text-white font-semibold rounded hover:bg-yellow-400 transition duration-300 ease-in-out">Order Now</a>
+                            </div>
+                    
+                            <!-- Dish 2 -->
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                                <img src="/images/Street/groundnut cake.webp" alt="groundnut cake" class="rounded-t-lg w-full h-48 object-cover">
+                                <h2 class="text-2xl font-semibold text-gray-800 mt-4">Groundnut Cake</h2>
+                                <p class="text-red-600 mt-2">&#8373;20.00</p>
+                                <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-yellow-500 text-white font-semibold rounded hover:bg-yellow-400 transition duration-300 ease-in-out">Order Now</a>
+                            </div>
+                    
+                            <!-- Dish 3 -->
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                                <img src="/images/Street/kebabs-.jpeg" alt="kebabs" class="rounded-t-lg w-full h-48 object-cover">
+                                <h2 class="text-2xl font-semibold text-gray-800 mt-4">Kebab</h2>
+                                <p class="text-red-600 mt-2">&#8373;20.00</p>
+                                <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-yellow-500 text-white font-semibold rounded hover:bg-yellow-400 transition duration-300 ease-in-out">Order Now</a>
+                            </div>
+                    
+                            <!-- Dish 4 -->
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                                <img src="/images/Street/Meat pies.jpg" alt="Meat pie" class="rounded-t-lg w-full h-48 object-cover">
+                                <h2 class="text-2xl font-semibold text-gray-800 mt-4">Meat Pie</h2>
+                                <p class="text-gray-600 mt-2">&#8373;20.00</p>
+                                <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-yellow-500 text-white font-semibold rounded hover:bg-yellow-400 transition duration-300 ease-in-out">Order Now</a>
+                            </div>
+        
+                            <!-- Dish 5 -->
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                                <img src="/images/Street/meat-balls.jpeg" alt="meat ball" class="rounded-t-lg w-full h-48 object-cover">
+                                <h2 class="text-2xl font-semibold text-gray-800 mt-4">Meat Ball</h2>
+                                <p class="text-red-600 mt-2">&#8373;20.00</p>
+                                <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-yellow-500 text-white font-semibold rounded hover:bg-yellow-400 transition duration-300 ease-in-out">Order Now</a>
+                            </div>
+                    
+                            <!-- Dish 6 -->
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                                <img src="/images/Street/plantain chips.webp" alt="plantain chips" class="rounded-t-lg w-full h-48 object-cover">
+                                <h2 class="text-2xl font-semibold text-gray-800 mt-4">Plantain Chip</h2>
+                                <p class="text-red-600 mt-2">&#8373;20.00</p>
+                                <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-yellow-500 text-white font-semibold rounded hover:bg-yellow-400 transition duration-300 ease-in-out">Order Now</a>
+                            </div>
+                    
+                            <!-- Dish 7 -->
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                                <img src="/images/Street/Spring rolls.jpeg" alt="spring roll" class="rounded-t-lg w-full h-48 object-cover">
+                                <h2 class="text-2xl font-semibold text-gray-800 mt-4">Spring Roll</h2>
+                                <p class="text-red-600 mt-2">&#8373;20.00</p>
+                                <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-yellow-500 text-white font-semibold rounded hover:bg-yellow-400 transition duration-300 ease-in-out">Order Now</a>
+                            </div>
+                    
+                            <!-- Dish 8 -->
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                                <img src="/images/Street/kelewele.jpg" alt="kelewele" class="rounded-t-lg w-full h-48 object-cover">
+                                <h2 class="text-2xl font-semibold text-gray-800 mt-4">kelewele</h2>
+                                <p class="text-red-600 mt-2">&#8373;20.00</p>
+                                <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-yellow-500 text-white font-semibold rounded hover:bg-yellow-400 transition duration-300 ease-in-out">Order Now</a>
+                            </div>
+                            
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!--Special Pizza-->
+                    <div class="min-h-screen flex items-center justify-center" id="targetPizza">
+                        <div class="container mx-auto p-8 bg-white bg-opacity-80 rounded-lg shadow-lg">
+                            <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">Special Pizza</h1>
+                        
+                            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                        
+                            <!-- Dish 1 -->
+                            <div class="p-6 rounded-lg shadow-lg bg-gradient-to-r from-green-400 to-blue-500 transform transition duration-500 hover:scale-105 hover:shadow-2xl hover:opacity-90">
+                                <h1 class="text-3xl font-semibold text-white underline">Small Size</h1>
+                                <h4 class=" font-semibold text-white">Chicken Pizza ......&#8373;80.00</h4>
+                                <h4 class=" font-semibold text-white">Beef Pizza ......&#8373;90.00</h4>
+                                <h4 class=" font-semibold text-white">Tuna Pizza ......&#8373;90.00</h4>
+                                <h4 class=" font-semibold text-white">Mashroom Pizza ......&#8373;90.00</h4>
+                                <h4 class=" font-semibold text-white">All Seasoning Pizza ......&#8373;100.00</h4>
+                                <h4 class=" font-semibold text-white">Special Pizza ......&#8373;110.00</h4>
+                                <h4 class=" font-semibold text-white">Seafood Pizza ......&#8373;120.00</h4>
+                                <h4 class=" font-semibold text-white">Fully Loaded Pizza ......&#8373;130.00</h4>
+                                <h4 class=" font-semibold text-white">...................................</h4>
+                                <a href="userOrderForm.html" class="mt-4 inline-block bg-gray-900 text-white py-2 px-4 rounded hover:bg-white hover:text-black">Order Now</a>
+                            </div>
+                        
+                            <!-- Dish 2 -->
+                            <div class="p-6 rounded-lg shadow-lg bg-gradient-to-r from-yellow-400 to-red-500 transform transition duration-500 hover:scale-105 hover:shadow-2xl hover:opacity-90">
+                                <h1 class="text-3xl font-semibold text-white underline">Medium Size</h1>
+                                <h4 class=" font-semibold text-white">Margarita Pizza ......&#8373;C80.00</h4>
+                                <h4 class=" font-semibold text-white">Chicken Pizza ......&#8373;C90.00</h4>
+                                <h4 class=" font-semibold text-white">Beef Pizza ......&#8373;100.00</h4>
+                                <h4 class=" font-semibold text-white">Tuna Pizza ......&#8373;100.00</h4>
+                                <h4 class=" font-semibold text-white">Mashroom Pizza ......&#8373;100.00</h4>
+                                <h4 class=" font-semibold text-white">All Seasoning Pizza ......&#8373;110.00</h4>
+                                <h4 class=" font-semibold text-white">Special Pizza ......&#8373;120.00</h4>
+                                <h4 class=" font-semibold text-white">Seafood Pizza ......&#8373;140.00</h4>
+                                <h4 class=" font-semibold text-white">Fully Loaded Pizza ......&#8373;160.00</h4>
+                                <a href="userOrderForm.html" class="mt-4 inline-block bg-gray-900 text-white py-2 px-4 rounded hover:bg-white hover:text-black">Order Now</a>
+                            </div>
+                        
+                                <!-- Dish 3 -->
+                        <div class="p-6 rounded-lg shadow-lg bg-gradient-to-r from-purple-400 to-pink-500 transform transition duration-500 hover:scale-105 hover:shadow-2xl hover:opacity-90">
+                                <h1 class="text-3xl font-semibold text-white underline">Large Size</h1>
+                                <h4 class=" font-semibold text-white">Margarita Pizza ......&#8373;80.00</h4>
+                                <h4 class=" font-semibold text-white">Chicken Pizza ......&#8373;90.00</h4>
+                                <h4 class=" font-semibold text-white">Beef Pizza ......&#8373;100.00</h4>
+                                <h4 class=" font-semibold text-white">Tuna Pizza ......&#8373;100.00</h4>
+                                <h4 class=" font-semibold text-white">Mashroom Pizza ......&#8373;100.00</h4>
+                                <h4 class=" font-semibold text-white">All Seasoning Pizza ......&#8373;110.00</h4>
+                                <h4 class=" font-semibold text-white">Special Pizza ......&#8373;120.00</h4>
+                                <h4 class=" font-semibold text-white">Seafood Pizza ......&#8373;140.00</h4>
+                                <h4 class=" font-semibold text-white">Fully Loaded Pizza ......&#8373;160.00</h4>
+                                <a href="userOrderForm.html" class="mt-4 inline-block bg-gray-900 text-white py-2 px-4 rounded hover:bg-white hover:text-black">Order Now</a>
+                        </div>
+                        <!-- Dish 4 -->
+                        <div class="p-6 rounded-lg shadow-lg bg-gradient-to-r from-pink-400 to-red-500 transform transition duration-500 hover:scale-105 hover:shadow-2xl hover:opacity-90">
+                            <h1 class="text-3xl font-semibold text-white underline">Family Size</h1>
+                            <h4 class=" font-semibold text-white">Margarita Pizza ......&#8373;80.00</h4>
+                            <h4 class=" font-semibold text-white">Chicken Pizza ......&#8373;90.00</h4>
+                            <h4 class=" font-semibold text-white">Beef Pizza ......&#8373;100.00</h4>
+                            <h4 class=" font-semibold text-white">Tuna Pizza ......&#8373;100.00</h4>
+                            <h4 class=" font-semibold text-white">Mashroom Pizza ......&#8373;100.00</h4>
+                            <h4 class=" font-semibold text-white">All Seasoning Pizza ......&#8373;110.00</h4>
+                            <h4 class=" font-semibold text-white">Special Pizza ......&#8373;120.00</h4>
+                            <h4 class=" font-semibold text-white">Seafood Pizza ......&#8373;140.00</h4>
+                            <h4 class=" font-semibold text-white">Fully Loaded Pizza ......&#8373;160.00</h4>
+                            <a href="userOrderForm.html" class="mt-4 inline-block bg-gray-900 text-white py-2 px-4 rounded hover:bg-white hover:text-black">Order Now</a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!--Noodles-->
+                <div id="targetNoodles">
+                    <div class="relative h-screen flex items-center justify-center">
+                        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+                        <div class="relative z-10 p-6 md:p-8 text-center bg-white bg-opacity-90 rounded-lg shadow-lg transform transition duration-500 
+                        hover:scale-105 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl">
+                            <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">Special Noodles</h1>
+                            <p class="mt-4 text-sm sm:text-lg text-gray-600">We offer Special noodls as well</p>
+                            <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-red-600">&#8373;25.00 a plate</h1>
+                        </div>
+                        <div class="relative z-20 mt-4 sm:-mt-8">
+                            <a href="userOrderForm.html"class="inline-block bg-red-500 text-white py-2 sm:py-3 px-4 sm:px-6 text-sm sm:text-lg 
+                            font-semibold rounded-full shadow-lg hover:bg-red-600 transform transition duration-500 hover:scale-110">
+                                Order Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+        
+                <!--Dessert-->
+                <div  class="bg-gray-100 font-sans" id="targetDessert">
+                    <div class="container mx-auto p-4">
+                        <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">dessert</h1>
+                
+                        <!-- Menu Items -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        
+                        <!-- Dish 1 -->
+                        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                            <img src="/images/Desert/coconut-rice-pudding.webp" alt="coconut rice pudding" class="rounded-t-lg w-full h-48 object-cover">
+                            <h2 class="text-2xl font-semibold text-gray-800 mt-4">Coconut Rice pudding</h2>
+                            <p class="text-red-600 mt-2">&#8373;25.00</p>
+                            <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-purple-500 text-white font-semibold rounded hover:bg-purple-400 transition duration-300 ease-in-out">Order Now</a>
+                        </div>
+                
+                        <!-- Dish 2 -->
+                        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                            <img src="/images/Desert/mango.jpg" alt="mango" class="rounded-t-lg w-full h-48 object-cover">
+                            <h2 class="text-2xl font-semibold text-gray-800 mt-4">Mango Juice</h2>
+                            <p class="text-red-600 mt-2">&#8373;25.00</p>
+                                <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-purple-500 text-white font-semibold rounded hover:bg-purple-400 transition duration-300 ease-in-out">Order Now</a>
+                            </div>
+                    
+                            <!-- Dish 3 -->
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                                <img src="/images/Desert/mabgo-pineapple.jpg" alt="mango pineapple" class="rounded-t-lg w-full h-48 object-cover">
+                                <h2 class="text-2xl font-semibold text-gray-800 mt-4">Pineapple Juice</h2>
+                                <p class="text-red-600 mt-2">&#8373;25.00</p>
+                                <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-purple-500 text-white font-semibold rounded hover:bg-purple-400 transition duration-300 ease-in-out">Order Now</a>
+                            </div>
+                    
+                            <!-- Dish 4 -->
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                                <img src="/images/Desert/Gc-fish-Potato.jpeg" alt="fish potato" class="rounded-t-lg w-full h-48 object-cover">
+                                <h2 class="text-2xl font-semibold text-gray-800 mt-4">Fish Potato</h2>
+                                <p class="text-red-600 mt-2">&#8373;25.00</p>
+                                <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-purple-500 text-white font-semibold rounded hover:bg-purple-400 transition duration-300 ease-in-out">Order Now</a>
+                            </div>
+        
+                            <!-- Dish 5 -->
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                                <img src="/images/Desert/gc-seafood.jpeg" alt="seafood" class="rounded-t-lg w-full h-48 object-cover">
+                                <h2 class="text-2xl font-semibold text-gray-800 mt-4">Seafood</h2>
+                                <p class="text-red-600 mt-2">GHC25.00</p>
+                                <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-purple-500 text-white font-semibold rounded hover:bg-purple-400 transition duration-300 ease-in-out">Order Now</a>
+                            </div>
+                                                <!-- Dish 6 -->
+                                                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                                                    <img src="/images/Desert/pineapple.jpg" alt="pineapple" class="rounded-t-lg w-full h-48 object-cover">
+                                                    <h2 class="text-2xl font-semibold text-gray-800 mt-4">special Juice</h2>
+                                                    <p class="text-red-600 mt-2">&#8373;25.00</p>
+                                                    <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-purple-500 text-white font-semibold rounded hover:bg-purple-400 transition duration-300 ease-in-out">Order Now</a>
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                            
+                                        <!--Local beverages-->
+                                        <div  class="bg-gray-100 font-sans" id="targetBev">
+                                            <div class="container mx-auto p-4">
+                                                <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">Local Beverages</h1>
+                                        
+                                                <!-- Menu Items -->
+                                                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                                                
+                                                <!-- Dish 1 -->
+                                                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                                                    <img src="/images/Local beverage/sobolo 1.jpg" alt="sobolo" class="rounded-t-lg w-full h-48 object-cover">
+                                                    <h2 class="text-2xl font-semibold text-gray-800 mt-4">Sobolo</h2>
+                                                    <p class="text-red-600 mt-2">&#8373;10.00</p>
+                                                    <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-sky-500 text-white font-semibold rounded hover:bg-sky-400 transition duration-300 ease-in-out">Order Now</a>
+                                                </div>
+                                        
+                                                <!-- Dish 2 -->
+                                                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                                                    <img src="/images/Local beverage/pito 1.webp" alt="pito" class="rounded-t-lg w-full h-48 object-cover">
+                                                    <h2 class="text-2xl font-semibold text-gray-800 mt-4">Pito</h2>
+                                <p class="text-red-600 mt-2">&#8373;10.00</p>
+                                <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-sky-500 text-white font-semibold rounded hover:bg-sky-400 transition duration-300 ease-in-out">Order Now</a>
+                            </div>
+                    
+                            <!-- Dish 3 -->
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                                <img src="/images/Local beverage/palm wine 2.jpg" alt="palm wine" class="rounded-t-lg w-full h-48 object-cover">
+                                <h2 class="text-2xl font-semibold text-gray-800 mt-4">Palm Wine</h2>
+                                <p class="text-red-600 mt-2">&#8373;10.00</p>
+                                <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-sky-500 text-white font-semibold rounded hover:bg-sky-400 transition duration-300 ease-in-out">Order Now</a>
+                            </div>
+                    
+                            <!-- Dish 4 -->
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                                <img src="/images/Local beverage/coconut 1.webp" alt="coconut" class="rounded-t-lg w-full h-48 object-cover">
+                                <h2 class="text-2xl font-semibold text-gray-800 mt-4">Coconut Juice</h2>
+                                <p class="text-red-600 mt-2">&#8373;10.00</p>
+                                <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-sky-500 text-white font-semibold rounded hover:bg-sky-400 transition duration-300 ease-in-out">Order Now</a>
+                            </div>
+        
+                            <!-- Dish 5 -->
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                                <img src="/images/Local beverage/akpeteshie.jpeg" alt="akpeteshie" class="rounded-t-lg w-full h-48 object-cover">
+                                <h2 class="text-2xl font-semibold text-gray-800 mt-4">Akpeteshie</h2>
+                                <p class="text-red-600 mt-2">GHC10.00</p>
+                                <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-sky-500 text-white font-semibold rounded hover:bg-sky-400 transition duration-300 ease-in-out">Order Now</a>
+                            </div>
+                    
+                            <!-- Dish 6 -->
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                                <img src="/images/Local beverage/sobolo 2.jpg" alt="sobolo" class="rounded-t-lg w-full h-48 object-cover">
+                                <h2 class="text-2xl font-semibold text-gray-800 mt-4">Sobolo</h2>
+                                <p class="text-red-600 mt-2">&#8373;10.00</p>
+                                <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-sky-500 text-white font-semibold rounded hover:bg-sky-400 transition duration-300 ease-in-out">Order Now</a>
+                            </div>
+                    
+                            <!-- Dish 7 -->
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                                <img src="/images/Local beverage/coconut 3.jpg" alt="coconut" class="rounded-t-lg w-full h-48 object-cover">
+                                <h2 class="text-2xl font-semibold text-gray-800 mt-4">Coconut Juice</h2>
+                                <p class="text-red-600 mt-2">&#8373;10.00</p>
+                                <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-sky-500 text-white font-semibold rounded hover:bg-sky-400 transition duration-300 ease-in-out">Order Now</a>
+                            </div>
+                    
+                            <!-- Dish 8 -->
+                            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover-animate">
+                                <img src="/images/Local beverage/pito 2.webp" alt="pito" class="rounded-t-lg w-full h-48 object-cover">
+                                <h2 class="text-2xl font-semibold text-gray-800 mt-4">Pito</h2>
+                                <p class="text-red-600 mt-2">&#8373;10.00</p>
+                                <a href="userOrderForm.html" class="inline-block mt-4 px-4 py-2 bg-sky-500 text-white font-semibold rounded hover:bg-sky-400 transition duration-300 ease-in-out">Order Now</a>
+                            </div>
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+
+        <!-- Footer -->
+        <footer class="bg-orange-700 text-white py-12 px-4 lg:ml-64">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+                <!-- Address -->
+                <div class="w-full mb-6 text-center md:text-left">
+                    <h3 class="text-xl mb-2 font-bold text-white underline rounded">Address</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-center md:justify-start">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Sunyani, Fiapre Box 20</span>
+                        </div>
+                        <div class="flex items-center justify-center md:justify-start">
+                            <i class="fas fa-phone mr-2"></i>
+                            <span>+233 24 089 7702</span>
+                        </div>
+                        <div class="flex items-center justify-center md:justify-start">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <span>owusuboat05@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+    
+            <!-- Navigation -->
+                <div class="w-full mb-6 md:ml-6 text-center md:text-left">
+                    <h3 class="text-xl mb-2 font-bold text-white underline rounded">Navigation</h3>
+                    <ul class="space-y-2">
+                        <li><a href="userHome.html" class="hover:underline">Home</a></li>
+                        <li><a href="userMenu.html" class="hover:underline">Menu</a></li>
+                        <li><a href="order.html" class="hover:underline">Orders</a></li>
+                        <li><a href="userStaff.html" class="hover:underline">Staff</a></li>
+                        <li><a href="userPolicy.html" class="hover:underline">Policy</a></li>
+                        <li><a href="userTerms.html" class="hover:underline">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+    
+            <!-- Open Hours -->
+                <div class="w-full mb-6 ml-4 text-center md:text-left">
+                    <h3 class="text-xl mb-2 font-bold text-white underline rounded">Open Hours</h3>
+                    <div class="space-y-2">
+                        <p>Sunday - Friday: 6am - 11pm</p>
+                        <p>Saturday: 6pm - 11pm</p>
+                    </div>
+                </div>
+    
+            <!-- Social Media -->
+                <div class="w-full mb-6 ml-4 text-center md:text-left">
+                    <h3 class="text-xl mb-2 font-bold text-white underline rounded">Follow Us</h3>
+                    <div class="flex justify-center md:justify-start space-x-4 text-xl">
+                        <a href="#" class="hover:text-red-400"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-red-400"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-red-400"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-red-400"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-red-400"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    
+      
+
+    <script src="/userJS/uMenu.js">
+        
+    </script>
+</body>
+</html>

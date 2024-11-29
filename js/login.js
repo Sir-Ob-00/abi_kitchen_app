@@ -32,3 +32,37 @@
                 });
             }
         });
+
+
+        //Login aunthentication
+
+        // Predefined credentials (for demonstration purposes)
+    const validUsers = [
+        { username: "admin", email: "admin@example.com", password: "pass123" },
+        { username: "user1", email: "user1@example.com", password: "pass456" }
+    ];
+    
+    // Get the form element
+    const loginForm = document.getElementById("loginForm");
+    
+    // Add an event listener for form submission
+    loginForm.addEventListener("submit", (event) => {
+        event.preventDefault(); // Prevent the default form submission
+    
+        // Get input values
+        const loginInput = document.getElementById("loginInput").value;
+        const password = document.getElementById("password").value;
+    
+        // Check if the login input matches either a username or an email
+        const user = validUsers.find(
+        user => (user.username === loginInput || user.email === loginInput) && user.password === password
+        );
+    
+        if (user) {
+        alert("Login successful!");
+        window.location.href = "home.html"; // Redirect to the homepage
+        } else {
+        alert("Invalid username/email or password. Please try again.");
+        }
+    });
+    
