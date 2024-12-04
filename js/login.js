@@ -4,6 +4,9 @@
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
         });
+
+        var humburger = document.getElementById('hamburger-button');
+        humburger.style.marginRight = '40px';
         
         // Toggle submenus on both large and mobile screens
         document.querySelectorAll('.dropdown > a').forEach(dropdownToggle => {

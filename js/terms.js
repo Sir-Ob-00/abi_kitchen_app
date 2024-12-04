@@ -1,4 +1,4 @@
-//JS for Humburger Menu
+            //JS for Humburger Menu
             // Toggle mobile menu visibility
             document.getElementById('hamburger-button').addEventListener('click', function () {
                 const menu = document.getElementById('mobile-menu');
