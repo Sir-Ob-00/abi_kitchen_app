@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Terms</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Abi's Kitchen/User_Terms</title>
+  <link rel="shortcut icon" type="image/png" href="/images/background/favi.png">
+  <link href="./output.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     .underline-hover:hover {
@@ -54,8 +55,8 @@
         </nav>
 
         <!-- Sidebar -->
-        <aside id="sidebar" class="fixed top-16 left-0 w-64 h-[calc(100%-4rem)] bg-white shadow-lg z-10 transform -translate-x-full transition-transform duration-300 lg:translate-x-0">
-            <div class="flex items-center gap-4 p-6 border-b">
+        <aside id="sidebar" class="fixed  left-0 w-64 h-full bg-white shadow-lg transform -translate-x-full transition-transform duration-300 lg:translate-x-0">
+            <div class="flex items-center gap-4 p-6 border-b mt-16">
                 <img src="https://via.placeholder.com/50" alt="User Profile" class="w-12 h-12 rounded-full border">
                 <div>
                     <h1 class="font-bold text-lg text-gray-800">User Name</h1>
@@ -74,11 +75,11 @@
 
         <!-- Sidebar Toggle Button -->
         <button id="sidebarToggle" class="fixed bottom-5 left-5 bg-red-500 text-white p-4 rounded-full shadow-lg hover:bg-red-600 lg:hidden">
-            <i class="fa fa-bars"></i>
+            <i class="fa fa-bars" aria-hidden="true"></i>
         </button>
 
         <!-- Main Content -->
-        <main class="ml-0 lg:ml-64 mt-16 flex-1 p-8 bg-gray-50 overflow-y-auto">
+        <main class=" mt-16 flex-1 p-8 bg-gray-50">
                     <!-- Header Section -->
             <div class="bg-gradient-to-r from-red-600 to-yellow-600 py-12 text-center text-white font-arv">
                 <h1 class="text-4xl font-bold">Terms and Conditions</h1>
@@ -117,14 +118,12 @@
 
                     <!-- Section 3 -->
                     <section>
-                        <h2 class="text-xl md:text-2xl font-semibold text-gray-800 bg-orange-200 py-2 px-4 rounded-md w-max mx-auto my-4">
-                        3. Online Orders
-                        </h2>
+                        <h2 class="text-xl md:text-2xl font-semibold text-gray-800 bg-orange-200 py-2 px-4 rounded-md w-max mx-auto my-4">3. Online Orders</h2>
                         <ul class="list-disc ml-8 mt-2 space-y-2 text-gray-700 leading-relaxed">
-                        <li>All information provided during the ordering process is accurate and complete.</li>
-                        <li>You are responsible for reviewing your order before submission.</li>
-                        <li>Prices, availability, and menu items are subject to change without notice.</li>
-                        <li>All payments are final, and no refunds will be issued unless approved by [Restaurant Name].</li>
+                            <li>All information provided during the ordering process is accurate and complete.</li>
+                            <li>You are responsible for reviewing your order before submission.</li>
+                            <li>Prices, availability, and menu items are subject to change without notice.</li>
+                            <li>All payments are final, and no refunds will be issued unless approved by [Restaurant Name].</li>
                         </ul>
                     </section>
 
@@ -226,20 +225,20 @@
                 </div>
     
             <!-- Navigation -->
-                <div class="w-full mb-6 md:ml-6 text-center md:text-left">
+                <div class="w-full mb-6 text-center md:text-left">
                     <h3 class="text-xl mb-2 font-bold text-white underline rounded">Navigation</h3>
                     <ul class="space-y-2">
-                        <li><a href="#" class="hover:underline">Home</a></li>
-                        <li><a href="menu.html" class="hover:underline">Menu</a></li>
+                        <li><a href="userHome.html" class="hover:underline">Home</a></li>
+                        <li><a href="userMenu.html" class="hover:underline">Menu</a></li>
                         <li><a href="order.html" class="hover:underline">Orders</a></li>
-                        <li><a href="staff.html" class="hover:underline">Staff</a></li>
-                        <li><a href="policy.html" class="hover:underline">Policy</a></li>
-                        <li><a href="terms.html" class="hover:underline">Terms & Conditions</a></li>
+                        <li><a href="userStaff.html" class="hover:underline">Staff</a></li>
+                        <li><a href="userPolicy.html" class="hover:underline">Policy</a></li>
+                        <li><a href="userTerms.html" class="hover:underline">Terms & Conditions</a></li>
                     </ul>
                 </div>
     
             <!-- Open Hours -->
-                <div class="w-full mb-6 ml-4 text-center md:text-left">
+                <div class="w-full mb-6 text-center md:text-left">
                     <h3 class="text-xl mb-2 font-bold text-white underline rounded">Open Hours</h3>
                     <div class="space-y-2">
                         <p>Sunday - Friday: 6am - 11pm</p>
@@ -248,7 +247,7 @@
                 </div>
     
             <!-- Social Media -->
-                <div class="w-full mb-6 ml-4 text-center md:text-left">
+                <div class="w-full mb-6 text-center md:text-left">
                     <h3 class="text-xl mb-2 font-bold text-white underline rounded">Follow Us</h3>
                     <div class="flex justify-center md:justify-start space-x-4 text-xl">
                         <a href="#" class="hover:text-red-400"><i class="fab fa-facebook-f"></i></a>

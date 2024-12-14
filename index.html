@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abi's Kitchen</title>
+    <title>Abi's Kitchen/home</title>
     <link rel="shortcut icon" type="image/png" href="/images/background/favi.png">
-     <link href="./output.css" rel="stylesheet">
+    <link href="./output.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <style>
@@ -18,6 +18,77 @@
     .submenu-scale:hover {
         transform: scale(1.05);
         transition: transform 0.2s ease-in-out;
+    }
+
+
+
+    .menu-title { 
+        color: #dc2626; 
+        font-size: 3rem; 
+        text-align: center; 
+        font-weight: 800; 
+        margin-top: 5rem; 
+    }
+
+
+
+    .grid-container { 
+        display: grid; 
+        margin: 2.5rem; 
+        gap: 5rem 2.5rem; 
+        font-family: 'Poppins', sans-serif; 
+        grid-template-columns: 
+        repeat(1, minmax(0, 1fr)); 
+    } 
+
+
+    @media (min-width: 640px) { 
+        .grid-container { 
+            grid-template-columns: repeat(2, minmax(0, 1fr)); } 
+    } 
+    @media (min-width: 1024px) { 
+    .grid-container { 
+        grid-template-columns: repeat(3, minmax(0, 1fr)); } 
+
+    } 
+    .card { 
+        background-color: #ffffff; 
+        border-radius: 0.375rem; 
+        overflow: hidden; 
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+        position: relative; 
+        border-width: 2px; 
+        transition: transform 300ms, box-shadow 300ms; 
+    } 
+    .card:hover { 
+        transform: scale(1.05); 
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); 
+    } 
+    
+    
+    
+    .button-container { 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        gap: 5rem; 
+        padding: 2rem; 
+    } 
+    .menu-button { 
+        background-color: #dc2626; 
+        color: #ffffff; 
+        font-weight: 600; 
+        font-size: 1.25rem; 
+        padding: 0.5rem; 
+        border-radius: 0.375rem; 
+        transition: all 500ms ease-out; 
+        text-decoration: none; 
+    } 
+    .menu-button:hover { 
+        border-width: 2px; 
+        border-color: #dc2626; 
+        background-color: inherit; 
+        color: #ef4444;
     }
 </style>
 <body>
@@ -105,54 +176,16 @@
 
 
                 <!-- Menu:Picture cards -->
-        <div class="mt-20">
-            <h2 class="text-red-600 text-5xl text-center font-extrabold">MENU</h2>
-        
-            <div class="grid m-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-20 gap-x-10 font-pop">
-                <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg border-2 transform hover:scale-105 transition-transform duration-300">
-                    <div>
-                        <img src="/images/background/salad 1.jpg" alt="Fish Dish">
-                        <p class="hidden-label m-10 text-gray-500 font-bold text-2xl uppercase text-center">best salad</p>
-                    </div>
-                </div>
-                <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg border-2 transform hover:scale-105 transition-transform duration-300">
-                    <div>
-                        <img src="/images/background/pizza 1.jpg" alt="Fufu Dish">
-                        <p class="hidden-label m-10 text-gray-500 font-bold text-2xl uppercase text-center">top pizza</p>
-                    </div>
-                </div>
-                <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg border-2 transform hover:scale-105 transition-transform duration-300">
-                    <div>
-                        <img src="/images/Desert/gc-seafood.jpeg" alt="seafood">
-                        <p class="hidden-label m-10 text-gray-500 font-bold text-2xl uppercase text-center">Hot Dessert</p>
-                    </div>
-                </div>
-                <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg border-2 transform hover:scale-105 transition-transform duration-300">
-                    <div>
-                        <img src="/images/Traditional/Akple with Palm.jpg" alt="akple">
-                        <p class="hidden-label m-10 text-gray-500 font-bold text-2xl uppercase text-center">Hot Local</p>
-                    </div>
-                </div>
-                <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg border-2 transform hover:scale-105 transition-transform duration-300">
-                    <div>
-                        <img src="/images/Speacial/snail 1.jpg" alt="snail">
-                        <p class="hidden-label m-10 text-gray-500 font-bold text-2xl uppercase text-center">Special</p>
-                    </div>
-                </div>
-                <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg border-2 transform hover:scale-105 transition-transform duration-300">
-                    <div>
-                        <img src="/images/Local beverage/palm wine 2.jpg" alt="Fufu Dish">
-                        <p class="hidden-label m-10 text-gray-500 font-bold text-2xl uppercase text-center">beverage</p>
-                    </div>
-                </div>
-            </div>
-                        <!--View menu button-->
-            <div class="flex items-center justify-center gap-20 p-8">
-                <a href="menu.html" class="bg-red-600 text-white font-semibold text-xl p-2 rounded hover:border-2 hover:border-red-600 hover:bg-inherit hover:text-red-500 transition ease-out duration-500">View Menu</a>
-            </div>
-        </div>
+                
+                <div> 
+                    <h2 class="menu-title" id="">MENU</h2> 
+                    <div class="grid-container " id="grid-container"></div> 
 
-           
+                    <!-- View menu button --> 
+                    <div class="button-container"> 
+                        <a href="menu.html" class="menu-button">View Menu</a> 
+                    </div>
+                </div>
         
     
 
@@ -213,7 +246,7 @@
                 </div>
         
                 <!-- Open Hours -->
-                <div class="w-full mb-6 ml-4 text-center md:text-left">
+                <div class="w-full mb-6 text-center md:text-left">
                     <h3 class="text-xl mb-2 font-bold text-white underline rounded">Open Hours</h3>
                     <div class="space-y-2">
                         <p>Sunday - Friday: 6am - 11pm</p>
@@ -222,7 +255,7 @@
                 </div>
         
                 <!-- Social Media -->
-                <div class="w-full mb-6 ml-4 text-center md:text-left">
+                <div class="w-full mb-6 text-center md:text-left">
                     <h3 class="text-xl mb-2 font-bold text-white underline rounded">Follow Us</h3>
                     <div class="flex justify-center md:justify-start space-x-4 text-xl">
                         <a href="#" class="hover:text-red-400"><i class="fab fa-facebook-f"></i></a>
@@ -239,7 +272,7 @@
     
     
     
-    <script src="/js/home.js">
+    <script type="module" src="/js/home.js">
         
     </script>
 

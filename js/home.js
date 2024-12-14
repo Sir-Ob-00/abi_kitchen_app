@@ -5,7 +5,7 @@
             menu.classList.toggle('hidden');
         });
         
-        var humburger = document.getElementById('hamburger-button');
+        const humburger = document.getElementById('hamburger-button');
         humburger.style.marginRight = '40px';
 
         // Toggle submenus on both large and mobile screens
@@ -36,15 +36,35 @@
             }
         });
         
-        
-    // Select all images in the slider
-    const images = document.querySelectorAll('.slider img');
-    let currentIndex = 0;
-    function showNextImage() {
-        images[currentIndex].classList.replace('opacity-100', 'opacity-0');
-        currentIndex = (currentIndex + 1) % images.length;
-        images[currentIndex].classList.replace('opacity-0', 'opacity-100');
-    }
-    setInterval(showNextImage, 3000);
-
     
+
+
+
+
+    import { mealImages } from "./home_menu.js";
+    
+    var gridContainer = document.getElementById('grid-container');
+
+    function displayCards(){
+        mealImages.forEach((meal) => {
+
+        var menuCard = document.createElement('div');
+        var menuContent = document.createElement('div');
+        var menuImage = document.createElement('img');
+        var menuTitle = document.createElement('p');
+        
+        menuCard.className = 'card';
+        menuTitle.classList.add('label');
+        menuTitle.style.fontSize = '200';
+
+        menuImage.src = meal.image;
+        menuTitle = meal.title;
+        menuContent.append(menuImage);
+        menuContent.append(menuTitle);
+        menuCard.append(menuContent);
+        gridContainer.append(menuCard);
+
+        });
+    };
+
+    document.addEventListener('DOMContentLoaded', displayCards());
